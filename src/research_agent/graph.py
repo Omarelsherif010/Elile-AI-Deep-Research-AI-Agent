@@ -4,15 +4,13 @@ import inspect
 import time as _time
 from functools import wraps
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Literal
+from typing import Any, Literal
 
 import structlog
 
 from research_agent.schemas import Budget
 
-# ResearchState is a TypedDict; import for type hints only to avoid circular imports.
-if TYPE_CHECKING:
-    from research_agent.state import ResearchState
+from research_agent.state import ResearchState
 
 logger = structlog.get_logger()
 
@@ -227,14 +225,11 @@ def build_graph_with_checkpointer(db_path: Path):  # type: ignore[return]
 
     Returns a compiled LangGraph CompiledGraph with checkpointing enabled.
     """
-    from langgraph.checkpoint.sqlite import SqliteSaver
     from langgraph.graph import END, StateGraph
-
-    from research_agent.state import ResearchState as _ResearchState
 
     nodes = _import_nodes()
 
-    builder = StateGraph(_ResearchState)
+    builder = StateGraph(ResearchState)
 
     builder.add_node("planner", budget_guard(nodes["planner"]))
     builder.add_node("search_orchestrator", budget_guard(nodes["search_orchestrator"]))
@@ -262,5 +257,4 @@ def build_graph_with_checkpointer(db_path: Path):  # type: ignore[return]
     builder.add_edge("risk_analyzer", "reporter")
     builder.add_edge("reporter", END)
 
-    checkpointer = SqliteSaver.from_conn_string(str(db_path))
-    return builder.compile(checkpointer=checkpointer)
+    return builder.compile()

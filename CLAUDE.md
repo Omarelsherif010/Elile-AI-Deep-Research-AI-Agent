@@ -243,6 +243,8 @@ These will come up in conversation. Decline politely and link the rationale.
 ## Active Technologies
 - Python 3.11+ + LangGraph ≥1.1, Pydantic v2, anthropic SDK, openai SDK, google-generativeai SDK, neo4j Python driver, httpx, tenacity, structlog, trafilatura (001-deep-research-agent)
 - Neo4j Aura free tier (graph, optional); SQLite (search cache, checkpoints); filesystem (runs/, audit logs) (001-deep-research-agent)
+- Python 3.11+ + pydantic >=2.0 (schemas), pyyaml (persona loading), rapidfuzz (fuzzy matching), openai >=1.50 (embeddings via text-embedding-3-small), jinja2 (report templates), structlog (logging) (002-eval-suite)
+- Filesystem (YAML personas, JSON artifacts, Markdown reports, JSON match cache) (002-eval-suite)
 
 ## Recent Changes
 - 001-deep-research-agent: Added Python 3.11+ + LangGraph ≥1.1, Pydantic v2, anthropic SDK, openai SDK, google-generativeai SDK, neo4j Python driver, httpx, tenacity, structlog, trafilatura

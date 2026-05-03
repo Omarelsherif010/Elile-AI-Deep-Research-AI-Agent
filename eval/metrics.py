@@ -1,166 +1,236 @@
-"""Eval metrics computation for the research agent."""
+"""Metric computation for the eval suite.
+
+Functions:
+- compute_recall: recall by tier
+- compute_precision: automated precision for synthetic, sample for real_public
+- compute_calibration: ECE with 5 equal-width bins
+- compute_risk_recall: fraction of planted risks found
+- cost_summary: aggregate cost/duration from artifacts
+- evaluate_success_criteria: pass/fail against thresholds
+"""
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+import random
 from typing import Any
 
+import structlog
 
-@dataclass
-class EvalMetrics:
-    persona_name: str
-    recall_easy: float = 0.0
-    recall_medium: float = 0.0
-    recall_hard: float = 0.0
-    precision: float = 0.0
-    confidence_calibration: float = 0.0
-    risk_recall: float = 0.0
+from eval.matcher import fuzzy_match
+from eval.schemas import (
+    CalibrationBucket,
+    FactMatch,
+    PersonaMetrics,
+    PersonaType,
+    RiskMatch,
+    RunArtifacts,
+    Tier,
+)
+from research_agent.schemas import ValidatedClaim
 
-    # Raw counts
-    easy_found: int = 0
-    easy_total: int = 0
-    medium_found: int = 0
-    medium_total: int = 0
-    hard_found: int = 0
-    hard_total: int = 0
-    risk_found: int = 0
-    risk_total: int = 0
+logger = structlog.get_logger()
 
-    def pass_fail(self, thresholds: dict[str, float]) -> dict[str, bool]:
-        """Return per-dimension pass/fail against supplied thresholds."""
-        return {
-            "recall_easy": self.recall_easy >= thresholds.get("recall_easy", 0.70),
-            "recall_medium": self.recall_medium >= thresholds.get("recall_medium", 0.50),
-            "precision": self.precision >= thresholds.get("precision", 0.90),
-            "confidence_calibration": self.confidence_calibration
-            >= thresholds.get("confidence_calibration", 0.95),
-            "risk_recall": self.risk_recall >= thresholds.get("risk_recall", 0.80),
-        }
-
-    def overall_pass(self, thresholds: dict[str, float]) -> bool:
-        """Return True only if all per-dimension checks pass."""
-        return all(self.pass_fail(thresholds).values())
+# Fixed bins for ECE: (0.0, 0.2], (0.2, 0.4], (0.4, 0.6], (0.6, 0.8], (0.8, 1.0]
+_CALIBRATION_BINS = [
+    (0.0, 0.2),
+    (0.2, 0.4),
+    (0.4, 0.6),
+    (0.6, 0.8),
+    (0.8, 1.0),
+]
 
 
 def compute_recall(
-    ground_truth: list[dict[str, Any]],
-    validated_claims: list[dict[str, Any]],
-    match_threshold: float = 0.7,
-) -> tuple[int, int]:
-    """Count how many ground truth facts appear in validated claims.
+    fact_matches: list[FactMatch],
+    planted_facts: list[Any],
+) -> dict[Tier, float]:
+    """Compute recall per tier.
 
-    Returns (found, total).
-    Simple matching: check if gt subject+predicate+object keywords appear in any claim.
+    Returns dict with keys easy, medium, hard.
     """
-    found = 0
-    for gt in ground_truth:
-        gt_text = f"{gt['subject']} {gt['predicate']} {gt['object']}".lower()
-        gt_words = set(gt_text.split())
-        for claim in validated_claims:
-            claim_text = (
-                f"{claim.get('subject', '')} {claim.get('predicate', '')} {claim.get('object', '')}"
-            ).lower()
-            claim_words = set(claim_text.split())
-            overlap = len(gt_words & claim_words) / max(len(gt_words), 1)
-            if overlap >= match_threshold:
-                found += 1
-                break
-    return found, len(ground_truth)
+    tier_totals: dict[Tier, int] = {Tier.easy: 0, Tier.medium: 0, Tier.hard: 0}
+    tier_found: dict[Tier, int] = {Tier.easy: 0, Tier.medium: 0, Tier.hard: 0}
+
+    # Build a map from fact id to tier for lookups
+    fact_tiers = {f.id: f.difficulty for f in planted_facts}
+
+    for match in fact_matches:
+        tier = fact_tiers.get(match.planted_fact_id)
+        if tier is None:
+            continue
+        tier_totals[tier] += 1
+        if match.matched_claim_id is not None:
+            tier_found[tier] += 1
+
+    return {
+        Tier.easy: tier_found[Tier.easy] / max(tier_totals[Tier.easy], 1),
+        Tier.medium: tier_found[Tier.medium] / max(tier_totals[Tier.medium], 1),
+        Tier.hard: tier_found[Tier.hard] / max(tier_totals[Tier.hard], 1),
+    }
 
 
-def compute_precision(validated_claims: list[dict[str, Any]], sample_size: int = 30) -> float:
-    """Estimate precision. Without human judgment, use confidence > 0.5 as proxy for correct.
+def compute_precision(
+    claims: list[ValidatedClaim],
+    planted_facts: list[Any],
+    persona_type: PersonaType,
+    sample_size: int = 30,
+    seed: int = 42,
+) -> dict[str, Any]:
+    """Compute precision metrics.
 
-    Returns fraction of sample with confidence > 0.5.
+    For synthetic personas: automated check using fuzzy matching against
+    all planted facts. For real_public: sample claims for manual review.
+
+    Returns dict with keys:
+    - rate: float | None
+    - sampled_claims: list[dict]
+    - is_automated: bool
     """
-    if not validated_claims:
-        return 1.0
-    sample = validated_claims[:sample_size]
-    high_confidence = sum(1 for c in sample if c.get("confidence", 0) > 0.5)
-    return high_confidence / len(sample)
+    if not claims:
+        return {
+            "rate": 0.0,
+            "sampled_claims": [],
+            "is_automated": True,
+        }
+
+    if persona_type == PersonaType.synthetic:
+        # Automated: check ALL claims against planted facts (full ground truth)
+        correct = 0
+        sampled_claims: list[dict[str, Any]] = []
+
+        for claim in claims:
+            claim_text = f"{claim.subject} {claim.predicate} {claim.object}"
+            is_correct = False
+            best_score = 0.0
+            for fact in planted_facts:
+                score = fuzzy_match(claim_text, fact.statement)
+                if score > best_score:
+                    best_score = score
+                if score >= 60.0:
+                    is_correct = True
+                    break
+
+            if is_correct:
+                correct += 1
+
+            sampled_claims.append({
+                "claim_id": claim.id,
+                "claim_text": claim_text,
+                "confidence": claim.confidence,
+                "is_correct": is_correct,
+                "best_fuzzy_score": best_score,
+            })
+
+        return {
+            "rate": correct / len(claims),
+            "sampled_claims": sampled_claims,
+            "is_automated": True,
+        }
+
+    # real_public: sample for manual review
+    rng = random.Random(seed)
+    sample = rng.sample(claims, min(sample_size, len(claims)))
+    sampled_claims = [
+        {
+            "claim_id": claim.id,
+            "claim_text": f"{claim.subject} {claim.predicate} {claim.object}",
+            "confidence": claim.confidence,
+            "is_correct": None,  # to be labeled manually
+        }
+        for claim in sample
+    ]
+
+    return {
+        "rate": None,
+        "sampled_claims": sampled_claims,
+        "is_automated": False,
+    }
 
 
-def compute_confidence_calibration(validated_claims: list[dict[str, Any]]) -> float:
-    """For claims with confidence > 0.8, what fraction have ≥ 2 corroborating sources?
+def compute_calibration(
+    claims: list[ValidatedClaim],
+    fact_matches: list[FactMatch],
+) -> tuple[list[CalibrationBucket], float]:
+    """Compute ECE with 5 equal-width bins.
 
-    Uses n_supporting_sources as proxy for ground truth.
+    Returns (buckets, ece).
     """
-    high_conf = [c for c in validated_claims if c.get("confidence", 0) > 0.8]
-    if not high_conf:
-        return 1.0
-    well_supported = sum(1 for c in high_conf if len(c.get("supporting_sources", [])) >= 2)
-    return well_supported / len(high_conf)
+    matched_claim_ids = {m.matched_claim_id for m in fact_matches if m.matched_claim_id}
+
+    buckets: list[CalibrationBucket] = []
+    ece = 0.0
+    total_claims = len(claims)
+
+    for idx, (low, high) in enumerate(_CALIBRATION_BINS):
+        if idx == 0:
+            bin_claims = [c for c in claims if low <= c.confidence <= high]
+        else:
+            bin_claims = [c for c in claims if low < c.confidence <= high]
+        claim_count = len(bin_claims)
+        matched_count = sum(1 for c in bin_claims if c.id in matched_claim_ids)
+
+        observed = None
+        if claim_count > 0:
+            observed = matched_count / claim_count
+            mean_confidence = sum(c.confidence for c in bin_claims) / claim_count
+            ece += (claim_count / max(total_claims, 1)) * abs(observed - mean_confidence)
+
+        buckets.append(
+            CalibrationBucket(
+                range_low=low,
+                range_high=high,
+                claim_count=claim_count,
+                matched_count=matched_count,
+                observed_precision=observed,
+            )
+        )
+
+    return buckets, ece
 
 
 def compute_risk_recall(
-    expected_flags: list[dict[str, Any]],
-    actual_flags: list[dict[str, Any]],
-    match_threshold: float = 0.5,
-) -> tuple[int, int]:
-    """Count how many expected risk flags were surfaced.
+    risk_matches: list[RiskMatch],
+    planted_risks: list[Any],
+) -> float:
+    """Compute fraction of planted risks that were matched."""
+    if not planted_risks:
+        return 1.0
+    found = sum(1 for m in risk_matches if m.matched_flag_index is not None)
+    return found / len(planted_risks)
 
-    Returns (found, total).
-    Matching: type must match AND description keywords overlap.
+
+def cost_summary(artifacts: RunArtifacts) -> dict[str, Any]:
+    """Extract cost/duration summary from run artifacts."""
+    return {
+        "cost_dollars": artifacts.cost_dollars,
+        "duration_seconds": artifacts.duration_seconds,
+        "iterations_used": artifacts.iterations_used,
+        "search_calls_used": artifacts.search_calls_used,
+    }
+
+
+def evaluate_success_criteria(metrics: PersonaMetrics) -> dict[str, bool]:
+    """Evaluate pass/fail for each success criterion.
+
+    Criteria:
+    - high_confidence_precision: (0.8, 1.0] bucket claims >= 95% precision
+    - easy_recall: >= 80%
+    - risk_recall: 100%
     """
-    found = 0
-    for expected in expected_flags:
-        exp_type = expected.get("type", "")
-        exp_desc = expected.get("description", "").lower()
-        exp_words = set(exp_desc.split())
-        for actual in actual_flags:
-            if actual.get("type") != exp_type:
-                continue
-            act_desc = actual.get("description", "").lower()
-            act_words = set(act_desc.split())
-            if exp_words and act_words:
-                overlap = len(exp_words & act_words) / len(exp_words)
-                if overlap >= match_threshold:
-                    found += 1
-                    break
-            elif not exp_words:
-                found += 1
-                break
-    return found, len(expected_flags)
+    # Find the (0.8, 1.0] bucket
+    high_conf_bucket = None
+    for bucket in metrics.calibration_buckets:
+        if bucket.range_low == 0.8 and bucket.range_high == 1.0:
+            high_conf_bucket = bucket
+            break
 
+    if high_conf_bucket and high_conf_bucket.claim_count > 0:
+        high_conf_precision = high_conf_bucket.observed_precision or 0.0
+    else:
+        high_conf_precision = 1.0  # vacuously true if no high-confidence claims
 
-def compute_metrics(
-    persona: dict[str, Any],
-    report_json: dict[str, Any],
-) -> EvalMetrics:
-    """Compute all metrics for a persona run."""
-    gt = persona.get("ground_truth", {})
-
-    validated_claims = report_json.get("claims", [])
-    actual_flags = report_json.get("risk_flags", [])
-
-    easy_found, easy_total = compute_recall(gt.get("easy", []), validated_claims)
-    medium_found, medium_total = compute_recall(
-        gt.get("medium", []), validated_claims, match_threshold=0.6
-    )
-    hard_found, hard_total = compute_recall(
-        gt.get("hard", []), validated_claims, match_threshold=0.5
-    )
-
-    precision = compute_precision(validated_claims)
-    calibration = compute_confidence_calibration(validated_claims)
-    risk_found, risk_total = compute_risk_recall(
-        persona.get("expected_risk_flags", []), actual_flags
-    )
-
-    return EvalMetrics(
-        persona_name=persona.get("name", "unknown"),
-        recall_easy=easy_found / max(easy_total, 1),
-        recall_medium=medium_found / max(medium_total, 1),
-        recall_hard=hard_found / max(hard_total, 1),
-        precision=precision,
-        confidence_calibration=calibration,
-        risk_recall=risk_found / max(risk_total, 1),
-        easy_found=easy_found,
-        easy_total=easy_total,
-        medium_found=medium_found,
-        medium_total=medium_total,
-        hard_found=hard_found,
-        hard_total=hard_total,
-        risk_found=risk_found,
-        risk_total=risk_total,
-    )
+    return {
+        "high_confidence_precision": high_conf_precision >= 0.95,
+        "easy_recall": metrics.recall_by_tier.get(Tier.easy, 0.0) >= 0.80,
+        "risk_recall": metrics.risk_recall >= 1.0,
+    }

@@ -1,98 +1,160 @@
-name: persona_synthetic_a
-display_name: "Alexandra Chen"
-target:
-  name: "Alexandra Chen"
-  role: "Chief Executive Officer"
-  organization: "Meridian Capital Partners"
-  context: "Based in Singapore"
-  aliases: ["Alex Chen", "Alexandra M. Chen"]
+id: persona_synthetic_a
+target_name: Aria Vellinor
+target_context: Former fintech executive turned venture capitalist, based in the fictional city-state of Velmaris. Founder of Vellinor Capital.
+persona_type: synthetic
+description: >
+  Aria Vellinor is a fictional venture capitalist and former fintech executive.
+  She founded Vellinor Capital in 2019 and serves on the boards of several
+  fictional technology and finance companies. All organizations and associates
+  in this persona are fictional.
+ethical_notes: >
+  This is a fully synthetic persona. All names, companies, locations, and events
+  are fictional. No real individuals or organizations are referenced.
+plant_site_root: eval/plant_site/aria-vellinor
 
-# Ground truth facts planted in plant_site/
-ground_truth:
-  easy:  # Tier-1/2 sources, explicit statements
-    - id: gt_001
-      subject: "Alexandra Chen"
-      predicate: "serves as"
-      object: "CEO of Meridian Capital Partners"
-      source_tier: 2
-      dimension: "professional_history"
+planted_facts:
+  # Easy tier — headline-visible facts
+  - id: fact_a01
+    statement: Aria Vellinor is the founder and Managing Partner of Vellinor Capital.
+    difficulty: easy
+    expected_dimension: professional_history
+    fact_type: role
+    match_strategy: exact
+    match_threshold: 100.0
+    notes: Headline fact — appears in page title and opening paragraph.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/index.html
 
-    - id: gt_002
-      subject: "Alexandra Chen"
-      predicate: "holds degree from"
-      object: "MBA from INSEAD (2009)"
-      source_tier: 2
-      dimension: "biographical"
+  - id: fact_a02
+    statement: Aria Vellinor was born in Velmaris.
+    difficulty: easy
+    expected_dimension: biographical
+    fact_type: biographical
+    match_strategy: fuzzy
+    match_threshold: 80.0
+    notes: Opening biography paragraph.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/index.html
 
-    - id: gt_003
-      subject: "Alexandra Chen"
-      predicate: "previously served as"
-      object: "Managing Director at DBS Bank (2012-2018)"
-      source_tier: 2
-      dimension: "professional_history"
+  - id: fact_a03
+    statement: Aria Vellinor holds a Master of Finance from the Velmaris Institute of Technology.
+    difficulty: easy
+    expected_dimension: biographical
+    fact_type: biographical
+    match_strategy: fuzzy
+    match_threshold: 80.0
+    notes: Education section, clearly stated.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/index.html
 
-  medium:  # Tier-2/3 sources, require corroboration
-    - id: gt_004
-      subject: "Alexandra Chen"
-      predicate: "co-founded"
-      object: "GreenTech Ventures (2019)"
-      source_tier: 3
-      dimension: "financial_connections"
+  - id: fact_a04
+    statement: Vellinor Capital was founded in 2019.
+    difficulty: easy
+    expected_dimension: professional_history
+    fact_type: role
+    match_strategy: exact
+    match_threshold: 100.0
+    notes: Company founding date in opening paragraph.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/index.html
 
-    - id: gt_005
-      subject: "Alexandra Chen"
-      predicate: "serves on board of"
-      object: "Singapore FinTech Association"
-      source_tier: 2
-      dimension: "network"
+  # Medium tier — requires reading article body
+  - id: fact_a05
+    statement: Aria Vellinor serves on the board of the Velmaris Digital Commerce Association.
+    difficulty: medium
+    expected_dimension: network
+    fact_type: network
+    match_strategy: fuzzy
+    match_threshold: 80.0
+    notes: Board membership listed in career timeline; not in opening paragraph.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/career.html
 
-    - id: gt_006
-      subject: "Alexandra Chen"
-      predicate: "received"
-      object: "MAS Enforcement Inquiry (2021, resolved)"
-      source_tier: 2
-      dimension: "risk_surface"
+  - id: fact_a06
+    statement: Aria Vellinor was previously Chief Technology Officer at Meridian Fintech Solutions.
+    difficulty: medium
+    expected_dimension: professional_history
+    fact_type: role
+    match_strategy: fuzzy
+    match_threshold: 80.0
+    notes: Prior role in career timeline page.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/career.html
 
-  hard:  # Tier-3/4, require cross-referencing
-    - id: gt_007
-      subject: "Alexandra Chen"
-      predicate: "associated with"
-      object: "venture fund linked to Hartwell Group"
-      source_tier: 3
-      dimension: "network"
+  - id: fact_a07
+    statement: Vellinor Capital led a Series B investment of 45 million Velmaris crowns in Nexara Systems.
+    difficulty: medium
+    expected_dimension: financial_connections
+    fact_type: financial
+    match_strategy: fuzzy
+    match_threshold: 75.0
+    notes: Investment amount in ventures page; specific number requires reading.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/ventures.html
 
-    - id: gt_008
-      subject: "GreenTech Ventures"
-      predicate: "received"
-      object: "SEC preliminary inquiry letter (2022)"
-      source_tier: 3
-      dimension: "risk_surface"
+  - id: fact_a08
+    statement: Aria Vellinor is an advisory board member at the Ethereal AI Governance Institute.
+    difficulty: medium
+    expected_dimension: network
+    fact_type: network
+    match_strategy: fuzzy
+    match_threshold: 80.0
+    notes: Advisory role mentioned in ventures page.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/ventures.html
 
-# Expected risk flags
-expected_risk_flags:
-  - type: REGULATORY
-    severity: MEDIUM
-    description: "MAS Enforcement Inquiry (2021)"
-    evidence_ids: [gt_006]
+  # Hard tier — requires cross-referencing multiple pages
+  - id: fact_a09
+    statement: Aria Vellinor publicly advocated for mandatory algorithmic transparency at the 2023 Velmaris Tech Summit.
+    difficulty: hard
+    expected_dimension: public_statements
+    fact_type: statement
+    match_strategy: semantic
+    match_threshold: 0.75
+    notes: Conference quote in speaking page; may be paraphrased by agent.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/speaking.html
 
-  - type: NETWORK
-    severity: LOW
-    description: "Association with Hartwell Group via fund connection"
-    evidence_ids: [gt_007]
+  - id: fact_a10
+    statement: The Velmaris Financial Oversight Authority opened a preliminary inquiry into Vellinor Capital in March 2022.
+    difficulty: hard
+    expected_dimension: risk_surface
+    fact_type: risk
+    match_strategy: fuzzy
+    match_threshold: 75.0
+    notes: Regulatory inquiry details in press page; requires cross-referencing with career page for timeline.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/press.html
 
-  - type: REGULATORY
-    severity: MEDIUM
-    description: "SEC preliminary inquiry via GreenTech Ventures"
-    evidence_ids: [gt_008]
+  - id: fact_a11
+    statement: Aria Vellinor declined to comment on the Velmaris Financial Oversight Authority inquiry when asked by the Velmaris Business Tribune.
+    difficulty: hard
+    expected_dimension: public_statements
+    fact_type: statement
+    match_strategy: semantic
+    match_threshold: 0.75
+    notes: No-comment statement in press page; likely paraphrased.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/press.html
 
-# Eval thresholds
-thresholds:
-  recall_easy: 0.70      # ≥70% of easy facts recalled
-  recall_medium: 0.50    # ≥50% of medium facts recalled
-  recall_hard: 0.30      # ≥30% of hard facts recalled
-  precision: 0.90        # ≥90% precision on sample of validated claims
-  risk_recall: 0.80      # ≥80% of planted risk flags surfaced
-  confidence_calibration: 0.95  # ≥95% of >0.8 claims are actually true
+  - id: fact_a12
+    statement: Aria Vellinor invested personally in the seed round of Lumina Robotics prior to Vellinor Capital's Series A lead.
+    difficulty: hard
+    expected_dimension: financial_connections
+    fact_type: financial
+    match_strategy: fuzzy
+    match_threshold: 70.0
+    notes: Personal investment detail requires connecting seed-round mention in ventures page with press coverage.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/ventures.html
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/press.html
 
-# Plant site URL base (GitHub Pages)
-plant_site_base: "https://example.github.io/research-agent-plant-site/persona_a"
+planted_risks:
+  - id: risk_a01
+    risk_category: REGULATORY
+    expected_severity: MEDIUM
+    description: >
+      The Velmaris Financial Oversight Authority opened a preliminary inquiry
+      into Vellinor Capital in March 2022 regarding cross-border investment disclosures.
+    evidence_source_urls:
+      - https://example.github.io/research-agent-plant-site/aria-vellinor/press.html

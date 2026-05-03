@@ -53,21 +53,10 @@ def main() -> None:
     run_parser.add_argument("--max-search-calls", type=int, default=None, dest="max_search_calls")
     run_parser.add_argument("--max-dollars", type=float, default=None, dest="max_dollars")
 
-    # ------------------------------------------------------------------
-    # `eval` sub-command
-    # ------------------------------------------------------------------
-    eval_parser = subparsers.add_parser("eval", help="Run evaluation suite")
-    eval_parser.add_argument(
-        "--persona", default=None, help="Specific persona to run (default: all)"
-    )
-    eval_parser.add_argument("--output", default=None, help="Results directory")
-
     args = parser.parse_args()
 
     if args.command == "run":
         sys.exit(asyncio.run(_run_investigation(args)))
-    elif args.command == "eval":
-        sys.exit(asyncio.run(_run_eval(args)))
 
 
 # ---------------------------------------------------------------------------
@@ -169,30 +158,6 @@ async def _run_investigation(args: argparse.Namespace) -> int:
 
 
 # ---------------------------------------------------------------------------
-# `eval` implementation
-# ---------------------------------------------------------------------------
-
-
-async def _run_eval(args: argparse.Namespace) -> int:
-    """Run the evaluation suite against synthetic personas.
-
-    Returns 0 on success, 1 on any error.
-    """
-    try:
-        from eval.runner import EvalRunner  # type: ignore[import]
-
-        runner = EvalRunner(
-            persona=args.persona,
-            output_dir=Path(args.output) if args.output else Path("eval/results"),
-        )
-        await runner.run()
-        return 0
-    except Exception as exc:
-        print(f"Eval error: {exc}", file=sys.stderr)
-        return 1
-
-
-# ---------------------------------------------------------------------------
 # Logging configuration
 # ---------------------------------------------------------------------------
 
@@ -202,7 +167,6 @@ def _configure_logging() -> None:
     structlog.configure(
         processors=[
             structlog.stdlib.add_log_level,
-            structlog.stdlib.add_logger_name,
             structlog.dev.ConsoleRenderer(),
         ],
         wrapper_class=structlog.BoundLogger,
