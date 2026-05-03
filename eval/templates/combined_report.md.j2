@@ -1,0 +1,29 @@
+# Eval Suite Summary Report
+
+**Run ID**: `{{ run_id }}`  
+**Timestamp**: {{ timestamp }}  
+
+## Overall Result
+
+{{ "PASS" if overall_pass else "FAIL" }} — {{ per_persona | length }} persona(s) evaluated.
+
+## Per-Persona Summary
+
+| Persona | Easy Recall | Precision | Risk Recall | Cost | Pass/Fail |
+|---------|-------------|-----------|-------------|------|-----------|
+{%- for pm in per_persona %}
+{% set ns = namespace(persona_pass=true) %}{% for v in pm.success_criteria.values() %}{% if not v %}{% set ns.persona_pass = false %}{% endif %}{% endfor %}| {{ pm.persona_id }} | {{ "%.2f" % pm.recall_by_tier.easy }} | {{ "%.2f" % pm.precision if pm.precision_is_automated else "N/A" }} | {{ "%.2f" % pm.risk_recall }} | ${{ "%.2f" % pm.cost_dollars }} | {{ "PASS" if ns.persona_pass else "FAIL" }} |
+{%- endfor %}
+
+## Totals
+
+| Metric | Value |
+|--------|-------|
+| Total Cost | ${{ "%.2f" % total_cost_dollars }} |
+| Total Duration | {{ "%.1f" % total_duration_seconds }}s |
+
+## Detailed Reports
+
+{% for pm in per_persona %}
+- [{{ pm.persona_id }}]({{ pm.persona_id }}.md)
+{% endfor %}

@@ -1,0 +1,75 @@
+# {{ persona_id }} — Eval Report
+
+**Run ID**: `{{ run_id }}`  
+**Timestamp**: {{ timestamp }}  
+
+## Summary
+
+| Metric | Value |
+|--------|-------|
+| Overall Pass | {{ "PASS" if overall_pass else "FAIL" }} |
+| Precision | {{ "%.2f" % precision }} {% if not precision_is_automated %}(pending manual review){% endif %} |
+| Risk Recall | {{ "%.2f" % risk_recall }} |
+| Cost | ${{ "%.2f" % cost_dollars }} |
+| Duration | {{ "%.1f" % duration_seconds }}s |
+
+## Recall by Tier
+
+| Tier | Recall | Found / Total |
+|------|--------|---------------|
+{%- for tier, value in recall_by_tier.items() %}
+| {{ tier.value }} | {{ "%.2f" % value }} | {{ found_counts.get(tier, 0) }} / {{ total_counts.get(tier, 0) }} |
+{%- endfor %}
+
+## Precision
+
+- **Rate**: {{ "%.2f" % precision if precision_is_automated else "Pending manual review" }}
+- **Sample size**: {{ precision_sample_size }}
+- **Automated**: {{ "Yes" if precision_is_automated else "No" }}
+
+{% if not precision_is_automated %}
+> Claims were sampled for manual review. Run `make eval-replay` after labeling to update precision.
+{% endif %}
+
+## Calibration
+
+| Confidence Range | Claims | Matched | Observed Precision | Bar |
+|------------------|--------|---------|-------------------|-----|
+{%- for bucket in calibration_buckets %}
+| ({{ "%.1f" % bucket.range_low }}, {{ "%.1f" % bucket.range_high }}] | {{ bucket.claim_count }} | {{ bucket.matched_count }} | {{ "%.2f" % bucket.observed_precision if bucket.observed_precision is not none else "N/A" }} | {{ "█" * ((bucket.observed_precision * 20) | int) if bucket.observed_precision is not none else "" }} |
+{%- endfor %}
+
+**Expected Calibration Error (ECE)**: {{ "%.4f" % expected_calibration_error }}
+
+## Risk Recall
+
+| Planted Risk | Matched | Severity Match |
+|--------------|---------|---------------|
+{%- for match in risk_matches %}
+| `{{ match.planted_risk_id }}` | {{ "Yes" if match.matched_flag_index is not none else "No" }} | {{ "Yes" if match.severity_match else "No" }} |
+{%- endfor %}
+
+## Fact Matches
+
+| Fact ID | Strategy | Score | Matched Claim | Confidence |
+|---------|----------|-------|---------------|------------|
+{%- for match in fact_matches %}
+| `{{ match.planted_fact_id }}` | {{ match.match_strategy_used.value }} | {{ "%.1f" % match.match_score if match.match_score <= 100 else "%.2f" % match.match_score }} | {{ match.matched_claim_text or "—" }} | {{ "%.2f" % match.matched_claim_confidence if match.matched_claim_confidence is not none else "—" }} |
+{%- endfor %}
+
+## Cost Summary
+
+| Metric | Value |
+|--------|-------|
+| Cost | ${{ "%.2f" % cost_dollars }} |
+| Duration | {{ "%.1f" % duration_seconds }}s |
+| Iterations | {{ iterations_used }} |
+| Search Calls | {{ search_calls_used }} |
+
+## Success Criteria
+
+| Criterion | Status |
+|-----------|--------|
+{%- for name, passed in success_criteria.items() %}
+| {{ name | replace("_", " ") | title }} | {{ "PASS" if passed else "FAIL" }} |
+{%- endfor %}

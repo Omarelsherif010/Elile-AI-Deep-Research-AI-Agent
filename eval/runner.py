@@ -1,144 +1,230 @@
-"""Eval runner: load personas, execute pipeline, compute metrics, emit report."""
+"""Eval runner: invoke the agent CLI as a subprocess and collect artifacts.
+
+Provides two entry points:
+- run_persona(): live agent invocation
+- replay_persona(): reconstruct RunArtifacts from cached files
+"""
 
 from __future__ import annotations
 
 import json
-from datetime import datetime
+import os
+import shutil
+import subprocess
+import sys
+import time
 from pathlib import Path
-from typing import Any
 
 import structlog
-import yaml
 
-from eval.metrics import EvalMetrics, compute_metrics
+from eval.schemas import PersonaDefinition, RunArtifacts
 
 logger = structlog.get_logger()
 
-PERSONAS_DIR = Path(__file__).parent / "personas"
+DEFAULT_CACHE_DIR = Path("eval/cache")
 
 
-class EvalRunner:
-    def __init__(
-        self,
-        persona: str | None = None,
-        output_dir: Path | None = None,
-    ) -> None:
-        self.persona_filter = persona
-        self.output_dir = output_dir or Path("eval/results") / datetime.now().strftime(
-            "%Y%m%d_%H%M%S"
+def run_persona(
+    persona: PersonaDefinition,
+    run_id: str,
+    cache_dir: Path = DEFAULT_CACHE_DIR,
+    env_overrides: dict[str, str] | None = None,
+) -> RunArtifacts:
+    """Invoke the agent CLI for one persona and collect artifacts.
+
+    Args:
+        persona: The persona definition to run against.
+        run_id: Unique identifier for this eval run.
+        cache_dir: Where to cache artifacts.
+        env_overrides: Optional environment variable overrides.
+
+    Returns:
+        RunArtifacts populated with paths and metadata.
+    """
+    agent_run_dir = Path("runs") / f"eval_{run_id}_{persona.id}"
+    agent_run_dir.mkdir(parents=True, exist_ok=True)
+
+    persona_cache_dir = cache_dir / run_id / persona.id
+    persona_cache_dir.mkdir(parents=True, exist_ok=True)
+
+    cmd = [
+        sys.executable,
+        "-m",
+        "research_agent",
+        "run",
+        "--target",
+        persona.target_name,
+        "--context",
+        persona.target_context,
+        "--output",
+        str(agent_run_dir),
+        "--max-iterations",
+        str(persona.max_iterations or 3),
+        "--max-dollars",
+        str(persona.max_dollars or 5.0),
+    ]
+
+    env = {**dict(os.environ), **(env_overrides or {})}
+
+    stdout_log = persona_cache_dir / "agent_stdout.log"
+    stderr_log = persona_cache_dir / "agent_stderr.log"
+
+    logger.info("eval_subprocess_start", persona=persona.id, run_id=run_id)
+    t0 = time.time()
+
+    with stdout_log.open("w", encoding="utf-8") as stdout_fh, stderr_log.open(
+        "w", encoding="utf-8"
+    ) as stderr_fh:
+        result = subprocess.run(
+            cmd,
+            stdout=stdout_fh,
+            stderr=stderr_fh,
+            env=env,
+            check=False,
         )
-        self.output_dir.mkdir(parents=True, exist_ok=True)
 
-    async def run(self) -> list[EvalMetrics]:
-        """Run eval for all (or filtered) personas."""
-        persona_files = sorted(PERSONAS_DIR.glob("*.yaml"))
-        if self.persona_filter:
-            persona_files = [p for p in persona_files if p.stem == self.persona_filter]
+    duration = time.time() - t0
+    exit_code = result.returncode
 
-        if not persona_files:
-            logger.warning("no_personas_found", filter=self.persona_filter)
-            return []
+    logger.info(
+        "eval_subprocess_complete",
+        persona=persona.id,
+        run_id=run_id,
+        exit_code=exit_code,
+        duration=duration,
+    )
 
-        all_metrics: list[EvalMetrics] = []
-        for persona_file in persona_files:
-            persona: dict[str, Any] = yaml.safe_load(persona_file.read_text())
-            logger.info("eval_persona_start", persona=persona["name"])
+    # Copy artifacts to cache
+    report_src = agent_run_dir / "report.json"
+    audit_src = agent_run_dir / "audit.json"
+    report_dst = persona_cache_dir / "report.json"
+    audit_dst = persona_cache_dir / "audit.json"
 
-            try:
-                metrics = await self._run_persona(persona)
-                all_metrics.append(metrics)
-                self._save_persona_result(persona, metrics)
-            except Exception as exc:
-                logger.error("eval_persona_failed", persona=persona["name"], error=str(exc))
+    if report_src.exists():
+        shutil.copy2(report_src, report_dst)
+    else:
+        report_dst.write_text("{}", encoding="utf-8")
+        logger.warning("report_json_missing", persona=persona.id, run_id=run_id)
 
-        self._emit_summary(all_metrics)
-        return all_metrics
+    if audit_src.exists():
+        shutil.copy2(audit_src, audit_dst)
+    else:
+        audit_dst.write_text("{}", encoding="utf-8")
+        logger.warning("audit_json_missing", persona=persona.id, run_id=run_id)
 
-    async def _run_persona(self, persona: dict[str, Any]) -> EvalMetrics:
-        """Execute the pipeline for one persona and compute metrics."""
-        from research_agent.graph import build_graph
-        from research_agent.schemas import Budget, TargetProfile
-        from research_agent.state import create_initial_state
+    # Parse metadata from audit.json and report.json
+    cost_dollars, iterations_used, search_calls_used = _parse_audit(audit_dst)
+    if cost_dollars == 0.0:
+        # Fallback to budget_used in report.json
+        cost_dollars, iterations_used, search_calls_used = _parse_report_budget(report_dst)
 
-        target_data: dict[str, Any] = persona["target"]
-        target = TargetProfile(
-            name=target_data["name"],
-            role=target_data.get("role"),
-            organization=target_data.get("organization"),
-            context=target_data.get("context"),
-            aliases=target_data.get("aliases", []),
-        )
+    artifacts = RunArtifacts(
+        persona_id=persona.id,
+        run_id=run_id,
+        agent_run_dir=agent_run_dir,
+        report_json=report_dst,
+        audit_json=audit_dst,
+        cost_dollars=cost_dollars,
+        duration_seconds=duration,
+        iterations_used=iterations_used,
+        search_calls_used=search_calls_used,
+        exit_code=exit_code,
+    )
 
-        budget = Budget(
-            max_iterations=3,  # reduced for eval speed
-            max_search_calls=20,
-            max_dollars=1.0,
-        )
+    return artifacts
 
-        run_id = f"eval_{persona['name']}_{datetime.now().strftime('%H%M%S')}"
-        state = create_initial_state(target=target, run_id=run_id, budget=budget)
 
-        graph = build_graph()
-        config: dict[str, Any] = {"configurable": {"thread_id": run_id}}
+def replay_persona(
+    persona: PersonaDefinition,
+    run_dir: Path,
+) -> RunArtifacts:
+    """Reconstruct RunArtifacts from cached files without invoking the agent.
 
-        run_dir = Path("runs") / run_id
-        run_dir.mkdir(parents=True, exist_ok=True)
+    Args:
+        persona: The persona definition.
+        run_dir: The cached run directory (e.g., eval/cache/{run_id}/{persona_id}).
 
-        await graph.ainvoke(state, config=config)
+    Returns:
+        RunArtifacts populated from cached files.
+    """
+    report_json = run_dir / "report.json"
+    audit_json = run_dir / "audit.json"
 
-        report_path = run_dir / "report.json"
-        if report_path.exists():
-            report_json: dict[str, Any] = json.loads(report_path.read_text())
-        else:
-            report_json = {"claims": [], "risk_flags": []}
+    if not report_json.exists():
+        raise FileNotFoundError(f"report.json not found in {run_dir}")
+    if not audit_json.exists():
+        raise FileNotFoundError(f"audit.json not found in {run_dir}")
 
-        return compute_metrics(persona, report_json)
+    cost_dollars, iterations_used, search_calls_used = _parse_audit(audit_json)
+    if cost_dollars == 0.0:
+        cost_dollars, iterations_used, search_calls_used = _parse_report_budget(report_json)
 
-    def _save_persona_result(self, persona: dict[str, Any], metrics: EvalMetrics) -> None:
-        thresholds: dict[str, float] = persona.get("thresholds", {})
-        result: dict[str, Any] = {
-            "persona": persona["name"],
-            "metrics": {
-                "recall_easy": metrics.recall_easy,
-                "recall_medium": metrics.recall_medium,
-                "recall_hard": metrics.recall_hard,
-                "precision": metrics.precision,
-                "confidence_calibration": metrics.confidence_calibration,
-                "risk_recall": metrics.risk_recall,
-            },
-            "pass_fail": metrics.pass_fail(thresholds),
-            "overall_pass": metrics.overall_pass(thresholds),
-        }
-        out_file = self.output_dir / f"{persona['name']}_result.json"
-        out_file.write_text(json.dumps(result, indent=2))
-        logger.info("eval_persona_done", persona=persona["name"], pass_=result["overall_pass"])
+    return RunArtifacts(
+        persona_id=persona.id,
+        run_id=run_dir.parent.name,
+        agent_run_dir=run_dir,
+        report_json=report_json,
+        audit_json=audit_json,
+        match_cache=run_dir / "match_cache.json" if (run_dir / "match_cache.json").exists() else None,
+        cost_dollars=cost_dollars,
+        duration_seconds=0.0,  # unknown for replay
+        iterations_used=iterations_used,
+        search_calls_used=search_calls_used,
+        exit_code=0,
+    )
 
-    def _emit_summary(self, all_metrics: list[EvalMetrics]) -> None:
-        summary: dict[str, Any] = {
-            "run_at": datetime.now().isoformat(),
-            "personas_run": len(all_metrics),
-            "results": [
-                {
-                    "persona": m.persona_name,
-                    "recall_easy": m.recall_easy,
-                    "recall_medium": m.recall_medium,
-                    "precision": m.precision,
-                    "risk_recall": m.risk_recall,
-                }
-                for m in all_metrics
-            ],
-        }
-        (self.output_dir / "summary.json").write_text(json.dumps(summary, indent=2))
 
-        # Print table to stdout
-        print("\n=== Eval Results ===")
-        print(
-            f"{'Persona':<30} {'Recall/E':<10} {'Recall/M':<10} "
-            f"{'Precision':<10} {'RiskRecall':<12}"
-        )
-        print("-" * 72)
-        for m in all_metrics:
-            print(
-                f"{m.persona_name:<30} {m.recall_easy:<10.2f} {m.recall_medium:<10.2f} "
-                f"{m.precision:<10.2f} {m.risk_recall:<12.2f}"
-            )
+def _parse_audit(audit_path: Path) -> tuple[float, int, int]:
+    """Parse audit.json (JSONL) for cost summary.
+
+    Returns (cost_dollars, iterations_used, search_calls_used).
+    """
+    cost_dollars = 0.0
+    iterations_used = 0
+    search_calls_used = 0
+
+    if not audit_path.exists():
+        return cost_dollars, iterations_used, search_calls_used
+
+    try:
+        with audit_path.open("r", encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if not line:
+                    continue
+                entry = json.loads(line)
+                if entry.get("type") == "cost_summary":
+                    cost_dollars = entry.get("total_dollars", 0.0)
+                    iterations_used = entry.get("iterations", 0)
+                    search_calls_used = entry.get("total_search_calls", 0)
+                    return cost_dollars, iterations_used, search_calls_used
+                # Accumulate dollars from individual entries as fallback
+                cost_dollars += entry.get("dollars", 0.0)
+    except (json.JSONDecodeError, OSError):
+        logger.warning("audit_parse_failed", path=str(audit_path))
+
+    return cost_dollars, iterations_used, search_calls_used
+
+
+def _parse_report_budget(report_path: Path) -> tuple[float, int, int]:
+    """Parse report.json for budget_used as fallback.
+
+    Returns (cost_dollars, iterations_used, search_calls_used).
+    """
+    cost_dollars = 0.0
+    iterations_used = 0
+    search_calls_used = 0
+
+    if not report_path.exists():
+        return cost_dollars, iterations_used, search_calls_used
+
+    try:
+        data = json.loads(report_path.read_text(encoding="utf-8"))
+        budget = data.get("budget_used", {})
+        cost_dollars = budget.get("used_dollars", 0.0)
+        iterations_used = budget.get("used_iterations", 0)
+        search_calls_used = budget.get("used_search_calls", 0)
+    except (json.JSONDecodeError, OSError):
+        logger.warning("report_parse_failed", path=str(report_path))
+
+    return cost_dollars, iterations_used, search_calls_used
