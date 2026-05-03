@@ -2,297 +2,280 @@
 
 from __future__ import annotations
 
-import pytest
+from pathlib import Path
+
 from eval.metrics import (
-    EvalMetrics,
+    compute_calibration,
     compute_precision,
     compute_recall,
     compute_risk_recall,
+    cost_summary,
+    evaluate_success_criteria,
+)
+from eval.schemas import (
+    CalibrationBucket,
+    FactMatch,
+    MatchStrategy,
+    PersonaMetrics,
+    PersonaType,
+    RiskMatch,
+    RunArtifacts,
+    Tier,
 )
 
-# ---------------------------------------------------------------------------
-# compute_recall
-# ---------------------------------------------------------------------------
+from research_agent.schemas import RiskCategory, RiskSeverity, ValidatedClaim
 
 
 class TestComputeRecall:
-    def test_no_match_returns_zero_found(self) -> None:
-        """Returns (0, n) when validated claims share no keywords with ground truth."""
-        ground_truth = [
-            {"subject": "Alice", "predicate": "works at", "object": "Acme Corp"},
-            {"subject": "Alice", "predicate": "holds degree from", "object": "MIT"},
+    def test_three_of_four_easy(self) -> None:
+        from eval.schemas import FactType, PlantedFact, ResearchDimension
+        facts = [
+            PlantedFact(
+                id="fact_e01", statement="A", difficulty=Tier.easy,
+                expected_dimension=ResearchDimension.biographical,
+                fact_type=FactType.biographical, notes="n", source_urls=["u"],
+            ),
+            PlantedFact(
+                id="fact_e02", statement="B", difficulty=Tier.easy,
+                expected_dimension=ResearchDimension.biographical,
+                fact_type=FactType.biographical, notes="n", source_urls=["u"],
+            ),
+            PlantedFact(
+                id="fact_e03", statement="C", difficulty=Tier.easy,
+                expected_dimension=ResearchDimension.biographical,
+                fact_type=FactType.biographical, notes="n", source_urls=["u"],
+            ),
+            PlantedFact(
+                id="fact_e04", statement="D", difficulty=Tier.easy,
+                expected_dimension=ResearchDimension.biographical,
+                fact_type=FactType.biographical, notes="n", source_urls=["u"],
+            ),
         ]
-        validated_claims: list[dict] = [
-            {"subject": "Bob", "predicate": "lives in", "object": "Paris"},
+        matches = [
+            FactMatch(planted_fact_id="fact_e01", match_strategy_used=MatchStrategy.exact, match_score=1.0, matched_claim_id="c1"),
+            FactMatch(planted_fact_id="fact_e02", match_strategy_used=MatchStrategy.exact, match_score=1.0, matched_claim_id="c2"),
+            FactMatch(planted_fact_id="fact_e03", match_strategy_used=MatchStrategy.exact, match_score=1.0, matched_claim_id="c3"),
+            FactMatch(planted_fact_id="fact_e04", match_strategy_used=MatchStrategy.exact, match_score=0.0, matched_claim_id=None),
         ]
-        found, total = compute_recall(ground_truth, validated_claims)
-        assert found == 0
-        assert total == 2
+        recall = compute_recall(matches, facts)
+        assert recall[Tier.easy] == 0.75
 
-    def test_exact_match_all_found(self) -> None:
-        """All ground truth items are found when claims contain identical text."""
-        ground_truth = [
-            {
-                "subject": "Alexandra Chen",
-                "predicate": "serves as",
-                "object": "CEO of Meridian Capital Partners",
-            },
-        ]
-        validated_claims = [
-            {
-                "subject": "Alexandra Chen",
-                "predicate": "serves as",
-                "object": "CEO of Meridian Capital Partners",
-                "confidence": 0.9,
-                "supporting_sources": ["https://a.example", "https://b.example"],
-            }
-        ]
-        found, total = compute_recall(ground_truth, validated_claims)
-        assert found == 1
-        assert total == 1
-
-    def test_partial_keyword_overlap_matches_above_threshold(self) -> None:
-        """A claim that shares enough keywords with GT is counted as a match."""
-        ground_truth = [
-            {
-                "subject": "Marcus Okonkwo",
-                "predicate": "co-founded",
-                "object": "Okonkwo Energy Holdings 2008",
-            }
-        ]
-        # Claim text shares most of the GT words
-        validated_claims = [
-            {
-                "subject": "Marcus Okonkwo",
-                "predicate": "co-founded",
-                "object": "Okonkwo Energy Holdings in 2008",
-                "confidence": 0.8,
-                "supporting_sources": ["https://source.example"],
-            }
-        ]
-        found, total = compute_recall(ground_truth, validated_claims, match_threshold=0.6)
-        assert found == 1
-        assert total == 1
-
-    def test_empty_ground_truth_returns_zero_total(self) -> None:
-        """With no ground truth entries, total is 0 and found is 0."""
-        found, total = compute_recall([], [{"subject": "X", "predicate": "Y", "object": "Z"}])
-        assert found == 0
-        assert total == 0
-
-    def test_empty_claims_returns_zero_found(self) -> None:
-        """With ground truth but no claims, nothing is found."""
-        ground_truth = [{"subject": "A", "predicate": "B", "object": "C"}]
-        found, total = compute_recall(ground_truth, [])
-        assert found == 0
-        assert total == 1
-
-    def test_each_gt_counted_at_most_once(self) -> None:
-        """A single GT item is not double-counted even if multiple claims match."""
-        ground_truth = [
-            {"subject": "Alexandra Chen", "predicate": "holds degree", "object": "MBA INSEAD 2009"}
-        ]
-        validated_claims = [
-            {
-                "subject": "Alexandra Chen",
-                "predicate": "holds degree",
-                "object": "MBA INSEAD 2009",
-                "confidence": 0.9,
-                "supporting_sources": [],
-            },
-            {
-                "subject": "Alexandra Chen",
-                "predicate": "holds degree",
-                "object": "MBA INSEAD 2009",
-                "confidence": 0.85,
-                "supporting_sources": [],
-            },
-        ]
-        found, total = compute_recall(ground_truth, validated_claims)
-        assert found == 1
-        assert total == 1
-
-
-# ---------------------------------------------------------------------------
-# compute_precision
-# ---------------------------------------------------------------------------
+    def test_empty(self) -> None:
+        recall = compute_recall([], [])
+        assert recall[Tier.easy] == 0.0
+        assert recall[Tier.medium] == 0.0
+        assert recall[Tier.hard] == 0.0
 
 
 class TestComputePrecision:
-    def test_empty_claims_returns_one(self) -> None:
-        """Precision is 1.0 when there are no claims (vacuously true)."""
-        assert compute_precision([]) == 1.0
-
-    def test_all_high_confidence_returns_one(self) -> None:
-        """All claims with confidence > 0.5 yields precision = 1.0."""
-        claims = [
-            {"confidence": 0.9, "supporting_sources": []},
-            {"confidence": 0.75, "supporting_sources": []},
-            {"confidence": 0.6, "supporting_sources": []},
+    def test_synthetic_automated(self) -> None:
+        from eval.schemas import FactType, PlantedFact, ResearchDimension
+        facts = [
+            PlantedFact(
+                id="fact_e01", statement="Founded TestCo", difficulty=Tier.easy,
+                expected_dimension=ResearchDimension.professional_history,
+                fact_type=FactType.role, notes="n", source_urls=["u"],
+            ),
         ]
-        assert compute_precision(claims) == 1.0
-
-    def test_all_low_confidence_returns_zero(self) -> None:
-        """All claims with confidence ≤ 0.5 yields precision = 0.0."""
         claims = [
-            {"confidence": 0.4, "supporting_sources": []},
-            {"confidence": 0.3, "supporting_sources": []},
+            ValidatedClaim(
+                subject="Person", predicate="founded", object="TestCo",
+                source_urls=["u"], extraction_confidence=0.9, confidence=0.9,
+            ),
+            ValidatedClaim(
+                subject="Person", predicate="did", object="something else",
+                source_urls=["u"], extraction_confidence=0.5, confidence=0.5,
+            ),
         ]
-        assert compute_precision(claims) == 0.0
+        result = compute_precision(claims, facts, PersonaType.synthetic, sample_size=10)
+        assert result["is_automated"] is True
+        assert result["rate"] == 0.5
+        assert len(result["sampled_claims"]) == 2
 
-    def test_mixed_confidence_returns_correct_fraction(self) -> None:
-        """Half high-confidence claims yields precision = 0.5."""
+    def test_real_public_manual(self) -> None:
         claims = [
-            {"confidence": 0.8, "supporting_sources": []},  # > 0.5
-            {"confidence": 0.2, "supporting_sources": []},  # ≤ 0.5
+            ValidatedClaim(
+                subject="Person", predicate="is", object="CEO",
+                source_urls=["u"], extraction_confidence=0.9, confidence=0.9,
+            ),
         ]
-        result = compute_precision(claims)
-        assert result == pytest.approx(0.5)
+        result = compute_precision(claims, [], PersonaType.real_public, sample_size=10)
+        assert result["is_automated"] is False
+        assert result["rate"] is None
+        assert result["sampled_claims"][0]["is_correct"] is None
 
-    def test_sample_size_limits_evaluation(self) -> None:
-        """Only the first sample_size claims are evaluated."""
-        # First 2 are low confidence, rest are high — sample_size=2 should give 0.0
+    def test_no_claims(self) -> None:
+        result = compute_precision([], [], PersonaType.synthetic)
+        assert result["rate"] == 1.0
+        assert result["is_automated"] is True
+
+
+class TestComputeCalibration:
+    def test_hand_built_claims(self) -> None:
         claims = [
-            {"confidence": 0.1},
-            {"confidence": 0.2},
-            {"confidence": 0.9},
-            {"confidence": 0.9},
+            ValidatedClaim(
+                subject="P", predicate="p", object="o",
+                source_urls=["u"], extraction_confidence=0.9, confidence=0.9,
+            ),
+            ValidatedClaim(
+                subject="P", predicate="p", object="o2",
+                source_urls=["u"], extraction_confidence=0.85, confidence=0.85,
+            ),
+            ValidatedClaim(
+                subject="P", predicate="p", object="o3",
+                source_urls=["u"], extraction_confidence=0.3, confidence=0.3,
+            ),
         ]
-        result = compute_precision(claims, sample_size=2)
-        assert result == pytest.approx(0.0)
+        matches = [
+            FactMatch(planted_fact_id="f1", match_strategy_used=MatchStrategy.exact, match_score=1.0, matched_claim_id=claims[0].id),
+            FactMatch(planted_fact_id="f2", match_strategy_used=MatchStrategy.exact, match_score=1.0, matched_claim_id=claims[1].id),
+            FactMatch(planted_fact_id="f3", match_strategy_used=MatchStrategy.exact, match_score=0.0, matched_claim_id=None),
+        ]
+        buckets, ece = compute_calibration(claims, matches)
+        assert len(buckets) == 5
+        high_bucket = next(b for b in buckets if b.range_low == 0.8)
+        assert high_bucket.claim_count == 2
+        assert high_bucket.matched_count == 2
+        assert high_bucket.observed_precision == 1.0
+        low_bucket = next(b for b in buckets if b.range_low == 0.2)
+        assert low_bucket.claim_count == 1
+        assert low_bucket.observed_precision == 0.0
+        assert 0.0 <= ece <= 1.0
 
-
-# ---------------------------------------------------------------------------
-# compute_risk_recall
-# ---------------------------------------------------------------------------
+    def test_empty_claims(self) -> None:
+        buckets, ece = compute_calibration([], [])
+        assert len(buckets) == 5
+        assert all(b.claim_count == 0 for b in buckets)
+        assert ece == 0.0
 
 
 class TestComputeRiskRecall:
-    def test_exact_type_and_keyword_match(self) -> None:
-        """A flag matching both type and description keywords is counted."""
-        expected = [{"type": "REGULATORY", "description": "MAS Enforcement Inquiry 2021"}]
-        actual = [{"type": "REGULATORY", "description": "MAS Enforcement Inquiry resolved 2021"}]
-        found, total = compute_risk_recall(expected, actual)
-        assert found == 1
-        assert total == 1
-
-    def test_type_mismatch_not_counted(self) -> None:
-        """A flag with matching description but wrong type is not counted."""
-        expected = [{"type": "REGULATORY", "description": "MAS Enforcement Inquiry 2021"}]
-        actual = [{"type": "NETWORK", "description": "MAS Enforcement Inquiry 2021"}]
-        found, total = compute_risk_recall(expected, actual)
-        assert found == 0
-        assert total == 1
-
-    def test_no_actual_flags_returns_zero(self) -> None:
-        """Returns (0, n) when no actual flags are provided."""
-        expected = [
-            {"type": "REGULATORY", "description": "OFAC screening"},
-            {"type": "NETWORK", "description": "Sanctioned individual link"},
+    def test_all_found(self) -> None:
+        matches = [
+            RiskMatch(planted_risk_id="risk_t01", matched_flag_index=0, severity_match=True),
+            RiskMatch(planted_risk_id="risk_t02", matched_flag_index=1, severity_match=True),
         ]
-        found, total = compute_risk_recall(expected, [])
-        assert found == 0
-        assert total == 2
-
-    def test_empty_expected_returns_zero_total(self) -> None:
-        """Returns (0, 0) when expected flags list is empty."""
-        actual = [{"type": "REGULATORY", "description": "Some issue"}]
-        found, total = compute_risk_recall([], actual)
-        assert found == 0
-        assert total == 0
-
-    def test_multiple_flags_partially_matched(self) -> None:
-        """Only matched flags are counted; unmatched expected flags reduce recall."""
-        expected = [
-            {"type": "REGULATORY", "description": "MAS inquiry resolved"},
-            {"type": "NETWORK", "description": "Hartwell Group fund connection"},
+        from eval.schemas import PlantedRisk
+        risks = [
+            PlantedRisk(id="risk_t01", risk_category=RiskCategory.REGULATORY, expected_severity=RiskSeverity.MEDIUM, description="d", evidence_source_urls=["u"]),
+            PlantedRisk(id="risk_t02", risk_category=RiskCategory.NETWORK, expected_severity=RiskSeverity.HIGH, description="d", evidence_source_urls=["u"]),
         ]
-        actual = [
-            {"type": "REGULATORY", "description": "MAS enforcement inquiry resolved 2021"},
-            # NETWORK flag is absent
+        assert compute_risk_recall(matches, risks) == 1.0
+
+    def test_none_found(self) -> None:
+        matches = [
+            RiskMatch(planted_risk_id="risk_t01", matched_flag_index=None, severity_match=False),
         ]
-        found, total = compute_risk_recall(expected, actual)
-        assert found == 1
-        assert total == 2
-
-    def test_low_keyword_overlap_not_counted(self) -> None:
-        """A flag whose description shares too few keywords is not counted."""
-        expected = [{"type": "REGULATORY", "description": "OFAC sanctions screening cleared"}]
-        actual = [
-            # Only 1 overlapping word out of 4 expected words => overlap < 0.5
-            {"type": "REGULATORY", "description": "completely unrelated matter resolved"}
+        from eval.schemas import PlantedRisk
+        risks = [
+            PlantedRisk(id="risk_t01", risk_category=RiskCategory.REGULATORY, expected_severity=RiskSeverity.MEDIUM, description="d", evidence_source_urls=["u"]),
         ]
-        found, total = compute_risk_recall(expected, actual, match_threshold=0.5)
-        assert found == 0
-        assert total == 1
+        assert compute_risk_recall(matches, risks) == 0.0
+
+    def test_no_risks(self) -> None:
+        assert compute_risk_recall([], []) == 1.0
 
 
-# ---------------------------------------------------------------------------
-# EvalMetrics.pass_fail
-# ---------------------------------------------------------------------------
+class TestCostSummary:
+    def test_basic(self) -> None:
+        import tempfile
+        with tempfile.TemporaryDirectory() as td:
+            d = Path(td)
+            artifacts = RunArtifacts(
+                persona_id="p1",
+                run_id="r1",
+                agent_run_dir=d,
+                report_json=d / "report.json",
+                audit_json=d / "audit.json",
+                cost_dollars=1.23,
+                duration_seconds=45.6,
+                iterations_used=3,
+                search_calls_used=12,
+                exit_code=0,
+            )
+            (d / "report.json").write_text("{}")
+            (d / "audit.json").write_text("{}")
+            summary = cost_summary(artifacts)
+            assert summary["cost_dollars"] == 1.23
+            assert summary["duration_seconds"] == 45.6
 
 
-class TestEvalMetricsPassFail:
-    def _make_metrics(self, **kwargs: float) -> EvalMetrics:
-        defaults = {
-            "recall_easy": 0.75,
-            "recall_medium": 0.55,
-            "recall_hard": 0.35,
-            "precision": 0.92,
-            "confidence_calibration": 0.96,
-            "risk_recall": 0.85,
-        }
-        defaults.update(kwargs)
-        return EvalMetrics(persona_name="test", **defaults)  # type: ignore[arg-type]
+class TestEvaluateSuccessCriteria:
+    def test_pass_all(self) -> None:
+        metrics = PersonaMetrics(
+            persona_id="p1",
+            recall_by_tier={Tier.easy: 0.85, Tier.medium: 0.6, Tier.hard: 0.3},
+            precision=0.95,
+            precision_sample_size=10,
+            precision_is_automated=True,
+            risk_recall=1.0,
+            fact_matches=[],
+            risk_matches=[],
+            calibration_buckets=[
+                CalibrationBucket(range_low=0.0, range_high=0.2, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.2, range_high=0.4, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.4, range_high=0.6, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.6, range_high=0.8, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.8, range_high=1.0, claim_count=2, matched_count=2, observed_precision=1.0),
+            ],
+            expected_calibration_error=0.05,
+            cost_dollars=1.0,
+            duration_seconds=30.0,
+            success_criteria={},
+        )
+        criteria = evaluate_success_criteria(metrics)
+        assert criteria["high_confidence_precision"] is True
+        assert criteria["easy_recall"] is True
+        assert criteria["risk_recall"] is True
 
-    def _default_thresholds(self) -> dict[str, float]:
-        return {
-            "recall_easy": 0.70,
-            "recall_medium": 0.50,
-            "precision": 0.90,
-            "confidence_calibration": 0.95,
-            "risk_recall": 0.80,
-        }
+    def test_fail_easy_recall(self) -> None:
+        metrics = PersonaMetrics(
+            persona_id="p1",
+            recall_by_tier={Tier.easy: 0.7, Tier.medium: 0.6, Tier.hard: 0.3},
+            precision=0.95,
+            precision_sample_size=10,
+            precision_is_automated=True,
+            risk_recall=1.0,
+            fact_matches=[],
+            risk_matches=[],
+            calibration_buckets=[
+                CalibrationBucket(range_low=0.0, range_high=0.2, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.2, range_high=0.4, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.4, range_high=0.6, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.6, range_high=0.8, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.8, range_high=1.0, claim_count=2, matched_count=2, observed_precision=1.0),
+            ],
+            expected_calibration_error=0.05,
+            cost_dollars=1.0,
+            duration_seconds=30.0,
+            success_criteria={},
+        )
+        criteria = evaluate_success_criteria(metrics)
+        assert criteria["easy_recall"] is False
+        assert criteria["high_confidence_precision"] is True
+        assert criteria["risk_recall"] is True
 
-    def test_all_pass_when_above_thresholds(self) -> None:
-        metrics = self._make_metrics()
-        result = metrics.pass_fail(self._default_thresholds())
-        assert all(result.values()), f"Expected all pass, got: {result}"
-
-    def test_overall_pass_true_when_all_pass(self) -> None:
-        metrics = self._make_metrics()
-        assert metrics.overall_pass(self._default_thresholds()) is True
-
-    def test_recall_easy_fails_when_below_threshold(self) -> None:
-        metrics = self._make_metrics(recall_easy=0.60)
-        result = metrics.pass_fail(self._default_thresholds())
-        assert result["recall_easy"] is False
-
-    def test_precision_fails_when_below_threshold(self) -> None:
-        metrics = self._make_metrics(precision=0.85)
-        result = metrics.pass_fail(self._default_thresholds())
-        assert result["precision"] is False
-
-    def test_risk_recall_fails_when_below_threshold(self) -> None:
-        metrics = self._make_metrics(risk_recall=0.70)
-        result = metrics.pass_fail(self._default_thresholds())
-        assert result["risk_recall"] is False
-
-    def test_overall_pass_false_when_any_fail(self) -> None:
-        metrics = self._make_metrics(precision=0.80)  # below 0.90 threshold
-        assert metrics.overall_pass(self._default_thresholds()) is False
-
-    def test_boundary_value_exactly_at_threshold_passes(self) -> None:
-        """A metric exactly at threshold should pass (>=)."""
-        metrics = self._make_metrics(recall_easy=0.70, precision=0.90, risk_recall=0.80)
-        result = metrics.pass_fail(self._default_thresholds())
-        assert result["recall_easy"] is True
-        assert result["precision"] is True
-        assert result["risk_recall"] is True
-
-    def test_custom_thresholds_override_defaults(self) -> None:
-        """Pass custom thresholds; default values should not be used."""
-        metrics = self._make_metrics(recall_easy=0.50)
-        tight_thresholds = {"recall_easy": 0.40}  # easier threshold
-        result = metrics.pass_fail(tight_thresholds)
-        assert result["recall_easy"] is True  # 0.50 >= 0.40
+    def test_fail_risk_recall(self) -> None:
+        metrics = PersonaMetrics(
+            persona_id="p1",
+            recall_by_tier={Tier.easy: 0.9, Tier.medium: 0.6, Tier.hard: 0.3},
+            precision=0.95,
+            precision_sample_size=10,
+            precision_is_automated=True,
+            risk_recall=0.5,
+            fact_matches=[],
+            risk_matches=[],
+            calibration_buckets=[
+                CalibrationBucket(range_low=0.0, range_high=0.2, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.2, range_high=0.4, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.4, range_high=0.6, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.6, range_high=0.8, claim_count=0, matched_count=0, observed_precision=None),
+                CalibrationBucket(range_low=0.8, range_high=1.0, claim_count=2, matched_count=2, observed_precision=1.0),
+            ],
+            expected_calibration_error=0.05,
+            cost_dollars=1.0,
+            duration_seconds=30.0,
+            success_criteria={},
+        )
+        criteria = evaluate_success_criteria(metrics)
+        assert criteria["risk_recall"] is False
