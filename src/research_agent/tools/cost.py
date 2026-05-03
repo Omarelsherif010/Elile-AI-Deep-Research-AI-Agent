@@ -10,7 +10,7 @@ logger = structlog.get_logger()
 PRICING: dict[str, dict[str, float]] = {
     "claude-opus-4-7-20260416": {"input": 5.0, "output": 25.0},
     "gpt-5.4-mini": {"input": 0.75, "output": 4.50},
-    "gemini-2.0-flash": {"input": 0.50, "output": 3.0},
+    "gemini-3-flash-preview": {"input": 0.50, "output": 3.0},
 }
 
 # Search call costs (per call)

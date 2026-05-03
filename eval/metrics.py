@@ -93,15 +93,12 @@ def compute_precision(
             "is_automated": True,
         }
 
-    rng = random.Random(seed)
-    sample = rng.sample(claims, min(sample_size, len(claims)))
-
     if persona_type == PersonaType.synthetic:
-        # Automated: a claim is "correct" if it fuzzy-matches any planted fact
+        # Automated: check ALL claims against planted facts (full ground truth)
         correct = 0
         sampled_claims: list[dict[str, Any]] = []
 
-        for claim in sample:
+        for claim in claims:
             claim_text = f"{claim.subject} {claim.predicate} {claim.object}"
             is_correct = False
             best_score = 0.0
@@ -125,12 +122,14 @@ def compute_precision(
             })
 
         return {
-            "rate": correct / len(sample),
+            "rate": correct / len(claims),
             "sampled_claims": sampled_claims,
             "is_automated": True,
         }
 
     # real_public: sample for manual review
+    rng = random.Random(seed)
+    sample = rng.sample(claims, min(sample_size, len(claims)))
     sampled_claims = [
         {
             "claim_id": claim.id,

@@ -23,7 +23,7 @@ T = TypeVar("T", bound=BaseModel)
 # Model IDs
 CLAUDE_OPUS_4 = "claude-opus-4-7-20260416"
 GPT_54_MINI = "gpt-5.4-mini"
-GEMINI_FLASH = "gemini-2.0-flash"
+GEMINI_FLASH = "gemini-3-flash-preview"
 
 ROLE_TO_MODEL: dict[str, str] = {
     "planner": CLAUDE_OPUS_4,
@@ -166,7 +166,7 @@ class LLMRouter:
                 return self._call_google(model, prompt, output_schema, max_tokens)
             else:
                 raise ProviderUnavailable(model, f"Unknown model: {model}")
-        except (ProviderUnavailable,) as exc:
+        except ProviderUnavailable as exc:
             # Fallback: if Anthropic or Google is missing, try OpenAI
             if model.startswith("claude") or model.startswith("gemini"):
                 logger.warning(

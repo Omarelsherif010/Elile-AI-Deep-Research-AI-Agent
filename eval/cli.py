@@ -339,7 +339,8 @@ def cmd_replay(args: argparse.Namespace) -> int:
     write_report(report, reports_dir, precision_samples)
 
     print(f"Replay complete: {reports_dir}")
-    return 0
+    print(f"Overall: {'PASS' if overall_pass else 'FAIL'}")
+    return 0 if overall_pass else 1
 
 
 def cmd_list_personas(_args: argparse.Namespace) -> int:
@@ -358,10 +359,12 @@ def cmd_list_personas(_args: argparse.Namespace) -> int:
 def cmd_validate_persona(args: argparse.Namespace) -> int:
     """Validate persona YAML against schema."""
     if args.all:
-        personas = _load_personas()
+        yaml_paths = sorted(
+            p for p in PERSONAS_DIR.glob("*.yaml") if not p.name.startswith("_")
+        )
     elif args.persona:
-        personas = _load_personas(args.persona)
-        if not personas:
+        yaml_paths = [PERSONAS_DIR / f"{args.persona}.yaml"]
+        if not yaml_paths[0].exists():
             available = [p.stem for p in PERSONAS_DIR.glob("*.yaml") if not p.name.startswith("_")]
             print(f"Invalid persona ID: {args.persona}", file=sys.stderr)
             print(f"Available: {', '.join(available)}", file=sys.stderr)
@@ -371,16 +374,13 @@ def cmd_validate_persona(args: argparse.Namespace) -> int:
         return 1
 
     all_valid = True
-    for p in personas:
+    for yaml_path in yaml_paths:
         try:
-            # Synthetic personas must have plant_site_root
-            if p.persona_type.value == "synthetic" and not p.plant_site_root:
-                print(f"FAIL {p.id}: synthetic persona missing plant_site_root")
-                all_valid = False
-                continue
+            data = yaml.safe_load(yaml_path.read_text(encoding="utf-8"))
+            p = PersonaDefinition(**data)
             print(f"OK   {p.id} ({len(p.planted_facts)} facts, {len(p.planted_risks)} risks)")
         except Exception as exc:
-            print(f"FAIL {p.id}: {exc}")
+            print(f"FAIL {yaml_path.stem}: {exc}")
             all_valid = False
 
     return 0 if all_valid else 1

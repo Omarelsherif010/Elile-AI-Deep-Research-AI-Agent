@@ -32,7 +32,7 @@ class TestLLMCallCost:
     def test_gemini_flash_cost(self) -> None:
         tracker = CostTracker()
         # $0.50/1M in, $3.0/1M out
-        cost = tracker.record_llm_call("gemini-2.0-flash", 1_000_000, 1_000_000)
+        cost = tracker.record_llm_call("gemini-3-flash-preview", 1_000_000, 1_000_000)
         assert abs(cost - (0.50 + 3.0)) < 1e-9
 
     def test_tokens_accumulated(self) -> None:

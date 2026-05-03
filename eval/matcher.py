@@ -154,7 +154,8 @@ def match_facts(
 
             if is_match and (
                 best_match is None
-                or (best_match.matched_claim_confidence or 0) < claim.confidence
+                or score > best_match.match_score
+                or (score == best_match.match_score and claim.confidence > (best_match.matched_claim_confidence or 0))
             ):
                 best_match = FactMatch(
                     planted_fact_id=fact.id,
