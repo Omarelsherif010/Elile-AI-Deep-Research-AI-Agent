@@ -1,0 +1,50 @@
+body {
+  font-family: Georgia, serif;
+  line-height: 1.6;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1rem;
+  color: #222;
+}
+
+header, footer {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: #f9f9f9;
+}
+
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #0056b3;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.disclaimer {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+article {
+  margin-bottom: 2rem;
+}
+
+h1, h2, h3 {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+time {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
