@@ -1,0 +1,14 @@
+{
+  "decision": "terminate",
+  "updated_gaps": ["financial_connections dimension not explored", "network dimension not explored"],
+  "termination_reason": "Budget cap reached (test fixture: forced termination after iteration 1)",
+  "coverage_assessment": {
+    "biographical": "adequate",
+    "professional_history": "adequate",
+    "financial_connections": "missing",
+    "network": "missing",
+    "public_statements": "missing",
+    "risk_surface": "weak"
+  },
+  "rationale": "Terminating after first iteration (fixture test). Two dimensions covered at basic level."
+}

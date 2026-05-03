@@ -1,0 +1,98 @@
+name: persona_synthetic_a
+display_name: "Alexandra Chen"
+target:
+  name: "Alexandra Chen"
+  role: "Chief Executive Officer"
+  organization: "Meridian Capital Partners"
+  context: "Based in Singapore"
+  aliases: ["Alex Chen", "Alexandra M. Chen"]
+
+# Ground truth facts planted in plant_site/
+ground_truth:
+  easy:  # Tier-1/2 sources, explicit statements
+    - id: gt_001
+      subject: "Alexandra Chen"
+      predicate: "serves as"
+      object: "CEO of Meridian Capital Partners"
+      source_tier: 2
+      dimension: "professional_history"
+
+    - id: gt_002
+      subject: "Alexandra Chen"
+      predicate: "holds degree from"
+      object: "MBA from INSEAD (2009)"
+      source_tier: 2
+      dimension: "biographical"
+
+    - id: gt_003
+      subject: "Alexandra Chen"
+      predicate: "previously served as"
+      object: "Managing Director at DBS Bank (2012-2018)"
+      source_tier: 2
+      dimension: "professional_history"
+
+  medium:  # Tier-2/3 sources, require corroboration
+    - id: gt_004
+      subject: "Alexandra Chen"
+      predicate: "co-founded"
+      object: "GreenTech Ventures (2019)"
+      source_tier: 3
+      dimension: "financial_connections"
+
+    - id: gt_005
+      subject: "Alexandra Chen"
+      predicate: "serves on board of"
+      object: "Singapore FinTech Association"
+      source_tier: 2
+      dimension: "network"
+
+    - id: gt_006
+      subject: "Alexandra Chen"
+      predicate: "received"
+      object: "MAS Enforcement Inquiry (2021, resolved)"
+      source_tier: 2
+      dimension: "risk_surface"
+
+  hard:  # Tier-3/4, require cross-referencing
+    - id: gt_007
+      subject: "Alexandra Chen"
+      predicate: "associated with"
+      object: "venture fund linked to Hartwell Group"
+      source_tier: 3
+      dimension: "network"
+
+    - id: gt_008
+      subject: "GreenTech Ventures"
+      predicate: "received"
+      object: "SEC preliminary inquiry letter (2022)"
+      source_tier: 3
+      dimension: "risk_surface"
+
+# Expected risk flags
+expected_risk_flags:
+  - type: REGULATORY
+    severity: MEDIUM
+    description: "MAS Enforcement Inquiry (2021)"
+    evidence_ids: [gt_006]
+
+  - type: NETWORK
+    severity: LOW
+    description: "Association with Hartwell Group via fund connection"
+    evidence_ids: [gt_007]
+
+  - type: REGULATORY
+    severity: MEDIUM
+    description: "SEC preliminary inquiry via GreenTech Ventures"
+    evidence_ids: [gt_008]
+
+# Eval thresholds
+thresholds:
+  recall_easy: 0.70      # ≥70% of easy facts recalled
+  recall_medium: 0.50    # ≥50% of medium facts recalled
+  recall_hard: 0.30      # ≥30% of hard facts recalled
+  precision: 0.90        # ≥90% precision on sample of validated claims
+  risk_recall: 0.80      # ≥80% of planted risk flags surfaced
+  confidence_calibration: 0.95  # ≥95% of >0.8 claims are actually true
+
+# Plant site URL base (GitHub Pages)
+plant_site_base: "https://example.github.io/research-agent-plant-site/persona_a"

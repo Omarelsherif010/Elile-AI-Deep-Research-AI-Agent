@@ -1,0 +1,54 @@
+{
+  "claims": [
+    {
+      "id": "claim-001",
+      "subject": "Alexandra Chen",
+      "predicate": "serves as",
+      "object": "CEO of Meridian Capital Partners",
+      "attributes": {"as_of": "2019"},
+      "source_urls": ["https://meridian-capital.example.com/team"],
+      "extraction_confidence": 0.92,
+      "asserted_at": null
+    },
+    {
+      "id": "claim-002",
+      "subject": "Alexandra Chen",
+      "predicate": "previously served as",
+      "object": "Managing Director at DBS Bank",
+      "attributes": {"from": "2012", "to": "2018"},
+      "source_urls": ["https://meridian-capital.example.com/team"],
+      "extraction_confidence": 0.88,
+      "asserted_at": null
+    }
+  ],
+  "entities": [
+    {
+      "id": "entity-001",
+      "type": "PERSON",
+      "canonical_name": "Alexandra Chen",
+      "aliases": ["Alex Chen"],
+      "attributes": {"role": "CEO"},
+      "confidence": 0.95
+    },
+    {
+      "id": "entity-002",
+      "type": "ORGANIZATION",
+      "canonical_name": "Meridian Capital Partners",
+      "aliases": [],
+      "attributes": {"type": "investment_firm"},
+      "confidence": 0.95
+    }
+  ],
+  "relations": [
+    {
+      "subject_entity_id": "entity-001",
+      "predicate": "leads",
+      "object_entity_id": "entity-002",
+      "attributes": {},
+      "confidence": 0.92,
+      "evidence_claim_ids": ["claim-001"]
+    }
+  ],
+  "ambiguity_notes": [],
+  "sources_processed": 1
+}

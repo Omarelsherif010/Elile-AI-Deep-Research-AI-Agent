@@ -1,0 +1,80 @@
+name: persona_synthetic_b
+display_name: "Marcus Okonkwo"
+target:
+  name: "Marcus Okonkwo"
+  role: "Co-Founder and Chairman"
+  organization: "Okonkwo Energy Holdings"
+  context: "Lagos, Nigeria; operates in EU and US markets"
+  aliases: ["M. Okonkwo", "Marcus A. Okonkwo"]
+
+ground_truth:
+  easy:
+    - id: gt_b001
+      subject: "Marcus Okonkwo"
+      predicate: "co-founded"
+      object: "Okonkwo Energy Holdings (2008)"
+      source_tier: 2
+      dimension: "professional_history"
+
+    - id: gt_b002
+      subject: "Marcus Okonkwo"
+      predicate: "holds degree from"
+      object: "BSc Engineering, University of Lagos (1999)"
+      source_tier: 3
+      dimension: "biographical"
+
+    - id: gt_b003
+      subject: "Marcus Okonkwo"
+      predicate: "listed as director of"
+      object: "three UK-registered companies (Companies House)"
+      source_tier: 1
+      dimension: "financial_connections"
+
+  medium:
+    - id: gt_b004
+      subject: "Okonkwo Energy Holdings"
+      predicate: "named in"
+      object: "OFAC preliminary sanctions screening (2020, cleared)"
+      source_tier: 1
+      dimension: "risk_surface"
+
+    - id: gt_b005
+      subject: "Marcus Okonkwo"
+      predicate: "associated with"
+      object: "Victor Adeyemi (sanctioned individual, business partner until 2019)"
+      source_tier: 2
+      dimension: "network"
+
+  hard:
+    - id: gt_b006
+      subject: "Marcus Okonkwo"
+      predicate: "made public statement"
+      object: "controversial remarks on energy policy at Davos 2023"
+      source_tier: 3
+      dimension: "public_statements"
+
+expected_risk_flags:
+  - type: REGULATORY
+    severity: HIGH
+    description: "OFAC preliminary screening (2020)"
+    evidence_ids: [gt_b004]
+
+  - type: NETWORK
+    severity: HIGH
+    description: "Prior business relationship with sanctioned individual Victor Adeyemi"
+    evidence_ids: [gt_b005]
+
+  - type: REPUTATIONAL
+    severity: LOW
+    description: "Controversial public statements on energy policy"
+    evidence_ids: [gt_b006]
+
+thresholds:
+  recall_easy: 0.70
+  recall_medium: 0.50
+  recall_hard: 0.30
+  precision: 0.90
+  risk_recall: 0.80
+  confidence_calibration: 0.95
+
+plant_site_base: "https://example.github.io/research-agent-plant-site/persona_b"

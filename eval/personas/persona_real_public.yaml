@@ -1,0 +1,64 @@
+name: persona_real_public
+display_name: "Satya Nadella"
+target:
+  name: "Satya Nadella"
+  role: "Chairman and CEO"
+  organization: "Microsoft Corporation"
+  context: "Redmond, WA. One of the most documented tech executives."
+  aliases: ["Satya Narayana Nadella"]
+
+# Ground truth from publicly verifiable sources
+ground_truth:
+  easy:
+    - id: gt_r001
+      subject: "Satya Nadella"
+      predicate: "serves as"
+      object: "CEO of Microsoft Corporation (since February 2014)"
+      source_tier: 1
+      dimension: "professional_history"
+      verification_url: "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=MSFT"
+
+    - id: gt_r002
+      subject: "Satya Nadella"
+      predicate: "holds degree"
+      object: "MS Computer Science, University of Wisconsin-Milwaukee"
+      source_tier: 2
+      dimension: "biographical"
+
+    - id: gt_r003
+      subject: "Satya Nadella"
+      predicate: "became Chairman of"
+      object: "Microsoft Board of Directors (June 2021)"
+      source_tier: 1
+      dimension: "professional_history"
+
+  medium:
+    - id: gt_r004
+      subject: "Satya Nadella"
+      predicate: "serves on board of"
+      object: "Starbucks Corporation"
+      source_tier: 1
+      dimension: "network"
+
+    - id: gt_r005
+      subject: "Satya Nadella"
+      predicate: "received compensation of"
+      object: "~$79M total compensation (FY2023, proxy filing)"
+      source_tier: 1
+      dimension: "financial_connections"
+
+# No planted risk flags — real persona, use public record
+expected_risk_flags: []
+
+# Calibration note: this persona tests precision (no fabrication)
+calibration_note: "This is a heavily-documented public figure. The agent should achieve high recall on easy facts. Precision check: verify the agent does NOT fabricate claims not in public record."
+
+thresholds:
+  recall_easy: 0.80  # higher bar for well-documented public figure
+  recall_medium: 0.60
+  recall_hard: 0.20  # not applicable
+  precision: 0.95    # tighter precision requirement
+  risk_recall: 1.0   # no false positives on a clean record
+  confidence_calibration: 0.95
+
+plant_site_base: null  # real public figure; no planted site needed
