@@ -9,7 +9,6 @@ import structlog
 from pydantic import BaseModel
 from tenacity import (
     retry,
-    retry_if_exception_type,
     retry_if_not_exception_type,
     stop_after_attempt,
     wait_exponential,
@@ -198,7 +197,7 @@ class LLMRouter:
             # Convert auth / rate-limit errors into ProviderUnavailable
             # so the fallback in call() can route to OpenAI.
             error_type = type(exc).__name__.lower()
-            if "auth" in error_type or "permission" in error_type or "api" in error_type:
+            if "auth" in error_type or "permission" in error_type or "api" in error_type or "ratelimit" in error_type:
                 raise ProviderUnavailable("anthropic", str(exc)) from exc
             raise
 

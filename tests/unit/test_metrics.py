@@ -106,7 +106,7 @@ class TestComputePrecision:
 
     def test_no_claims(self) -> None:
         result = compute_precision([], [], PersonaType.synthetic)
-        assert result["rate"] == 1.0
+        assert result["rate"] == 0.0
         assert result["is_automated"] is True
 
 

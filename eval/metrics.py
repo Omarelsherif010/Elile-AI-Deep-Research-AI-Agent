@@ -88,7 +88,7 @@ def compute_precision(
     """
     if not claims:
         return {
-            "rate": 1.0,
+            "rate": 0.0,
             "sampled_claims": [],
             "is_automated": True,
         }
@@ -173,8 +173,8 @@ def compute_calibration(
         observed = None
         if claim_count > 0:
             observed = matched_count / claim_count
-            bin_mid = (low + high) / 2
-            ece += (claim_count / max(total_claims, 1)) * abs(observed - bin_mid)
+            mean_confidence = sum(c.confidence for c in bin_claims) / claim_count
+            ece += (claim_count / max(total_claims, 1)) * abs(observed - mean_confidence)
 
         buckets.append(
             CalibrationBucket(

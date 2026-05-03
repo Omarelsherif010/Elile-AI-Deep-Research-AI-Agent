@@ -72,19 +72,31 @@ def run_persona(
     logger.info("eval_subprocess_start", persona=persona.id, run_id=run_id)
     t0 = time.time()
 
+    timeout_seconds = int(persona.max_dollars / 0.5 * 300) if persona.max_dollars else 900
+    timeout_seconds = max(timeout_seconds, 300)
+
     with stdout_log.open("w", encoding="utf-8") as stdout_fh, stderr_log.open(
         "w", encoding="utf-8"
     ) as stderr_fh:
-        result = subprocess.run(
-            cmd,
-            stdout=stdout_fh,
-            stderr=stderr_fh,
-            env=env,
-            check=False,
-        )
+        try:
+            result = subprocess.run(
+                cmd,
+                stdout=stdout_fh,
+                stderr=stderr_fh,
+                env=env,
+                check=False,
+                timeout=timeout_seconds,
+            )
+            exit_code = result.returncode
+        except subprocess.TimeoutExpired:
+            logger.error(
+                "eval_subprocess_timeout",
+                persona=persona.id,
+                timeout=timeout_seconds,
+            )
+            exit_code = -1
 
     duration = time.time() - t0
-    exit_code = result.returncode
 
     logger.info(
         "eval_subprocess_complete",

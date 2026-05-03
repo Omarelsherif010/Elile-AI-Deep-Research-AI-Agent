@@ -107,15 +107,16 @@ planted_facts:
       - https://www.microsoft.com/en-us/Investor/annual-reports.aspx
 
   - id: fact_r09
-    statement: Satya Nadella testified before the U.S. House Judiciary Committee in 2024 regarding competition in cloud computing and AI markets.
+    statement: Satya Nadella has publicly discussed responsible AI principles in multiple keynote addresses and Microsoft corporate communications.
     difficulty: hard
     expected_dimension: public_statements
     fact_type: statement
     match_strategy: semantic
     match_threshold: 0.75
-    notes: Congressional testimony; exact wording may vary across sources.
+    notes: Aggregated from multiple public statements; agent may paraphrase.
     source_urls:
-      - https://judiciary.house.gov/
+      - https://blogs.microsoft.com/on-the-issues/
+      - https://news.microsoft.com/exec/satya-nadella/
 
   - id: fact_r10
     statement: Satya Nadella was born in Hyderabad, India, and immigrated to the United States to pursue graduate studies.

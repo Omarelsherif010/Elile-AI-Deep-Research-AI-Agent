@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from unittest.mock import MagicMock
 
+import pytest
 from eval.matcher import (
     cosine_similarity,
     exact_match,
@@ -62,6 +63,10 @@ class TestCosineSimilarity:
 
     def test_zero_vector(self) -> None:
         assert cosine_similarity([0.0, 0.0], [1.0, 0.0]) == 0.0
+
+    def test_length_mismatch_raises(self) -> None:
+        with pytest.raises(ValueError, match="Vector length mismatch"):
+            cosine_similarity([1.0, 0.0], [1.0, 0.0, 0.0])
 
 
 class TestSemanticMatch:

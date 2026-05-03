@@ -69,7 +69,10 @@ def _budget_check(personas: list[PersonaDefinition]) -> bool:
             f"Warning: estimated cost ${total:.2f} exceeds cap ${EVAL_BUDGET_CAP:.2f}.",
             file=sys.stderr,
         )
-        response = input("Proceed anyway? (yes/no): ")
+        try:
+            response = input("Proceed anyway? (yes/no): ")
+        except EOFError:
+            return False
         return response.strip().lower() in ("yes", "y")
     return True
 
@@ -190,6 +193,17 @@ def cmd_run(args: argparse.Namespace) -> int:
         total_cost += artifacts.cost_dollars
         total_duration += artifacts.duration_seconds
 
+        if artifacts.exit_code != 0:
+            logger.error(
+                "agent_subprocess_failed",
+                persona=persona.id,
+                exit_code=artifacts.exit_code,
+            )
+            print(
+                f"WARNING: Agent exited with code {artifacts.exit_code} for {persona.id}",
+                file=sys.stderr,
+            )
+
         # Load agent output
         report_data = json.loads(artifacts.report_json.read_text(encoding="utf-8"))
         claims_data = report_data.get("claims", [])
@@ -306,6 +320,10 @@ def cmd_replay(args: argparse.Namespace) -> int:
             persona, artifacts, fact_matches, risk_matches, precision_result, buckets, ece
         )
         per_persona_metrics.append(metrics)
+
+    if not per_persona_metrics:
+        print("Error: no persona caches found to replay.", file=sys.stderr)
+        return 1
 
     overall_pass = all(
         all(m.success_criteria.values()) for m in per_persona_metrics
