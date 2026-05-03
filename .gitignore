@@ -222,3 +222,9 @@ runs/*
 !runs/.gitkeep
 *.sqlite
 .env
+
+# Eval suite
+eval/reports/*/
+eval/cache/*/
+!eval/reports/.gitkeep
+!eval/cache/.gitkeep
