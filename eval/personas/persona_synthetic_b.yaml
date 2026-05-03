@@ -1,80 +1,149 @@
-name: persona_synthetic_b
-display_name: "Marcus Okonkwo"
-target:
-  name: "Marcus Okonkwo"
-  role: "Co-Founder and Chairman"
-  organization: "Okonkwo Energy Holdings"
-  context: "Lagos, Nigeria; operates in EU and US markets"
-  aliases: ["M. Okonkwo", "Marcus A. Okonkwo"]
+id: persona_synthetic_b
+target_name: Dorian Ashcroft
+target_context: UK-based energy sector investor with interests in fictional African markets. Chairman of Ashcroft Energy Holdings.
+persona_type: synthetic
+description: >
+  Dorian Ashcroft is a fictional UK-based investor and chairman of Ashcroft
+  Energy Holdings, a fictional energy company with operations in West Africa.
+  All organizations, individuals, and events in this persona are fictional.
+ethical_notes: >
+  This is a fully synthetic persona. All names, companies, locations, and events
+  are fictional. No real individuals or organizations are referenced.
+plant_site_root: eval/plant_site/dorian-ashcroft
 
-ground_truth:
-  easy:
-    - id: gt_b001
-      subject: "Marcus Okonkwo"
-      predicate: "co-founded"
-      object: "Okonkwo Energy Holdings (2008)"
-      source_tier: 2
-      dimension: "professional_history"
+planted_facts:
+  # Easy tier
+  - id: fact_b01
+    statement: Dorian Ashcroft is the Chairman of Ashcroft Energy Holdings.
+    difficulty: easy
+    expected_dimension: professional_history
+    fact_type: role
+    match_strategy: exact
+    match_threshold: 100.0
+    notes: Headline fact in opening paragraph.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/index.html
 
-    - id: gt_b002
-      subject: "Marcus Okonkwo"
-      predicate: "holds degree from"
-      object: "BSc Engineering, University of Lagos (1999)"
-      source_tier: 3
-      dimension: "biographical"
+  - id: fact_b02
+    statement: Dorian Ashcroft holds a Bachelor of Science in Geology from the University of Ashford.
+    difficulty: easy
+    expected_dimension: biographical
+    fact_type: biographical
+    match_strategy: fuzzy
+    match_threshold: 80.0
+    notes: Education in biography page.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/index.html
 
-    - id: gt_b003
-      subject: "Marcus Okonkwo"
-      predicate: "listed as director of"
-      object: "three UK-registered companies (Companies House)"
-      source_tier: 1
-      dimension: "financial_connections"
+  - id: fact_b03
+    statement: Ashcroft Energy Holdings was founded in 2008.
+    difficulty: easy
+    expected_dimension: professional_history
+    fact_type: role
+    match_strategy: exact
+    match_threshold: 100.0
+    notes: Company founding year clearly stated.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/index.html
 
-  medium:
-    - id: gt_b004
-      subject: "Okonkwo Energy Holdings"
-      predicate: "named in"
-      object: "OFAC preliminary sanctions screening (2020, cleared)"
-      source_tier: 1
-      dimension: "risk_surface"
+  # Medium tier
+  - id: fact_b04
+    statement: Dorian Ashcroft serves as a non-executive director of the West African Energy Consortium.
+    difficulty: medium
+    expected_dimension: network
+    fact_type: network
+    match_strategy: fuzzy
+    match_threshold: 80.0
+    notes: Board role in about page.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/about.html
 
-    - id: gt_b005
-      subject: "Marcus Okonkwo"
-      predicate: "associated with"
-      object: "Victor Adeyemi (sanctioned individual, business partner until 2019)"
-      source_tier: 2
-      dimension: "network"
+  - id: fact_b05
+    statement: Ashcroft Energy Holdings operates solar installations in the fictional nation of Kondar.
+    difficulty: medium
+    expected_dimension: professional_history
+    fact_type: role
+    match_strategy: fuzzy
+    match_threshold: 80.0
+    notes: Operational geography in about page.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/about.html
 
-  hard:
-    - id: gt_b006
-      subject: "Marcus Okonkwo"
-      predicate: "made public statement"
-      object: "controversial remarks on energy policy at Davos 2023"
-      source_tier: 3
-      dimension: "public_statements"
+  - id: fact_b06
+    statement: Dorian Ashcroft holds a 35% equity stake in Ashcroft Energy Holdings.
+    difficulty: medium
+    expected_dimension: financial_connections
+    fact_type: financial
+    match_strategy: fuzzy
+    match_threshold: 80.0
+    notes: Equity stake in portfolio page.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/portfolio.html
 
-expected_risk_flags:
-  - type: REGULATORY
-    severity: HIGH
-    description: "OFAC preliminary screening (2020)"
-    evidence_ids: [gt_b004]
+  - id: fact_b07
+    statement: Ashcroft Energy Holdings reported revenue of 120 million pounds in fiscal year 2023.
+    difficulty: medium
+    expected_dimension: financial_connections
+    fact_type: financial
+    match_strategy: fuzzy
+    match_threshold: 75.0
+    notes: Revenue figure in portfolio page; specific number.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/portfolio.html
 
-  - type: NETWORK
-    severity: HIGH
-    description: "Prior business relationship with sanctioned individual Victor Adeyemi"
-    evidence_ids: [gt_b005]
+  # Hard tier — requires cross-referencing; contradictory statements
+  - id: fact_b08
+    statement: Dorian Ashcroft stated in the 2023 annual report that Ashcroft Energy Holdings had no direct contracts with Kondar state entities.
+    difficulty: hard
+    expected_dimension: public_statements
+    fact_type: statement
+    match_strategy: semantic
+    match_threshold: 0.75
+    notes: Statement in portfolio page. Contradicts fact_b09 planted in filings page.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/portfolio.html
 
-  - type: REPUTATIONAL
-    severity: LOW
-    description: "Controversial public statements on energy policy"
-    evidence_ids: [gt_b006]
+  - id: fact_b09
+    statement: Regulatory filings with the Kondar Energy Commission show Ashcroft Energy Holdings holds a power purchase agreement with Kondar Grid Authority, a state-owned utility.
+    difficulty: hard
+    expected_dimension: risk_surface
+    fact_type: risk
+    match_strategy: semantic
+    match_threshold: 0.75
+    notes: Filing page reveals the opposite of the annual report statement. Tests cross-page inconsistency detection.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/filings.html
 
-thresholds:
-  recall_easy: 0.70
-  recall_medium: 0.50
-  recall_hard: 0.30
-  precision: 0.90
-  risk_recall: 0.80
-  confidence_calibration: 0.95
+  - id: fact_b10
+    statement: Dorian Ashcroft transferred a 12% personal stake in Ashcroft Energy Holdings to the Meridian Trust in 2021.
+    difficulty: hard
+    expected_dimension: financial_connections
+    fact_type: financial
+    match_strategy: fuzzy
+    match_threshold: 70.0
+    notes: Trust transfer detail requires connecting portfolio page holdings with filings page beneficial ownership disclosure.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/portfolio.html
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/filings.html
 
-plant_site_base: "https://example.github.io/research-agent-plant-site/persona_b"
+planted_risks:
+  - id: risk_b01
+    risk_category: NETWORK
+    expected_severity: HIGH
+    description: >
+      Dorian Ashcroft maintained a business partnership with Victor Adeyemi
+      through a joint venture in the Niger Delta. Mr. Adeyemi was designated
+      by OFAC in November 2019.
+    evidence_source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/filings.html
+
+  - id: risk_b02
+    risk_category: INCONSISTENCY
+    expected_severity: MEDIUM
+    description: >
+      Contradictory statements about Kondar state contracts: the 2023 annual
+      report states no direct contracts, but regulatory filings show a power
+      purchase agreement with Kondar Grid Authority.
+    evidence_source_urls:
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/portfolio.html
+      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/filings.html

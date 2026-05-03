@@ -1,0 +1,63 @@
+# Persona Template
+# Copy this file to create a new eval persona.
+# All fields are annotated. Remove comments before use if desired.
+
+# Required. Pattern: persona_[a-z_]+
+id: persona_example
+
+# Required. Non-empty, max 200 chars.
+target_name: Example Person
+
+# Required. Context that helps the agent disambiguate (location, role, etc.).
+target_context: Fictional character for testing
+
+# Required. synthetic | real_public
+persona_type: synthetic
+
+# Required. Short description of the persona's profile.
+description: A brief profile description
+
+# Required. Notes on ethical scope, fictional status, data sources.
+ethical_notes: All organizations and individuals in this persona are fictional.
+
+# Required for synthetic personas. Path to plant site HTML directory (relative to repo root).
+# Must be set when persona_type == synthetic. Optional for real_public.
+plant_site_root: eval/plant_site/example-person
+
+# Required. At least one planted fact.
+planted_facts:
+  # id: Pattern fact_[a-z]\d{2}  (e.g., fact_e01)
+  # statement: The exact fact statement, max 500 chars
+  # difficulty: easy | medium | hard
+  # expected_dimension: biographical | professional_history | financial_connections | network | public_statements | risk_surface
+  # expected_min_confidence: float [0.0, 1.0], default 0.5
+  # fact_type: biographical | role | financial | network | statement | risk
+  # match_strategy: exact | fuzzy | semantic, default fuzzy
+  # match_threshold: float — [0, 100] for fuzzy, [0.0, 1.0] for semantic, default 80.0
+  # notes: Why this fact is at this tier
+  # source_urls: List of URLs (plant site pages for synthetic, real URLs for real_public)
+  - id: fact_e01
+    statement: Example fact statement
+    difficulty: easy
+    expected_dimension: biographical
+    expected_min_confidence: 0.5
+    fact_type: biographical
+    match_strategy: fuzzy
+    match_threshold: 80.0
+    notes: This is an easy fact visible in a headline or opening paragraph.
+    source_urls:
+      - https://example.github.io/research-agent-plant-site/example-person/index.html
+
+# Optional. List of expected risk flags.
+planted_risks:
+  # id: Pattern risk_[a-z]\d{2}
+  # risk_category: REGULATORY | REPUTATIONAL | NETWORK | FINANCIAL | INCONSISTENCY | COVERAGE_GAP | OTHER
+  # expected_severity: LOW | MEDIUM | HIGH | CRITICAL
+  # description: Non-empty description
+  # evidence_source_urls: List of URLs supporting this risk
+  - id: risk_e01
+    risk_category: REGULATORY
+    expected_severity: MEDIUM
+    description: Example regulatory risk
+    evidence_source_urls:
+      - https://example.github.io/research-agent-plant-site/example-person/index.html
