@@ -2,7 +2,7 @@
 
 > **Used by:** `src/research_agent/nodes/search_orchestrator.py`
 > **Model role:** query_expander
-> **Default model:** `gemini-2.5-flash`
+> **Default model:** `gemini-3-flash`
 > **Output schema:** `QueryExpansion`
 
 ---
@@ -133,7 +133,7 @@ Each query string must be 3–12 words. No sentences, no punctuation other than 
 
 - **Why multiple queries instead of one.** Search engines rank results based on query-document similarity. A query "Jane Doe CEO" surfaces biographies. A query "Jane Doe lawsuit settlement" surfaces legal coverage. A query "Acme Capital SEC filing" surfaces regulatory records. All three may be needed to answer a single sub-question fully. Using one query leaves 60–70% of relevant sources unfound.
 
-- **Why Gemini 2.5 Flash.** Query expansion is a high-fanout task: the orchestrator calls it once per sub-question, and plans typically have 8–12 sub-questions per iteration, run over multiple iterations. At these call volumes, Flash is 10× cheaper than Opus or GPT-4.1 for a task that requires breadth not depth. The task is also structurally simple — generate short strings — which plays to Flash's strengths.
+- **Why Gemini 3 Flash.** Query expansion is a high-fanout task: the orchestrator calls it once per sub-question, and plans typically have 8–12 sub-questions per iteration, run over multiple iterations. At these call volumes, Flash is 10× cheaper than Opus or GPT-5.4 Mini for a task that requires breadth not depth. The task is also structurally simple — generate short strings — which plays to Flash's strengths.
 
 - **The duplicate-query failure mode.** Without `{prior_queries}`, the expander will regenerate queries it (or prior iterations) have already tried. This wastes search budget and skews the results toward already-seen sources. Checking against `{prior_queries}` is mandatory, even if it means returning only 2 queries.
 

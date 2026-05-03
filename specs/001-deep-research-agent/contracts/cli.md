@@ -46,9 +46,9 @@ python -m research_agent eval \
 ## Environment Variables
 
 Required (in `.env`):
-- `ANTHROPIC_API_KEY` — Claude Opus 4 access
-- `OPENAI_API_KEY` — GPT-4.1 access
-- `GOOGLE_API_KEY` — Gemini 2.5 Flash access
+- `ANTHROPIC_API_KEY` — Claude Opus 4.7 access
+- `OPENAI_API_KEY` — GPT-5.4 Mini access
+- `GOOGLE_API_KEY` — Gemini 3 Flash access
 - `BRAVE_API_KEY` — Brave Search access
 
 Optional:

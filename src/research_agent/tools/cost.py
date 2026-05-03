@@ -6,13 +6,11 @@ import structlog
 
 logger = structlog.get_logger()
 
-# Pricing per 1M tokens (input/output) as of 2025
+# Pricing per 1M tokens (input/output) as of May 2026
 PRICING: dict[str, dict[str, float]] = {
-    "claude-opus-4": {"input": 15.0, "output": 75.0},
-    "claude-opus-4-5": {"input": 15.0, "output": 75.0},
-    "gpt-4.1": {"input": 2.0, "output": 8.0},
-    "gemini-2.5-flash": {"input": 0.075, "output": 0.30},
-    "gemini-2.0-flash": {"input": 0.075, "output": 0.30},
+    "claude-opus-4-7-20260416": {"input": 5.0, "output": 25.0},
+    "gpt-5.4-mini": {"input": 0.75, "output": 4.50},
+    "gemini-3-flash": {"input": 0.50, "output": 3.0},
 }
 
 # Search call costs (per call)

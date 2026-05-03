@@ -5,7 +5,7 @@
 
 ## Summary
 
-Build a LangGraph-orchestrated multi-agent pipeline that, given a target person's name, conducts iterative web research across multiple search providers, extracts structured claims with source provenance, cross-validates them with a documented confidence formula, surfaces risk patterns from a typed taxonomy, builds an in-memory identity graph (with optional Neo4j persistence), and produces an auditable Markdown/JSON risk report. The system is multi-model (Claude Opus 4 for reasoning, GPT-4.1 for extraction, Gemini 2.5 Flash for high-fanout expansion), budget-enforced, fully traced via LangSmith + local audit logs, and evaluated against three test personas with planted ground truth.
+Build a LangGraph-orchestrated multi-agent pipeline that, given a target person's name, conducts iterative web research across multiple search providers, extracts structured claims with source provenance, cross-validates them with a documented confidence formula, surfaces risk patterns from a typed taxonomy, builds an in-memory identity graph (with optional Neo4j persistence), and produces an auditable Markdown/JSON risk report. The system is multi-model (Claude Opus 4.7 for reasoning, GPT-5.4 Mini for extraction, Gemini 3 Flash for high-fanout expansion), budget-enforced, fully traced via LangSmith + local audit logs, and evaluated against three test personas with planted ground truth.
 
 ## Technical Context
 
@@ -154,7 +154,7 @@ confidence(claim) =
   + 0.20 × consistency_score
 ```
 
-**Source tier mapping** (classified by GPT-4.1 from URL + title):
+**Source tier mapping** (classified by GPT-5.4 Mini from URL + title):
 
 | Tier | Score | Examples |
 |------|-------|---------|
@@ -188,11 +188,11 @@ confidence(claim) =
 
 | Role | Model | Rationale |
 |------|-------|-----------|
-| Planner, Reflector, Risk synthesis, Reporter | Claude Opus 4 | Long-horizon reasoning, nuanced synthesis, handles complex multi-step instructions |
-| Extractor, Validator (cross-reference), Source tier classifier | GPT-4.1 | Most reliable Pydantic structured output via function calling |
-| Query expander, Snippet summarizer | Gemini 2.5 Flash | 10× cheaper for high-fanout loop work; adequate quality for expansion/summarization |
+| Planner, Reflector, Risk synthesis, Reporter | Claude Opus 4.7 | Long-horizon reasoning, nuanced synthesis, handles complex multi-step instructions |
+| Extractor, Validator (cross-reference), Source tier classifier | GPT-5.4 Mini | Most reliable Pydantic structured output via function calling |
+| Query expander, Snippet summarizer | Gemini 3 Flash | 10× cheaper for high-fanout loop work; adequate quality for expansion/summarization |
 
-**Rejected alternative**: Single-model approach (all Claude Opus 4). Rejected because extraction/validation calls happen at high frequency (30-60× per run) and Claude Opus is 10× more expensive than Gemini Flash for the simpler tasks. Multi-model routing cuts cost by ~60% while maintaining quality where it matters.
+**Rejected alternative**: Single-model approach (all Claude Opus 4.7). Rejected because extraction/validation calls happen at high frequency (30-60× per run) and Claude Opus is 10× more expensive than Gemini Flash for the simpler tasks. Multi-model routing cuts cost by ~60% while maintaining quality where it matters.
 
 ## Search Routing
 

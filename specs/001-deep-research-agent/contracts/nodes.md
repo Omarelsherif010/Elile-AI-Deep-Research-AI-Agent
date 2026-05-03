@@ -6,7 +6,7 @@ Each node is a function `(ResearchState) -> dict` that reads specific state fiel
 
 **Reads**: `target`, `iteration`, `gaps`, `validated_claims`
 **Writes**: `plan` (ResearchPlan), `iteration` (incremented)
-**Model**: Claude Opus 4
+**Model**: Claude Opus 4.7
 **Prompt**: `prompts/planner.md`
 **Behavior**: On iteration 0, generates a full research plan from the target profile. On iteration >0, refines the plan based on gaps and existing claims. Sub-questions are prioritized by dimension coverage and remaining budget.
 
@@ -14,7 +14,7 @@ Each node is a function `(ResearchState) -> dict` that reads specific state fiel
 
 **Reads**: `plan.sub_questions`, `budget`
 **Writes**: `search_turns` (appended), `budget.used_search_calls` (incremented)
-**Model**: Gemini 2.5 Flash (for query expansion)
+**Model**: Gemini 3 Flash (for query expansion)
 **Prompt**: `prompts/query_expander.md`
 **Behavior**: For each sub-question, expands the initial query into 2-3 variants via LLM. Routes each query to the appropriate search provider based on intent. Caches results via SearchCache. Stops dispatching if search call budget would be exceeded.
 
@@ -22,7 +22,7 @@ Each node is a function `(ResearchState) -> dict` that reads specific state fiel
 
 **Reads**: `search_turns` (latest iteration), `sources`
 **Writes**: `claims` (appended), `entities` (appended), `relations` (appended), `sources` (appended)
-**Model**: GPT-4.1
+**Model**: GPT-5.4 Mini
 **Prompt**: `prompts/extractor.md`
 **Behavior**: For each search result with content, extracts claims, entities, and relations as structured Pydantic output. Each claim carries source URLs. Content is wrapped via `guardrails.wrap_untrusted_content()` before insertion into the prompt. PII filter applied to each extracted claim.
 
@@ -30,7 +30,7 @@ Each node is a function `(ResearchState) -> dict` that reads specific state fiel
 
 **Reads**: `claims` (unvalidated from current iteration), `sources`, `validated_claims` (prior)
 **Writes**: `validated_claims` (appended)
-**Model**: GPT-4.1
+**Model**: GPT-5.4 Mini
 **Prompt**: `prompts/validator.md`
 **Behavior**: Cross-references each claim against all known sources. Classifies source tiers. Computes confidence score using `confidence.py` formula. Claims below 0.5 confidence with <2 independent domains are labeled "inferred, unverified". Claims that contradict higher-confidence claims are flagged.
 
@@ -38,7 +38,7 @@ Each node is a function `(ResearchState) -> dict` that reads specific state fiel
 
 **Reads**: `validated_claims`, `budget`, `plan`, `gaps`
 **Writes**: `gaps` (updated), `terminated`, `termination_reason`
-**Model**: Claude Opus 4
+**Model**: Claude Opus 4.7
 **Prompt**: `prompts/reflector.md`
 **Behavior**: Evaluates research progress vs. remaining budget. Decides one of three actions:
 - **continue**: Gaps remain and budget allows another iteration. Returns to planner.
@@ -56,7 +56,7 @@ Each node is a function `(ResearchState) -> dict` that reads specific state fiel
 
 **Reads**: `validated_claims`, `entities`, `relations`
 **Writes**: `risk_flags`
-**Model**: Claude Opus 4
+**Model**: Claude Opus 4.7
 **Prompt**: `prompts/risk_analyzer.md`
 **Behavior**: Analyzes validated claims and graph structure for risk patterns from the taxonomy. Assigns severity (Low/Medium/High/Critical) based on evidence strength and pattern severity. Each RiskFlag references supporting claim IDs. COVERAGE_GAP flags are generated for dimensions with zero or low-confidence claims. OTHER flags require a justification field.
 
@@ -64,6 +64,6 @@ Each node is a function `(ResearchState) -> dict` that reads specific state fiel
 
 **Reads**: all state fields
 **Writes**: none (side effects only)
-**Model**: Claude Opus 4
+**Model**: Claude Opus 4.7
 **Prompt**: `prompts/reporter.md`
 **Behavior**: Generates `report.md` (Markdown) and `report.json` (structured). Report sections: executive summary, target profile, research methodology, findings by dimension, risk flags (grouped by category, sorted by severity), claim inventory with provenance, identity graph summary, scope and limitations, budget consumption. Final `check_output_safety()` guardrail applied before write.

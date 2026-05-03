@@ -10,7 +10,7 @@ from research_agent.errors import ProviderUnavailable, SchemaValidationError
 from research_agent.tools.llm import (
     CLAUDE_OPUS_4,
     GEMINI_FLASH,
-    GPT_41,
+    GPT_54_MINI,
     ROLE_TO_MODEL,
     LLMRouter,
     Prompt,
@@ -93,10 +93,10 @@ class TestLLMRouterModelRouting:
         assert ROLE_TO_MODEL["reflector"] == CLAUDE_OPUS_4
 
     def test_extractor_uses_gpt(self) -> None:
-        assert ROLE_TO_MODEL["extractor"] == GPT_41
+        assert ROLE_TO_MODEL["extractor"] == GPT_54_MINI
 
     def test_validator_uses_gpt(self) -> None:
-        assert ROLE_TO_MODEL["validator"] == GPT_41
+        assert ROLE_TO_MODEL["validator"] == GPT_54_MINI
 
     def test_query_expander_uses_gemini(self) -> None:
         assert ROLE_TO_MODEL["query_expander"] == GEMINI_FLASH

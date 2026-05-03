@@ -2,7 +2,7 @@
 
 > **Used by:** `src/research_agent/nodes/risk_analyzer.py`
 > **Model role:** risk_analyzer
-> **Default model:** `claude-opus-4`
+> **Default model:** `claude-opus-4-7`
 > **Output schema:** `RiskAnalysis`
 
 ---

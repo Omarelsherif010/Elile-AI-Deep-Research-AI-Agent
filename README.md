@@ -7,7 +7,7 @@ A LangGraph-orchestrated multi-agent system for OSINT-style investigation of pub
 Given a target person's name, the agent:
 1. Generates an iterative research plan across 6 dimensions (biographical, professional, financial, network, public statements, risk surface)
 2. Expands and dispatches search queries to Brave Search, Exa, and Firecrawl
-3. Extracts structured claims with source provenance via GPT-4.1
+3. Extracts structured claims with source provenance via GPT-5.4 Mini
 4. Cross-validates claims, classifies source tiers, and computes a 4-factor confidence score
 5. Reflects on coverage gaps and decides to continue, pivot, or terminate
 6. Builds an identity graph (Neo4j or JSON export)
@@ -28,9 +28,9 @@ START → planner → search_orchestrator → extractor → validator → reflec
 
 | Role | Model | Rationale |
 |------|-------|-----------|
-| Planner, Reflector, Risk synthesis, Reporter | Claude Opus 4 | Long-horizon reasoning |
-| Extractor, Validator | GPT-4.1 | Most reliable structured output |
-| Query expander | Gemini 2.5 Flash | 10× cheaper for high-fanout loop |
+| Planner, Reflector, Risk synthesis, Reporter | Claude Opus 4.7 | Long-horizon reasoning |
+| Extractor, Validator | GPT-5.4 Mini | Most reliable structured output |
+| Query expander | Gemini 3 Flash | 10× cheaper for high-fanout loop |
 
 ### Search Routing
 
@@ -82,7 +82,7 @@ This system operates exclusively on **public sources**. It:
 ### Prerequisites
 - Python 3.11+
 - [uv](https://docs.astral.sh/uv/) package manager
-- API keys: Anthropic (Claude), OpenAI (GPT-4.1), Google AI (Gemini), Brave Search
+- API keys: Anthropic (Claude), OpenAI (GPT-5.4 Mini), Google AI (Gemini), Brave Search
 
 ### Setup
 

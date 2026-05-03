@@ -2,7 +2,7 @@
 
 > **Used by:** `src/research_agent/nodes/reflector.py`
 > **Model role:** reflector
-> **Default model:** `claude-opus-4`
+> **Default model:** `claude-opus-4-7`
 > **Output schema:** `ReflectionDecision`
 
 ---
@@ -179,7 +179,7 @@ The `coverage_assessment` must include all six keys: `"biographical"`, `"profess
 
 ## Notes
 
-- **Why Claude Opus 4 for the reflector.** The continue/pivot/terminate decision requires nuanced cost-vs-coverage judgment that is highly context-dependent. A simple threshold rule ("stop at 3 claims per dimension") would under-terminate on uneven coverage and over-terminate on well-covered cases. Opus 4's long-horizon reasoning is needed to weigh: how many iterations are genuinely left, what the diminishing returns curve looks like from the stagnation trend, which gaps are resolvable vs. which represent thin public records, and whether a pivot is more efficient than a continue. Flash would produce superficially reasonable decisions that fail under scrutiny in edge cases.
+- **Why Claude Opus 4.7 for the reflector.** The continue/pivot/terminate decision requires nuanced cost-vs-coverage judgment that is highly context-dependent. A simple threshold rule ("stop at 3 claims per dimension") would under-terminate on uneven coverage and over-terminate on well-covered cases. Opus 4.7's long-horizon reasoning is needed to weigh: how many iterations are genuinely left, what the diminishing returns curve looks like from the stagnation trend, which gaps are resolvable vs. which represent thin public records, and whether a pivot is more efficient than a continue. Flash would produce superficially reasonable decisions that fail under scrutiny in edge cases.
 
 - **The three-way decision vs. binary continue/stop.** Binary continue/stop mishandles uneven coverage — a "stop" when biographical is strong but risk is missing produces a deficient report, while a "continue" with the same plan just generates more biographical data. "Pivot" is the corrective: it allows the next iteration to be targeted at specific uncovered dimensions without wasting budget on already-covered ones.
 

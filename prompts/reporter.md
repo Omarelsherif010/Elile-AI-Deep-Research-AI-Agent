@@ -2,7 +2,7 @@
 
 > **Used by:** `src/research_agent/nodes/reporter.py`
 > **Model role:** reporter
-> **Default model:** `claude-opus-4`
+> **Default model:** `claude-opus-4-7`
 > **Output schema:** `ReportContent`
 
 ---
@@ -168,7 +168,7 @@ class ReportContent(BaseModel):
 
 ## Notes
 
-- **Why Claude Opus 4 for the reporter.** Report writing is the highest-context, highest-synthesis task in the pipeline. The reporter must integrate claims across 6 dimensions, write precise prose that accurately represents confidence levels, structure a multi-section document coherently, and apply nuanced judgment about which findings warrant emphasis. Gemini Flash produces coherent text but struggles with precise confidence language and consistent cross-referencing of claim IDs. GPT-4.1 handles the structure well but produces flatter, less analytically precise prose on synthesis tasks. Opus 4 is the right tool for this final step despite the higher cost — the report is the deliverable.
+- **Why Claude Opus 4.7 for the reporter.** Report writing is the highest-context, highest-synthesis task in the pipeline. The reporter must integrate claims across 6 dimensions, write precise prose that accurately represents confidence levels, structure a multi-section document coherently, and apply nuanced judgment about which findings warrant emphasis. Gemini Flash produces coherent text but struggles with precise confidence language and consistent cross-referencing of claim IDs. GPT-5.4 Mini handles the structure well but produces flatter, less analytically precise prose on synthesis tasks. Opus 4.7 is the right tool for this final step despite the higher cost — the report is the deliverable.
 
 - **Why the Scope section is system-enforced as mandatory.** The Scope and Limitations section is required by Constitution Principles 1 and 10. Without it, a reader might not know that the investigation used only public sources, might not realize that sensitive attributes were never inferred, and might not know which dimensions had thin coverage. Making `has_scope_section` a validated field in `ReportContent` means the guardrail in `guardrails.py` can check it programmatically — the reporter cannot silently omit it.
 

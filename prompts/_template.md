@@ -2,7 +2,7 @@
 
 > **Used by:** `<node or function name>`
 > **Model role:** <planner | extractor | validator | reflector | risk_analyzer | reporter | query_expander>
-> **Default model:** <claude-opus-4 | gpt-4.1 | gemini-2.5-flash>
+> **Default model:** <claude-opus-4-7 | gpt-5.4-mini | gemini-3-flash>
 > **Output schema:** `<PydanticClassName>`
 
 ---

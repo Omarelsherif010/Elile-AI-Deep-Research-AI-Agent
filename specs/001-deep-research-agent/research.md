@@ -13,8 +13,8 @@ All NEEDS CLARIFICATION items from the Technical Context have been resolved. Thi
 
 ## Decision 2: Multi-Model Routing
 
-**Decision**: Three models routed by role — Claude Opus 4 (reasoning), GPT-4.1 (extraction), Gemini 2.5 Flash (expansion).
-**Rationale**: Different tasks have different cost/quality profiles. Planning and synthesis require deep reasoning (Opus). Extraction/validation requires the most reliable structured output (GPT-4.1). Query expansion is high-fanout and low-complexity (Flash at 10× lower cost).
+**Decision**: Three models routed by role — Claude Opus 4.7 (reasoning), GPT-5.4 Mini (extraction), Gemini 3 Flash (expansion).
+**Rationale**: Different tasks have different cost/quality profiles. Planning and synthesis require deep reasoning (Opus). Extraction/validation requires the most reliable structured output (GPT-5.4 Mini). Query expansion is high-fanout and low-complexity (Flash at 10× lower cost).
 **Rejected alternative**: Single-model (all Opus). Rejected because a typical run makes 30-60 extraction calls. At Opus pricing, a single run would cost ~$15-25, exceeding the $5 budget cap. Multi-model routing cuts cost by ~60%.
 
 ## Decision 3: Search Provider Stack

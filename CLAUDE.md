@@ -62,9 +62,9 @@ Use `tools/llm.py` to route by role. Never hardcode a provider in a node.
 
 | Role | Model | Why |
 |---|---|---|
-| Planner / Reflector / Risk synthesis / Reporter | Claude Opus 4 | Long-horizon reasoning, nuanced synthesis |
-| Extractor / Validator (cross-ref) | GPT-4.1 | Most reliable Pydantic structured output |
-| Query expander / Snippet summarizer | Gemini 2.5 Flash | 10× cheaper for high-fanout loop work |
+| Planner / Reflector / Risk synthesis / Reporter | Claude Opus 4.7 | Long-horizon reasoning, nuanced synthesis |
+| Extractor / Validator (cross-ref) | GPT-5.4 Mini | Most reliable Pydantic structured output |
+| Query expander / Snippet summarizer | Gemini 3 Flash | 10× cheaper for high-fanout loop work |
 
 ### Search routing
 

@@ -2,7 +2,7 @@
 
 > **Used by:** `src/research_agent/nodes/validator.py`
 > **Model role:** validator
-> **Default model:** `gpt-4.1`
+> **Default model:** `gpt-5.4-mini`
 > **Output schema:** `ValidationResult`
 
 ---
@@ -155,7 +155,7 @@ With `validation_notes` (included inside `validations` entry — but since this 
 
 ## Notes
 
-- **Why GPT-4.1 for validation.** Validation produces a tightly structured nested JSON object (dict-of-dicts for tier assignments, multiple list fields) with precise integer semantics. GPT-4.1's structured output mode ensures schema compliance without post-processing hacks. Validation errors here would silently corrupt confidence scores and produce misleading risk flags.
+- **Why GPT-5.4 Mini for validation.** Validation produces a tightly structured nested JSON object (dict-of-dicts for tier assignments, multiple list fields) with precise integer semantics. GPT-5.4 Mini's structured output mode ensures schema compliance without post-processing hacks. Validation errors here would silently corrupt confidence scores and produce misleading risk flags.
 
 - **Why source tier classification is LLM work, not rule-based.** A naive approach would be a domain allowlist: `reuters.com -> Tier 2`, `gov -> Tier 1`. This breaks for:
   - Regional news organizations not on the allowlist (legitimate Tier 2)

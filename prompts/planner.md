@@ -2,7 +2,7 @@
 
 > **Used by:** `src/research_agent/nodes/planner.py`
 > **Model role:** planner
-> **Default model:** `claude-opus-4`
+> **Default model:** `claude-opus-4-7`
 > **Output schema:** `ResearchPlan`
 
 ---

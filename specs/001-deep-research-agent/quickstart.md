@@ -4,7 +4,7 @@
 
 - Python 3.11+
 - [uv](https://docs.astral.sh/uv/) package manager
-- API keys for: Anthropic (Claude), OpenAI (GPT-4.1), Google AI (Gemini)
+- API keys for: Anthropic (Claude), OpenAI (GPT-5.4 Mini), Google AI (Gemini)
 - API key for: Brave Search
 - Optional: Neo4j Aura account (free tier), Exa API key, Firecrawl API key, LangSmith API key
 

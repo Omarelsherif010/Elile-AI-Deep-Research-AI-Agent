@@ -2,7 +2,7 @@
 
 > **Used by:** `src/research_agent/nodes/extractor.py`
 > **Model role:** extractor
-> **Default model:** `gpt-4.1`
+> **Default model:** `gpt-5.4-mini`
 > **Output schema:** `ExtractionResult`
 
 ---
@@ -228,7 +228,7 @@ class ExtractionResult(BaseModel):
 
 ## Notes
 
-- **Why GPT-4.1 for extraction.** Extraction requires strict adherence to a Pydantic schema with UUIDs, typed predicates, and nested structures. GPT-4.1 has the most reliable structured output (JSON mode + schema enforcement) in empirical tests as of early 2025. Extraction errors here cascade: a wrong `source_url` or a fabricated claim will pass the validator and pollute the graph. The cost premium is justified by the downstream accuracy requirement.
+- **Why GPT-5.4 Mini for extraction.** Extraction requires strict adherence to a Pydantic schema with UUIDs, typed predicates, and nested structures. GPT-5.4 Mini has the most reliable structured output (JSON mode + schema enforcement) among cost-efficient models. Extraction errors here cascade: a wrong `source_url` or a fabricated claim will pass the validator and pollute the graph. The cost premium is justified by the downstream accuracy requirement.
 
 - **The prompt injection defense via `<source>` tags.** Fetched web content often contains adversarial text designed to hijack LLM behavior. By wrapping all source content in `<source url="...">...</source>` and explicitly instructing the model to treat the interior as data-only, we create a structural delimiter that separates instructions from content. This is the first line of defense; the second is the output schema validator in `guardrails.py`.
 
