@@ -156,6 +156,45 @@ class TestProviderUnavailable:
             router._get_google()
 
 
+class TestProviderFallback:
+    def test_claude_fallback_to_openai(self, monkeypatch: pytest.MonkeyPatch) -> None:
+        """When Anthropic is unavailable, planner role falls back to OpenAI."""
+        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+        monkeypatch.setenv("OPENAI_API_KEY", "fake-key")
+        router = LLMRouter()
+
+        with patch.object(router, "_call_anthropic") as mock_claude, \
+             patch.object(router, "_call_openai", return_value=("fallback", 10, 5)) as mock_openai:
+            mock_claude.side_effect = ProviderUnavailable("anthropic", "no key")
+            result = router.call("planner", "test prompt")
+
+        assert result == ("fallback", 10, 5)
+        mock_openai.assert_called_once_with(GPT_54_MINI, "test prompt", None, 4096)
+
+    def test_gemini_fallback_to_openai(self, monkeypatch: pytest.MonkeyPatch) -> None:
+        """When Google is unavailable, query_expander role falls back to OpenAI."""
+        monkeypatch.delenv("GOOGLE_API_KEY", raising=False)
+        monkeypatch.setenv("OPENAI_API_KEY", "fake-key")
+        router = LLMRouter()
+
+        with patch.object(router, "_call_google") as mock_google, \
+             patch.object(router, "_call_openai", return_value=("fallback", 10, 5)) as mock_openai:
+            mock_google.side_effect = ProviderUnavailable("google", "no key")
+            result = router.call("query_expander", "test prompt")
+
+        assert result == ("fallback", 10, 5)
+        mock_openai.assert_called_once_with(GPT_54_MINI, "test prompt", None, 4096)
+
+    def test_openai_unavailable_no_fallback(self, monkeypatch: pytest.MonkeyPatch) -> None:
+        """When OpenAI itself is unavailable, there is no further fallback."""
+        monkeypatch.delenv("OPENAI_API_KEY", raising=False)
+        monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
+        router = LLMRouter()
+
+        with pytest.raises(ProviderUnavailable, match="openai"):
+            router.call("extractor", "test prompt")
+
+
 # ---------------------------------------------------------------------------
 # LLMRouter — JSON parsing
 # ---------------------------------------------------------------------------

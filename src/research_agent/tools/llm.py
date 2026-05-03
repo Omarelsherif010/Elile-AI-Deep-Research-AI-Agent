@@ -7,7 +7,13 @@ from typing import Any, TypeVar
 
 import structlog
 from pydantic import BaseModel
-from tenacity import retry, retry_if_exception_type, stop_after_attempt, wait_exponential
+from tenacity import (
+    retry,
+    retry_if_exception_type,
+    retry_if_not_exception_type,
+    stop_after_attempt,
+    wait_exponential,
+)
 
 from research_agent.errors import ProviderUnavailable, SchemaValidationError
 
@@ -18,7 +24,7 @@ T = TypeVar("T", bound=BaseModel)
 # Model IDs
 CLAUDE_OPUS_4 = "claude-opus-4-7-20260416"
 GPT_54_MINI = "gpt-5.4-mini"
-GEMINI_FLASH = "gemini-3-flash"
+GEMINI_FLASH = "gemini-2.0-flash"
 
 ROLE_TO_MODEL: dict[str, str] = {
     "planner": CLAUDE_OPUS_4,
@@ -133,7 +139,7 @@ class LLMRouter:
     @retry(
         stop=stop_after_attempt(3),
         wait=wait_exponential(multiplier=1, min=2, max=10),
-        retry=retry_if_exception_type(Exception),
+        retry=retry_if_not_exception_type(ProviderUnavailable),
         reraise=True,
     )
     def call(
@@ -146,17 +152,33 @@ class LLMRouter:
         """Call the appropriate LLM for the given role.
 
         Returns: (parsed_output_or_text, tokens_in, tokens_out)
+
+        If the preferred provider is unavailable (e.g. no API key), falls back
+        to OpenAI when possible so the agent can still run with a single provider.
         """
         model = ROLE_TO_MODEL.get(role, CLAUDE_OPUS_4)
 
-        if model.startswith("claude"):
-            return self._call_anthropic(model, prompt, output_schema, max_tokens)
-        elif model.startswith("gpt"):
-            return self._call_openai(model, prompt, output_schema, max_tokens)
-        elif model.startswith("gemini"):
-            return self._call_google(model, prompt, output_schema, max_tokens)
-        else:
-            raise ProviderUnavailable(model, f"Unknown model: {model}")
+        try:
+            if model.startswith("claude"):
+                return self._call_anthropic(model, prompt, output_schema, max_tokens)
+            elif model.startswith("gpt"):
+                return self._call_openai(model, prompt, output_schema, max_tokens)
+            elif model.startswith("gemini"):
+                return self._call_google(model, prompt, output_schema, max_tokens)
+            else:
+                raise ProviderUnavailable(model, f"Unknown model: {model}")
+        except (ProviderUnavailable,) as exc:
+            # Fallback: if Anthropic or Google is missing, try OpenAI
+            if model.startswith("claude") or model.startswith("gemini"):
+                logger.warning(
+                    "provider_unavailable_fallback",
+                    role=role,
+                    original_model=model,
+                    fallback_model=GPT_54_MINI,
+                    reason=str(exc),
+                )
+                return self._call_openai(GPT_54_MINI, prompt, output_schema, max_tokens)
+            raise
 
     def _call_anthropic(
         self,
@@ -166,11 +188,20 @@ class LLMRouter:
         max_tokens: int,
     ) -> tuple[T | str, int, int]:
         client = self._get_anthropic()
-        response = client.messages.create(
-            model=model,
-            max_tokens=max_tokens,
-            messages=[{"role": "user", "content": prompt}],
-        )
+        try:
+            response = client.messages.create(
+                model=model,
+                max_tokens=max_tokens,
+                messages=[{"role": "user", "content": prompt}],
+            )
+        except Exception as exc:
+            # Convert auth / rate-limit errors into ProviderUnavailable
+            # so the fallback in call() can route to OpenAI.
+            error_type = type(exc).__name__.lower()
+            if "auth" in error_type or "permission" in error_type or "api" in error_type:
+                raise ProviderUnavailable("anthropic", str(exc)) from exc
+            raise
+
         text = response.content[0].text
         tokens_in = response.usage.input_tokens
         tokens_out = response.usage.output_tokens
@@ -187,12 +218,16 @@ class LLMRouter:
         max_tokens: int,
     ) -> tuple[T | str, int, int]:
         client = self._get_openai()
+        # Use max_completion_tokens (preferred for all modern models).
+        # If the model still expects max_tokens the SDK handles it,
+        # but newer models (o1, o3, gpt-5.x) reject max_tokens outright.
+        kwargs: dict[str, Any] = {"max_completion_tokens": max_tokens}
         if output_schema:
             response = client.beta.chat.completions.parse(
                 model=model,
                 messages=[{"role": "user", "content": prompt}],
                 response_format=output_schema,
-                max_tokens=max_tokens,
+                **kwargs,
             )
             tokens_in = response.usage.prompt_tokens
             tokens_out = response.usage.completion_tokens
@@ -201,7 +236,7 @@ class LLMRouter:
             response = client.chat.completions.create(
                 model=model,
                 messages=[{"role": "user", "content": prompt}],
-                max_tokens=max_tokens,
+                **kwargs,
             )
             tokens_in = response.usage.prompt_tokens
             tokens_out = response.usage.completion_tokens
@@ -215,7 +250,23 @@ class LLMRouter:
         max_tokens: int,
     ) -> tuple[T | str, int, int]:
         client = self._get_google()
-        response = client.models.generate_content(model=model, contents=prompt)
+        try:
+            response = client.models.generate_content(model=model, contents=prompt)
+        except Exception as exc:
+            # Convert quota/rate-limit errors into ProviderUnavailable so
+            # call() can fall back to OpenAI.
+            error_type = type(exc).__name__.lower()
+            error_msg = str(exc).lower()
+            if (
+                "resourceexhausted" in error_type
+                or "quota" in error_type
+                or "ratelimit" in error_type
+                or "429" in error_msg
+                or "resource_exhausted" in error_msg
+                or "quota" in error_msg
+            ):
+                raise ProviderUnavailable("google", str(exc)) from exc
+            raise
         text = response.text
         # google-genai SDK provides usage_metadata when available; fall back to estimate
         usage = getattr(response, "usage_metadata", None)

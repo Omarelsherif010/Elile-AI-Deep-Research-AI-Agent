@@ -83,6 +83,23 @@ class Claim(BaseModel):
     extraction_confidence: float
     asserted_at: datetime | None = None
 
+    @field_validator("asserted_at", mode="before")
+    @classmethod
+    def coerce_asserted_at(cls, v: Any) -> datetime | None:
+        """Coerce non-datetime strings (e.g. 'unknown') to None."""
+        if v is None:
+            return None
+        if isinstance(v, str):
+            v_lower = v.strip().lower()
+            if v_lower in ("unknown", "null", "none", "", "n/a"):
+                return None
+            # Try ISO8601 parse
+            try:
+                return datetime.fromisoformat(v_lower.replace("z", "+00:00"))
+            except ValueError:
+                return None
+        return v
+
     @field_validator("source_urls")
     @classmethod
     def source_urls_must_have_at_least_one(cls, v: list[str]) -> list[str]:
