@@ -22,7 +22,7 @@ planted_facts:
     match_threshold: 100.0
     notes: Headline fact in opening paragraph.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/index.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/index.html
 
   - id: fact_b02
     statement: Dorian Ashcroft holds a Bachelor of Science in Geology from the University of Ashford.
@@ -33,7 +33,7 @@ planted_facts:
     match_threshold: 80.0
     notes: Education in biography page.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/index.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/index.html
 
   - id: fact_b03
     statement: Ashcroft Energy Holdings was founded in 2008.
@@ -44,7 +44,7 @@ planted_facts:
     match_threshold: 100.0
     notes: Company founding year clearly stated.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/index.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/index.html
 
   # Medium tier
   - id: fact_b04
@@ -56,7 +56,7 @@ planted_facts:
     match_threshold: 80.0
     notes: Board role in about page.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/about.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/about.html
 
   - id: fact_b05
     statement: Ashcroft Energy Holdings operates solar installations in the fictional nation of Kondar.
@@ -67,7 +67,7 @@ planted_facts:
     match_threshold: 80.0
     notes: Operational geography in about page.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/about.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/about.html
 
   - id: fact_b06
     statement: Dorian Ashcroft holds a 35% equity stake in Ashcroft Energy Holdings.
@@ -78,7 +78,7 @@ planted_facts:
     match_threshold: 80.0
     notes: Equity stake in portfolio page.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/portfolio.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/portfolio.html
 
   - id: fact_b07
     statement: Ashcroft Energy Holdings reported revenue of 120 million pounds in fiscal year 2023.
@@ -89,7 +89,7 @@ planted_facts:
     match_threshold: 75.0
     notes: Revenue figure in portfolio page; specific number.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/portfolio.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/portfolio.html
 
   # Hard tier — requires cross-referencing; contradictory statements
   - id: fact_b08
@@ -101,7 +101,7 @@ planted_facts:
     match_threshold: 0.75
     notes: Statement in portfolio page. Contradicts fact_b09 planted in filings page.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/portfolio.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/portfolio.html
 
   - id: fact_b09
     statement: Regulatory filings with the Kondar Energy Commission show Ashcroft Energy Holdings holds a power purchase agreement with Kondar Grid Authority, a state-owned utility.
@@ -112,7 +112,7 @@ planted_facts:
     match_threshold: 0.75
     notes: Filing page reveals the opposite of the annual report statement. Tests cross-page inconsistency detection.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/filings.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/filings.html
 
   - id: fact_b10
     statement: Dorian Ashcroft transferred a 12% personal stake in Ashcroft Energy Holdings to the Meridian Trust in 2021.
@@ -123,8 +123,8 @@ planted_facts:
     match_threshold: 70.0
     notes: Trust transfer detail requires connecting portfolio page holdings with filings page beneficial ownership disclosure.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/portfolio.html
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/filings.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/portfolio.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/filings.html
 
 planted_risks:
   - id: risk_b01
@@ -135,7 +135,7 @@ planted_risks:
       through a joint venture in the Niger Delta. Mr. Adeyemi was designated
       by OFAC in November 2019.
     evidence_source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/filings.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/filings.html
 
   - id: risk_b02
     risk_category: INCONSISTENCY
@@ -145,5 +145,5 @@ planted_risks:
       report states no direct contracts, but regulatory filings show a power
       purchase agreement with Kondar Grid Authority.
     evidence_source_urls:
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/portfolio.html
-      - https://example.github.io/research-agent-plant-site/dorian-ashcroft/filings.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/portfolio.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/dorian-ashcroft/filings.html
