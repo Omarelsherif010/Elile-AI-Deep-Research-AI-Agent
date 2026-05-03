@@ -1,0 +1,33 @@
+{
+  "iteration": 1,
+  "sub_questions": [
+    {
+      "id": "bio_disambiguation",
+      "dimension": "biographical",
+      "question": "Confirm the correct Alexandra Chen (CEO of Meridian Capital Partners, Singapore)",
+      "rationale": "Identity disambiguation is mandatory on first pass",
+      "answer_criteria": "LinkedIn URL or company bio page tying name to role",
+      "initial_query": "Alexandra Chen Meridian Capital Partners CEO Singapore",
+      "priority": 1
+    },
+    {
+      "id": "prof_current_role",
+      "dimension": "professional_history",
+      "question": "When did Alexandra Chen become CEO of Meridian Capital Partners?",
+      "rationale": "Establishes the central professional fact",
+      "answer_criteria": "Start date for CEO role with source",
+      "initial_query": "Alexandra Chen appointed CEO Meridian Capital Partners",
+      "priority": 1
+    },
+    {
+      "id": "risk_regulatory",
+      "dimension": "risk_surface",
+      "question": "Are there regulatory actions or lawsuits involving Alexandra Chen or Meridian Capital?",
+      "rationale": "Direct risk surface",
+      "answer_criteria": "Cited filings or confident negative",
+      "initial_query": "Alexandra Chen Meridian Capital regulatory MAS Singapore",
+      "priority": 1
+    }
+  ],
+  "plan_notes": "Iteration 1: prioritize disambiguation and risk surface."
+}

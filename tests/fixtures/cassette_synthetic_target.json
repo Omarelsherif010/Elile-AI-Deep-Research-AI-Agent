@@ -1,0 +1,19 @@
+{
+  "target": "Alexandra Chen",
+  "search_responses": {
+    "brave_alexandra_chen_meridian": {
+      "provider": "brave",
+      "query": "Alexandra Chen Meridian Capital Partners CEO Singapore",
+      "results": [
+        {
+          "url": "https://meridian-capital.example.com/team",
+          "title": "Team - Meridian Capital Partners",
+          "snippet": "Alexandra Chen is the Chief Executive Officer of Meridian Capital Partners. She joined from DBS Bank where she served as Managing Director from 2012 to 2018.",
+          "content": "<source url=\"https://meridian-capital.example.com/team\">Alexandra Chen is the Chief Executive Officer of Meridian Capital Partners, a Singapore-based alternative investment firm. She joined from DBS Bank where she served as Managing Director from 2012 to 2018. Ms. Chen holds an MBA from INSEAD (2009).</source>",
+          "retrieved_at": "2026-05-03T12:00:00Z",
+          "provider": "brave"
+        }
+      ]
+    }
+  }
+}

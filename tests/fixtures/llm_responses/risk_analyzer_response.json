@@ -1,0 +1,21 @@
+{
+  "risk_flags": [
+    {
+      "type": "COVERAGE_GAP",
+      "severity": "LOW",
+      "description": "Financial connections dimension has no validated claims",
+      "evidence_claim_ids": [],
+      "confidence": 1.0,
+      "justification": null
+    },
+    {
+      "type": "COVERAGE_GAP",
+      "severity": "LOW",
+      "description": "Network dimension has no validated claims",
+      "evidence_claim_ids": [],
+      "confidence": 1.0,
+      "justification": null
+    }
+  ],
+  "analysis_notes": "Only two dimensions covered in this test run. COVERAGE_GAP flags generated for uncovered dimensions."
+}

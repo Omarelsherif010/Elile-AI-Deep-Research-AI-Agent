@@ -1,0 +1,25 @@
+{
+  "validations": [
+    {
+      "claim_id": "claim-001",
+      "source_tier_assignments": {"https://meridian-capital.example.com/team": 3},
+      "n_independent_domains": 1,
+      "is_timeless": false,
+      "months_old": 6,
+      "contradicting_claim_ids": [],
+      "contradictions_max_tier": null,
+      "validation_notes": "Tier 3 source (company website, self-attestation). Single domain — capped at 0.49."
+    },
+    {
+      "claim_id": "claim-002",
+      "source_tier_assignments": {"https://meridian-capital.example.com/team": 3},
+      "n_independent_domains": 1,
+      "is_timeless": false,
+      "months_old": 72,
+      "contradicting_claim_ids": [],
+      "contradictions_max_tier": null,
+      "validation_notes": "Historical role, Tier 3 source, older content."
+    }
+  ],
+  "rejected_claim_ids": []
+}
