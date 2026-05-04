@@ -22,15 +22,21 @@ class ConfidenceWeights:
 def load_weights() -> ConfidenceWeights:
     """Load confidence weights from env vars, falling back to defaults."""
     defaults = ConfidenceWeights()
-    authority = float(os.environ.get("CONFIDENCE_WEIGHT_AUTHORITY", defaults.authority))
-    corroboration = float(os.environ.get("CONFIDENCE_WEIGHT_CORROBORATION", defaults.corroboration))
-    recency = float(os.environ.get("CONFIDENCE_WEIGHT_RECENCY", defaults.recency))
-    consistency = float(os.environ.get("CONFIDENCE_WEIGHT_CONSISTENCY", defaults.consistency))
+
+    def _env_float(key: str, default: float) -> float:
+        val = os.environ.get(key, "")
+        if not val:
+            return default
+        try:
+            return float(val)
+        except ValueError:
+            return default
+
     return ConfidenceWeights(
-        authority=authority,
-        corroboration=corroboration,
-        recency=recency,
-        consistency=consistency,
+        authority=_env_float("CONFIDENCE_WEIGHT_AUTHORITY", defaults.authority),
+        corroboration=_env_float("CONFIDENCE_WEIGHT_CORROBORATION", defaults.corroboration),
+        recency=_env_float("CONFIDENCE_WEIGHT_RECENCY", defaults.recency),
+        consistency=_env_float("CONFIDENCE_WEIGHT_CONSISTENCY", defaults.consistency),
     )
 
 

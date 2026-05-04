@@ -125,6 +125,16 @@ def _build_validation_map(validations: list) -> dict[str, object]:
     return result
 
 
+def _safe_int(val: object, default: int) -> int:
+    """Convert a value to int, returning default on any failure."""
+    if val is None or val == "":
+        return default
+    try:
+        return int(val)
+    except (ValueError, TypeError):
+        return default
+
+
 def _extract_validation_params(
     v: object,
 ) -> tuple[int, int, bool, int, int | None, str]:
@@ -134,17 +144,20 @@ def _extract_validation_params(
         return defaults
 
     if isinstance(v, dict):
-        n_domains = int(v.get("n_independent_domains", 1))
+        n_domains = _safe_int(v.get("n_independent_domains"), 1)
         tier_assignments: dict = v.get("source_tier_assignments", {})
         if tier_assignments:
-            max_tier = min(int(t) for t in tier_assignments.values())
+            tiers = [_safe_int(t, 4) for t in tier_assignments.values()]
+            max_tier = min(tiers) if tiers else 4
         else:
             max_tier = 4
         is_timeless = bool(v.get("is_timeless", True))
-        months_old = int(v.get("months_old", 0))
+        months_old = _safe_int(v.get("months_old"), 0)
         contradictions_max_tier = v.get("contradictions_max_tier")
-        if contradictions_max_tier is not None:
-            contradictions_max_tier = int(contradictions_max_tier)
+        if contradictions_max_tier is not None and contradictions_max_tier != "":
+            contradictions_max_tier = _safe_int(contradictions_max_tier, None)
+        else:
+            contradictions_max_tier = None
         notes = str(v.get("validation_notes", ""))
         return n_domains, max_tier, is_timeless, months_old, contradictions_max_tier, notes
 
