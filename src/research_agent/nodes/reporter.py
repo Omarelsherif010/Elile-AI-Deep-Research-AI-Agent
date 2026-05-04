@@ -120,11 +120,11 @@ def _generate_markdown(
         if isinstance(result_raw, str):
             try:
                 parsed = json.loads(result_raw)
-                if isinstance(parsed, dict) and "markdown" in parsed:
+                if isinstance(parsed, dict) and isinstance(parsed.get("markdown"), str):
                     report_markdown = parsed["markdown"]
                 else:
                     report_markdown = result_raw
-            except (json.JSONDecodeError, KeyError):
+            except json.JSONDecodeError:
                 report_markdown = result_raw
         elif hasattr(result_raw, "markdown"):
             report_markdown = str(result_raw.markdown)

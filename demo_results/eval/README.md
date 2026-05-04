@@ -65,6 +65,8 @@ A real eval run of the synthetic persona (Aria Vellinor) against the live agent 
 - 0.49 ECE (poor calibration because no planted facts were matched)
 - 950s runtime, 42 search calls
 
+**Note on metrics:** `iterations_used: 0` counts reflector loop completions (not search passes); the initial search pass runs before the first reflector decision. `cost_dollars: 0.0` tracks LLM token spend only; search API fees are tracked separately by the search provider and are not included in this metric.
+
 This result honestly shows the search provider limitation described above.
 
 ### `fixture_replay_synthetic_a/`
@@ -105,6 +107,6 @@ python -m eval validate-persona --all
 ## Metrics Interpretation
 
 - **Recall by tier:** Easy facts should have higher recall than hard facts. If easy recall is 0%, the search provider likely didn't find the target.
-- **Precision:** For real public figures, precision should be high (>0.8) since facts are verifiable. For synthetic personas, precision is undefined (no claims to verify).
+- **Precision:** For real public figures, precision should be high (>0.8) since facts are verifiable. For synthetic personas, the agent may still find claims via name collisions with real entities — precision measures the accuracy of whatever claims the agent found, not planted-fact coverage.
 - **ECE (Expected Calibration Error):** Lower is better. ECE < 0.15 indicates well-calibrated confidence scores. High ECE means the agent is over- or under-confident.
 - **Risk recall:** What fraction of planted risk patterns did the agent identify? Only applicable when `planted_risks` is non-empty.

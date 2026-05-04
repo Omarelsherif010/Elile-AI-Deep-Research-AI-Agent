@@ -168,9 +168,9 @@ streamlit_app.py        # Interactive demo UI
 
 | Requirement | Status | Implementation |
 |-------------|--------|---------------|
-| **Deep Fact Extraction** (biographical, professional, financial, behavioral) | **Done** | Extractor processes each search result through GPT-5.4 Mini, produces subject-predicate-object claims. 320 claims extracted for Timothy Overturf |
+| **Deep Fact Extraction** (biographical, professional, financial, behavioral) | **Done** | Extractor processes each search result through GPT-5.4 Mini, produces subject-predicate-object claims. 670 claims extracted for Timothy Overturf |
 | **Risk Pattern Recognition** (red flags, inconsistencies) | **Done** | Risk analyzer classifies against 7-category taxonomy (REGULATORY, REPUTATIONAL, FINANCIAL, NETWORK, INCONSISTENCY, COVERAGE_GAP, OTHER) with 4 severity levels. Found CRITICAL SEC enforcement action for Overturf |
-| **Connection Mapping** (entities, organizations, events) | **Done** | Graph builder maps 43 entities and 121 relationships for Timothy Overturf. Exported as `graph_export.json` with typed nodes (PERSON, ORGANIZATION, EVENT) and edges |
+| **Connection Mapping** (entities, organizations, events) | **Done** | Graph builder maps 69 entities and 258 relationships for Timothy Overturf. Exported as `graph_export.json` with typed nodes (PERSON, ORGANIZATION, EVENT) and edges |
 | **Source Validation** (confidence scoring, cross-referencing) | **Done** | Validator cross-references claims, assigns 4-tier source classification, computes deterministic 4-factor confidence score. See `confidence.py` |
 
 ### Implementation Guidelines

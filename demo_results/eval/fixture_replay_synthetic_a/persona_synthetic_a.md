@@ -1,6 +1,6 @@
 # persona_synthetic_a — Eval Report
 
-**Run ID**: ``  
+**Run ID**: `e2e_demo_004-replay-20260503_181235`  
 **Timestamp**: 2026-05-03T18:12:40.158827+00:00  
 
 ## Summary
@@ -17,9 +17,9 @@
 
 | Tier | Recall | Found / Total |
 |------|--------|---------------|
-| easy | 1.00 | 0 / 0 |
-| medium | 0.75 | 0 / 0 |
-| hard | 0.50 | 0 / 0 |
+| easy | 1.00 | 4 / 4 |
+| medium | 0.75 | 3 / 4 |
+| hard | 0.50 | 2 / 4 |
 
 ## Precision
 
