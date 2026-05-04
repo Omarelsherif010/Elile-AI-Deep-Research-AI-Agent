@@ -1,0 +1,1843 @@
+{
+  "entities": [
+    {
+      "id": "f5a7b8c9-d012-4e34-bf01-5c6d7e8f9012",
+      "type": "ORGANIZATION",
+      "canonical_name": "Sisu Capital, LLC",
+      "aliases": [
+        "Sisu Capital, LLC",
+        "Sisu Capital LLC"
+      ],
+      "attributes": {
+        "status": "now-defunct",
+        "role_in_source": "investment advisory firm",
+        "role": "investment advisory firm",
+        "location": "Mill Valley, California",
+        "type": "investment advisory firm",
+        "organization_type": "investment firm"
+      },
+      "confidence": 0.99
+    },
+    {
+      "id": "a6b8c9d0-e123-4f45-c012-6d7e8f901234",
+      "type": "ORGANIZATION",
+      "canonical_name": "Securities and Exchange Commission",
+      "aliases": [
+        "SEC",
+        "Securities and Exchange Commission",
+        "U.S. Securities and Exchange Commission"
+      ],
+      "attributes": {
+        "jurisdiction": "United States",
+        "role": "regulatory agency"
+      },
+      "confidence": 0.99
+    },
+    {
+      "id": "b7c9d0e1-f234-4a56-d123-7e8f90123456",
+      "type": "EVENT",
+      "canonical_name": "SEC complaint in federal court filed on 2023-08-01",
+      "aliases": [
+        "SEC complaint",
+        "SEC complaint filed in federal court on 2023-08-01"
+      ],
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.88
+    },
+    {
+      "id": "c8d0e1f2-3456-4a67-e234-8f9012345678",
+      "type": "PERSON",
+      "canonical_name": "Hansueli Overturf",
+      "aliases": [
+        "Hans Overturf",
+        "Hansueli Overturf"
+      ],
+      "attributes": {
+        "relation_to_target": "father",
+        "role": "suspended investment advisor",
+        "crd": "4138916",
+        "location": "Switzerland",
+        "status": "suspended investment advisor"
+      },
+      "confidence": 0.94
+    },
+    {
+      "id": "9f8e7d6c-5b4a-3c2d-1e0f-9a8b7c6d5e4f",
+      "type": "EVENT",
+      "canonical_name": "SEC enforcement action against Timothy Overturf",
+      "aliases": [
+        "SEC charged Timothy Overturf"
+      ],
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "f2f2a2a1-8d44-4d2b-b7f8-1d2b7a4f9c11",
+      "type": "ORGANIZATION",
+      "canonical_name": "Sisu Capital",
+      "aliases": [
+        "Sisu Capital"
+      ],
+      "attributes": {},
+      "confidence": 0.99
+    },
+    {
+      "id": "2f9d7a1c-8a3e-4b0a-9d8a-7c5b1e2f3d4a",
+      "type": "EVENT",
+      "canonical_name": "SEC v. Sisu Capital, LLC, et al.",
+      "aliases": [
+        "SEC v. Sisu Capital, LLC, ET AL.",
+        "SEC v. Sisu Capital, LLC, et al."
+      ],
+      "attributes": {
+        "document_type": "SEC complaint",
+        "jurisdiction": "US SEC"
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "d2e3f4a5-b6c7-4890-9d1e-2f3a4b5c6d70",
+      "type": "EVENT",
+      "canonical_name": "SEC complaint filed in federal court",
+      "aliases": [
+        "SEC complaint in federal court",
+        "SEC complaint filed in federal court"
+      ],
+      "attributes": {
+        "date": "2023-08-01",
+        "actor": "Securities and Exchange Commission"
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "f3a1b2c4-8d6e-4f9a-a7b1-2c3d4e5f6071",
+      "type": "EVENT",
+      "canonical_name": "SEC Litigation Release LR-25807",
+      "aliases": [
+        "LR-25807"
+      ],
+      "attributes": {
+        "issuer": "SEC"
+      },
+      "confidence": 0.99
+    },
+    {
+      "id": "7e6f5d4c-3b2a-4d9c-8f7e-1a2b3c4d5e6f",
+      "type": "PERSON",
+      "canonical_name": "Hans",
+      "aliases": [
+        "Hans"
+      ],
+      "attributes": {},
+      "confidence": 0.78
+    },
+    {
+      "id": "8f7e6d5c-4b3a-4e9d-8f6e-2a3b4c5d6e7f",
+      "type": "ORGANIZATION",
+      "canonical_name": "SEC",
+      "aliases": [
+        "the SEC",
+        "SEC"
+      ],
+      "attributes": {},
+      "confidence": 0.97
+    },
+    {
+      "id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+      "type": "ORGANIZATION",
+      "canonical_name": "community banks",
+      "aliases": [
+        "community banks",
+        "Community banks"
+      ],
+      "attributes": {},
+      "confidence": 0.84
+    },
+    {
+      "id": "f4a4d5e6-6f7a-4c4d-9e0f-4d5e6f7a8b9c",
+      "type": "ORGANIZATION",
+      "canonical_name": "Sisu",
+      "aliases": [
+        "Sisu"
+      ],
+      "attributes": {
+        "context": "previous role"
+      },
+      "confidence": 0.99
+    },
+    {
+      "id": "1b3a2c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "type": "PERSON",
+      "canonical_name": "Timothy Silas Prugh Overturf",
+      "aliases": [
+        "Timothy Overturf",
+        "Timothy Silas Prugh Overturf"
+      ],
+      "attributes": {},
+      "confidence": 0.88
+    },
+    {
+      "id": "c1d2e3f4-a5b6-4789-cdef-2345678901ab",
+      "type": "EVENT",
+      "canonical_name": "SEC action against Timothy Overturf and Sisu Capital, LLC",
+      "aliases": [
+        "SEC enforcement action against Timothy Overturf and Sisu Capital, LLC",
+        "SEC charge against Timothy Overturf and Sisu Capital, LLC"
+      ],
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.96
+    },
+    {
+      "id": "7d6c5b4a-3f2e-1d0c-9b8a-7f6e5d4c3b44",
+      "type": "ORGANIZATION",
+      "canonical_name": "clients",
+      "aliases": [],
+      "attributes": {
+        "context": "Sisu Capital client interaction"
+      },
+      "confidence": 0.72
+    },
+    {
+      "id": "9c5e4d7f-3a2b-4a1d-8f2c-1f8d7b6a3d10",
+      "type": "EVENT",
+      "canonical_name": "SEC complaint filed on 2023-08-01",
+      "aliases": [],
+      "attributes": {
+        "jurisdiction": "federal court",
+        "date": "2023-08-01"
+      },
+      "confidence": 0.91
+    },
+    {
+      "id": "a6f5c1d9-9b0e-4aef-8f62-8f2d3f2c1a77",
+      "type": "ORGANIZATION",
+      "canonical_name": "State of California",
+      "aliases": [
+        "State of California"
+      ],
+      "attributes": {
+        "jurisdiction": "California"
+      },
+      "confidence": 0.98
+    },
+    {
+      "id": "a9b8c7d6-e5f4-4321-9abc-def012345678",
+      "type": "ORGANIZATION",
+      "canonical_name": "Sisu venture",
+      "aliases": [
+        "new Sisu venture",
+        "Sisu venture"
+      ],
+      "attributes": {
+        "description": "works with community banks to increase the financial well-being of their clients"
+      },
+      "confidence": 0.78
+    },
+    {
+      "id": "c1111111-2222-4333-8444-555555555555",
+      "type": "ORGANIZATION",
+      "canonical_name": "Arcata Theatre Lounge",
+      "aliases": [
+        "Arcata Theatre Lounge"
+      ],
+      "attributes": {
+        "location": "Arcata, California"
+      },
+      "confidence": 0.98
+    },
+    {
+      "id": "d1111111-2222-4333-8444-555555555555",
+      "type": "ORGANIZATION",
+      "canonical_name": "itsMove",
+      "aliases": [],
+      "attributes": {},
+      "confidence": 0.99
+    },
+    {
+      "id": "c2d3e4f5-a6b7-48c9-0d1e-2f3a4b5c6d78",
+      "type": "ORGANIZATION",
+      "canonical_name": "P-Fund",
+      "aliases": [
+        "P-Fund"
+      ],
+      "attributes": {},
+      "confidence": 0.9
+    },
+    {
+      "id": "d3e4f5a6-b7c8-49d0-1e2f-3a4b5c6d7e89",
+      "type": "ORGANIZATION",
+      "canonical_name": "e-fon",
+      "aliases": [
+        "e-fon"
+      ],
+      "attributes": {
+        "context": "previous role"
+      },
+      "confidence": 0.9
+    },
+    {
+      "id": "e4f5a6b7-c8d9-40e1-2f3a-4b5c6d7e8f90",
+      "type": "ORGANIZATION",
+      "canonical_name": "Overturf Financial Services",
+      "aliases": [
+        "Overturf Financial Services"
+      ],
+      "attributes": {
+        "context": "previous role"
+      },
+      "confidence": 0.96
+    },
+    {
+      "id": "7c3f8f6d-3c2c-4d3f-a1f4-4d3d9d2f0b21",
+      "type": "PERSON",
+      "canonical_name": "Joseph Ostini",
+      "aliases": [
+        "Joseph Ostini"
+      ],
+      "attributes": {
+        "role": "business partner"
+      },
+      "confidence": 0.95
+    },
+    {
+      "id": "8c0d4e5f-7a9b-4c1d-0e2f-4a5b6c7d8e11",
+      "type": "ORGANIZATION",
+      "canonical_name": "Captains Fund",
+      "aliases": [],
+      "attributes": {
+        "context": "previous role"
+      },
+      "confidence": 0.6
+    },
+    {
+      "id": "2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e",
+      "type": "ORGANIZATION",
+      "canonical_name": "KlaymanToskes",
+      "aliases": [],
+      "attributes": {
+        "role": "law firm"
+      },
+      "confidence": 0.9
+    },
+    {
+      "id": "a7b8c9d0-1e2f-4a3b-9c34-567890cdef12",
+      "type": "PERSON",
+      "canonical_name": "Hansueli \u201cHans\u201d Overturf",
+      "aliases": [
+        "Hans Overturf"
+      ],
+      "attributes": {
+        "relationship_to_Timothy_Overturf": "father"
+      },
+      "confidence": 0.97
+    },
+    {
+      "id": "1d2e3f4a-5b6c-7d8e-9f0a-1b2c3d4e5f77",
+      "type": "EVENT",
+      "canonical_name": "SEC complaint in federal court against Timothy Overturf and Sisu Capital, LLC",
+      "aliases": [
+        "SEC complaint"
+      ],
+      "attributes": {
+        "date": "2023-08-18"
+      },
+      "confidence": 0.9
+    },
+    {
+      "id": "4e5f6a7b-8c9d-4e0f-a1b2-c3d4e5f6a7b8",
+      "type": "EVENT",
+      "canonical_name": "SEC complaint in federal court in San Francisco",
+      "aliases": [],
+      "attributes": {
+        "jurisdiction": "federal court",
+        "location": "San Francisco"
+      },
+      "confidence": 0.9
+    },
+    {
+      "id": "5f4f9f1c-8b6f-4f3d-9d1d-1d3a5f7b2c9a",
+      "type": "EVENT",
+      "canonical_name": "SEC complaint involving Timothy Overturf and Sisu Capital",
+      "aliases": [],
+      "attributes": {},
+      "confidence": 0.91
+    },
+    {
+      "id": "e1a2b3c4-d5e6-4789-abcd-0123456789ab",
+      "type": "ORGANIZATION",
+      "canonical_name": "Two companies",
+      "aliases": [],
+      "attributes": {},
+      "confidence": 0.55
+    },
+    {
+      "id": "0d9d5a9d-7f19-4ce5-95f5-7b8c7bb7f3c1",
+      "type": "ORGANIZATION",
+      "canonical_name": "Timothy Overturf Properties",
+      "aliases": [
+        "Timothy Overturf Properties"
+      ],
+      "attributes": {
+        "source_context": "LinkedIn experience entry",
+        "website": "timothyoverturfproperties.com"
+      },
+      "confidence": 0.9
+    },
+    {
+      "id": "2b3c4d5e-6f78-4a90-abcd-ef1234567890",
+      "type": "EVENT",
+      "canonical_name": "SEC complaint",
+      "aliases": [],
+      "attributes": {
+        "jurisdiction": "United States"
+      },
+      "confidence": 0.93
+    },
+    {
+      "id": "3f8e7a1c-2b5d-4d6d-9f2c-1c0d8f7e4a11",
+      "type": "ORGANIZATION",
+      "canonical_name": "Sisu Extracts",
+      "aliases": [],
+      "attributes": {},
+      "confidence": 0.86
+    },
+    {
+      "id": "2b8c7d6e-1a3f-4d5e-9b0a-7c6d5e4f3a2b",
+      "type": "EVENT",
+      "canonical_name": "new Sisu venture with community banks",
+      "aliases": [],
+      "attributes": {
+        "description": "Sisu venture that works with community banks to increase the financial ..."
+      },
+      "confidence": 0.72
+    },
+    {
+      "id": "d2e3f4a5-b6c7-4890-9bcd-234567890abc",
+      "type": "ORGANIZATION",
+      "canonical_name": "LinkedIn",
+      "aliases": [],
+      "attributes": {},
+      "confidence": 0.99
+    },
+    {
+      "id": "2e9a4f1b-6c7d-4a8e-9f1c-3d2e7b8c9a01",
+      "type": "EVENT",
+      "canonical_name": "new Sisu venture",
+      "aliases": [
+        "new Sisu venture"
+      ],
+      "attributes": {
+        "description": "venture that works with community banks to increase the financial",
+        "context": "works with community banks"
+      },
+      "confidence": 0.76
+    },
+    {
+      "id": "c5d4e3f2-9b6a-4f4e-8d88-3c4d5e6f7082",
+      "type": "EVENT",
+      "canonical_name": "SEC complaint involving Sisu Capital and Timothy Overturf",
+      "aliases": [],
+      "attributes": {},
+      "confidence": 0.9
+    },
+    {
+      "id": "c8c1c7a4-3b8d-4a1b-9a55-6f4d4e9d2e10",
+      "type": "ORGANIZATION",
+      "canonical_name": "U.S. Naval Institute",
+      "aliases": [
+        "U.S. Naval Institute"
+      ],
+      "attributes": {
+        "publication": "Proceedings magazine"
+      },
+      "confidence": 0.96
+    },
+    {
+      "id": "1a4d7b2c-6c1f-4b6c-9d1a-0b7d4f2c8e11",
+      "type": "ORGANIZATION",
+      "canonical_name": "Arcata Theatre",
+      "aliases": [],
+      "attributes": {},
+      "confidence": 0.98
+    },
+    {
+      "id": "5c9e8a1f-2d3b-4c7a-9f0d-1b2c3d4e5f60",
+      "type": "ORGANIZATION",
+      "canonical_name": "company",
+      "aliases": [],
+      "attributes": {},
+      "confidence": 0.62
+    },
+    {
+      "id": "c1f6a8e9-5a2d-4f0c-8f12-3c4b7d8e9a33",
+      "type": "ORGANIZATION",
+      "canonical_name": "Proceedings magazine",
+      "aliases": [
+        "Proceedings"
+      ],
+      "attributes": {},
+      "confidence": 0.94
+    }
+  ],
+  "relations": [
+    {
+      "subject_entity_id": "f5a7b8c9-d012-4e34-bf01-5c6d7e8f9012",
+      "predicate": "is_subject_of_regulatory_action",
+      "object_entity_id": "b7c9d0e1-f234-4a56-d123-7e8f90123456",
+      "attributes": {},
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "c2d4e5f6-a789-4b01-8cde-2f3a4b5c6d78"
+      ]
+    },
+    {
+      "subject_entity_id": "a6b8c9d0-e123-4f45-c012-6d7e8f901234",
+      "predicate": "filed",
+      "object_entity_id": "b7c9d0e1-f234-4a56-d123-7e8f90123456",
+      "attributes": {},
+      "confidence": 0.94,
+      "evidence_claim_ids": [
+        "c2d4e5f6-a789-4b01-8cde-2f3a4b5c6d78"
+      ]
+    },
+    {
+      "subject_entity_id": "c8d0e1f2-3456-4a67-e234-8f9012345678",
+      "predicate": "is_family_member_of",
+      "object_entity_id": "Timothy Overturf",
+      "attributes": {
+        "relation": "father"
+      },
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "b1c3d4e5-f678-4a90-9abc-1d2e3f4a5b67"
+      ]
+    },
+    {
+      "subject_entity_id": "6a2b4c8d-1e3f-4a5b-9c0d-2e4f6a7b8c9d",
+      "predicate": "took_action_against",
+      "object_entity_id": "9f8e7d6c-5b4a-3c2d-1e0f-9a8b7c6d5e4f",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "d7d7c8a8-0b6c-4d6f-8f2f-7b6f0fb1b6e1"
+      ]
+    },
+    {
+      "subject_entity_id": "9f8e7d6c-5b4a-3c2d-1e0f-9a8b7c6d5e4f",
+      "predicate": "involves",
+      "object_entity_id": "1d2c3b4a-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "9c1f8d3f-3c5c-4b6f-8e8a-1a5b3d4f2b11"
+      ]
+    },
+    {
+      "subject_entity_id": "f2f2a2a1-8d44-4d2b-b7f8-1d2b7a4f9c11",
+      "predicate": "founded_by",
+      "object_entity_id": "f2f2a2a1-8d44-4d2b-b7f8-1d2b7a4f9c11",
+      "attributes": {},
+      "confidence": 0.0,
+      "evidence_claim_ids": []
+    },
+    {
+      "subject_entity_id": "9e6e6b2d-1f4b-4c6e-8f8f-2b0e9d7d4f1a",
+      "predicate": "is_subject_of_lawsuit",
+      "object_entity_id": "2f9d7a1c-8a3e-4b0a-9d8a-7c5b1e2f3d4a",
+      "attributes": {},
+      "confidence": 0.92,
+      "evidence_claim_ids": [
+        "1d5b1f7f-3a0c-4d3e-9b7f-6f7d4a5b8f2e"
+      ]
+    },
+    {
+      "subject_entity_id": "8c5e7b8a-7f0f-4a8c-9d2a-6d8f1d0b4b22",
+      "predicate": "employs",
+      "object_entity_id": "8c5e7b8a-7f0f-4a8c-9d2a-6d8f1d0b4b22",
+      "attributes": {
+        "note": "No separate person/entity relation extracted beyond target-role statements."
+      },
+      "confidence": 0.0,
+      "evidence_claim_ids": []
+    },
+    {
+      "subject_entity_id": "c1d2e3f4-5a6b-4789-8c0d-1e2f3a4b5c69",
+      "predicate": "is_subject_of_lawsuit",
+      "object_entity_id": "d2e3f4a5-b6c7-4890-9d1e-2f3a4b5c6d70",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "8f1b2c3d-9a4e-4f6a-b7c8-1d2e3f4a5b67"
+      ]
+    },
+    {
+      "subject_entity_id": "d2d4d7a0-3b7f-4c3d-9b1e-5e9c0a1f2b33",
+      "predicate": "was_suspended_from",
+      "object_entity_id": "b7d5c5ce-7c54-4e3f-a1bd-0f8a5b2a9c11",
+      "attributes": {
+        "context": "investment advisory services"
+      },
+      "confidence": 0.86,
+      "evidence_claim_ids": [
+        "2a8b6e7c-9c4b-4a0b-9e6c-5e4c1a7f8d20"
+      ]
+    },
+    {
+      "subject_entity_id": "6d5f4e3c-2b1a-4c9d-8e7f-0a1b2c3d4e5f",
+      "predicate": "collaborated_with",
+      "object_entity_id": "7e6f5d4c-3b2a-4d9c-8f7e-1a2b3c4d5e6f",
+      "attributes": {
+        "context": "alleged trading and stock purchase plan"
+      },
+      "confidence": 0.82,
+      "evidence_claim_ids": [
+        "c1a6d2d5-6f8b-4d4f-8d5b-2d7f0d2f7b4c"
+      ]
+    },
+    {
+      "subject_entity_id": "8f7e6d5c-4b3a-4e9d-8f6e-2a3b4c5d6e7f",
+      "predicate": "is_subject_of_lawsuit",
+      "object_entity_id": "6d5f4e3c-2b1a-4c9d-8e7f-0a1b2c3d4e5f",
+      "attributes": {
+        "context": "SEC complaint"
+      },
+      "confidence": 0.7,
+      "evidence_claim_ids": [
+        "8d6b9d6f-8b4c-4b6a-9d1f-7e0b0b7df6b1"
+      ]
+    },
+    {
+      "subject_entity_id": "a6b1f0d1-8e4d-4f7a-8d59-8c7b1d6f2e31",
+      "predicate": "founded_by",
+      "object_entity_id": "3fd4e2b9-4fb9-4c0a-8c2d-0e8bf4d2bfa1",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "3fd4e2b9-4fb9-4c0a-8c2d-0e8bf4d2bfa1"
+      ]
+    },
+    {
+      "subject_entity_id": "d4e5f6a7-8b9c-4d0e-9f1a-2b3c4d5e6f70",
+      "predicate": "works_with",
+      "object_entity_id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence_claim_ids": [
+        "c1a0b2d3-e4f5-4a6b-8c7d-9e0f1a2b3c4d"
+      ]
+    },
+    {
+      "subject_entity_id": "f4a4d5e6-6f7a-4c4d-9e0f-4d5e6f7a8b9c",
+      "predicate": "has_officer",
+      "object_entity_id": "c1f1a2c3-9d4e-4f1a-8b7c-1a2b3c4d5e6f",
+      "attributes": {
+        "role": "Chief Compliance Officer"
+      },
+      "confidence": 0.84,
+      "evidence_claim_ids": [
+        "c1f1a2c3-9d4e-4f1a-8b7c-1a2b3c4d5e6f",
+        "d2e2b3c4-8d5f-4a2b-9c7d-2b3c4d5e6f7a"
+      ]
+    },
+    {
+      "subject_entity_id": "8db3c0e7-6f9d-4d64-8b4f-0f4f6d3c2a91",
+      "predicate": "founded_by",
+      "object_entity_id": "8db3c0e7-6f9d-4d64-8b4f-0f4f6d3c2a91",
+      "attributes": {
+        "note": "Supported by claim that Timothy Overturf founded Sisu Capital."
+      },
+      "confidence": 0.0,
+      "evidence_claim_ids": [
+        "b9b6e9f1-4b29-4d2d-8f21-0d8f1a6d2a11"
+      ]
+    },
+    {
+      "subject_entity_id": "b7d1e2c3-9a8b-4c5d-8e1f-2a3b4c5d6e55",
+      "predicate": "charged",
+      "object_entity_id": "a5f2f4d9-6c55-4b7f-8a0d-6f2d3b8c1e44",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.98,
+      "evidence_claim_ids": [
+        "2d2a7e6f-5d4a-4d3d-8f7d-9d8f5a8b1b11"
+      ]
+    },
+    {
+      "subject_entity_id": "6c4f7f1d-2e6a-4e2a-9d6b-3a7b8c9d0e11",
+      "predicate": "was_organized_by",
+      "object_entity_id": "7d5e8a2c-3f7b-4c3d-8e7f-4b8c9d0e1f22",
+      "attributes": {},
+      "confidence": 0.68,
+      "evidence_claim_ids": [
+        "3b2d7f8a-8e4e-4d2b-9f7b-7c1a2d9e5f33"
+      ]
+    },
+    {
+      "subject_entity_id": "f1a2b3c4-d5e6-4f70-8a91-b2c3d4e5f601",
+      "predicate": "employs",
+      "object_entity_id": "0a1b2c3d-4e5f-4a6b-8c7d-9e0f1a2b3c40",
+      "attributes": {
+        "context": "new Sisu venture"
+      },
+      "confidence": 0.54,
+      "evidence_claim_ids": [
+        "d6e7f809-1234-4c5d-9e6f-7a8b9c0d1e22"
+      ]
+    },
+    {
+      "subject_entity_id": "f0b8eb64-5e53-4d9d-9b0e-3f7e6dbf2d31",
+      "predicate": "filed",
+      "object_entity_id": "2a3d8e2b-6d3b-4f5a-8a45-2f0d7e9b1c77",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.97,
+      "evidence_claim_ids": [
+        "7b0f9b3d-6d25-4b2d-9b0a-6df2c8c7a7f4",
+        "b48d6f3b-2e7d-4c9d-9d0d-0fd59ad4d4f6"
+      ]
+    },
+    {
+      "subject_entity_id": "d4f3f6d2-4e1b-4f2a-8d1d-5fdedc0d9a2a",
+      "predicate": "is_subject_of_lawsuit",
+      "object_entity_id": "2a3d8e2b-6d3b-4f5a-8a45-2f0d7e9b1c77",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.93,
+      "evidence_claim_ids": [
+        "c0ccca5a-8a5a-4f60-a2e5-63b1f1d1f9ad"
+      ]
+    },
+    {
+      "subject_entity_id": "b1c2d3e4-f5a6-4789-bcde-1234567890ab",
+      "predicate": "brought_action_against",
+      "object_entity_id": "c1d2e3f4-a5b6-4789-cdef-2345678901ab",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "8f3d2d3e-3a3d-4b50-9d93-9a6b1d3d3d11",
+        "e5f6a7b8-9c0d-4e1f-8a2b-3c4d5e6f7a55"
+      ]
+    },
+    {
+      "subject_entity_id": "c1d2e3f4-a5b6-4789-cdef-2345678901ab",
+      "predicate": "involves_entity",
+      "object_entity_id": "a1b2c3d4-e5f6-4789-abcd-0123456789ab",
+      "attributes": {},
+      "confidence": 0.92,
+      "evidence_claim_ids": [
+        "8f3d2d3e-3a3d-4b50-9d93-9a6b1d3d3d11",
+        "e5f6a7b8-9c0d-4e1f-8a2b-3c4d5e6f7a55"
+      ]
+    },
+    {
+      "subject_entity_id": "f0b0d1d8-7d3f-4d1e-8c8a-bb0f8b1f2f22",
+      "predicate": "founded_by",
+      "object_entity_id": "f0b0d1d8-7d3f-4d1e-8c8a-bb0f8b1f2f22",
+      "attributes": {},
+      "confidence": 0.0,
+      "evidence_claim_ids": [
+        "d6f4c1ad-9f02-4f91-8f4b-7f7e2dbd5a91"
+      ]
+    },
+    {
+      "subject_entity_id": "2d3f0a8d-7b1b-4cb8-8f7d-6d9a8d1d3b55",
+      "predicate": "is_subject_of_lawsuit",
+      "object_entity_id": "a1c5d9b8-2f6e-4a63-8b8f-1a2f6d3c7e91",
+      "attributes": {},
+      "confidence": 0.95,
+      "evidence_claim_ids": [
+        "0a4f3b74-0d3d-4ec3-9e58-9b6a88f2d2d1"
+      ]
+    },
+    {
+      "subject_entity_id": "9f1d2c3b-4a5e-4f6a-8b7c-1d2e3f4a5b66",
+      "predicate": "employs",
+      "object_entity_id": "7d6c5b4a-3f2e-1d0c-9b8a-7f6e5d4c3b44",
+      "attributes": {},
+      "confidence": 0.6,
+      "evidence_claim_ids": [
+        "2b0d2b0f-0e0d-4d65-ae7d-6d2b8c7e9c33"
+      ]
+    },
+    {
+      "subject_entity_id": "9f1d2c3b-4a5e-4f6a-8b7c-1d2e3f4a5b66",
+      "predicate": "works_with",
+      "object_entity_id": "8e7d6c5b-4a3f-2e1d-0c9b-8a7f6e5d4c55",
+      "attributes": {
+        "context": "new venture"
+      },
+      "confidence": 0.74,
+      "evidence_claim_ids": [
+        "3c3f4e5a-1a2b-4c6d-8e7f-9a0b1c2d3e44"
+      ]
+    },
+    {
+      "subject_entity_id": "f5c6a8b7-9d2f-4d19-9c1e-6f7a9e0d8c11",
+      "predicate": "was_charged_with",
+      "object_entity_id": "d1b2c3a4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "attributes": {},
+      "confidence": 0.91,
+      "evidence_claim_ids": [
+        "7c6a1c7f-4d0c-4b23-9f0c-6fd74d9b7f18"
+      ]
+    },
+    {
+      "subject_entity_id": "8d6d6d7e-6f65-4f7d-8c7d-2f0a9e7d8b2a",
+      "predicate": "founded_by",
+      "object_entity_id": "8d6d6d7e-6f65-4f7d-8c7d-2f0a9e7d8b2a",
+      "attributes": {},
+      "confidence": 0.0,
+      "evidence_claim_ids": [
+        "5f7b3e5f-1d4c-4f5d-9a10-4d2b8c0d8f6a"
+      ]
+    },
+    {
+      "subject_entity_id": "7c8f3b2a-1d4e-4f6a-9b0c-8d7e6f5a4b21",
+      "predicate": "is_subject_of_regulatory_action",
+      "object_entity_id": "3a9b2c1d-4e5f-4a6b-8c7d-9e0f1a2b3c44",
+      "attributes": {},
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "5a7d0e6e-1e1b-4b8f-9c0a-2f1d6b8e4f33"
+      ]
+    },
+    {
+      "subject_entity_id": "8e2f2a7d-8d5d-4a5e-b0c4-6d6e9d6c4b5f",
+      "predicate": "has_founder",
+      "object_entity_id": "8e2f2a7d-8d5d-4a5e-b0c4-6d6e9d6c4b5f",
+      "attributes": {
+        "note": "Founder/CEO text refers to Timothy Overturf and Sisu Capital; relation is represented via claims."
+      },
+      "confidence": 0.2,
+      "evidence_claim_ids": [
+        "7a6a4b4b-0a4f-4c53-9f6f-0b3b4c0e7c15",
+        "0d9e7c78-1f98-4f07-9b7c-3fcd2f7d2f9d"
+      ]
+    },
+    {
+      "subject_entity_id": "e4f5a6b7-c8d9-4012-def0-4567890123de",
+      "predicate": "employed_by",
+      "object_entity_id": "e4f5a6b7-c8d9-4012-def0-4567890123de",
+      "attributes": {},
+      "confidence": 0.0,
+      "evidence_claim_ids": []
+    },
+    {
+      "subject_entity_id": "4f1a8a4e-7b9b-4c86-a0a8-1e5d7a9d2b31",
+      "predicate": "is_subject_of_regulatory_action",
+      "object_entity_id": "f2b7d2e3-0e8d-4f6d-a8e2-2b9d1a9a7c55",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "2f6e0e7f-1d48-4f6f-9c0a-7f7d7d2f0a14"
+      ]
+    },
+    {
+      "subject_entity_id": "9c5e4d7f-3a2b-4a1d-8f2c-1f8d7b6a3d10",
+      "predicate": "involves",
+      "object_entity_id": "4f1a8a4e-7b9b-4c86-a0a8-1e5d7a9d2b31",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "2f6e0e7f-1d48-4f6f-9c0a-7f7d7d2f0a14"
+      ]
+    },
+    {
+      "subject_entity_id": "8f3a2b1c-4d5e-4f6a-9b7c-1d2e3f4a5b6c",
+      "predicate": "is_subject_of_regulatory_action",
+      "object_entity_id": "9a1b2c3d-4e5f-4a6b-8c7d-0e1f2a3b4c5d",
+      "attributes": {},
+      "confidence": 0.93,
+      "evidence_claim_ids": [
+        "5b6a3c1e-7f2d-4c4b-9f66-1d8b8d2d7f21"
+      ]
+    },
+    {
+      "subject_entity_id": "7c1f0c25-1b9f-4b3d-8b8b-2d8f7a9d6b11",
+      "predicate": "has_founder",
+      "object_entity_id": "7c1f0c25-1b9f-4b3d-8b8b-2d8f7a9d6b11",
+      "attributes": {},
+      "confidence": 0.0,
+      "evidence_claim_ids": [
+        "8f7d4c8a-0f7e-4d0f-8d4e-3f8b2e5db1a1"
+      ]
+    },
+    {
+      "subject_entity_id": "d2b2b0b6-0d4f-4f3f-8d0d-1d3f0b5d2a6d",
+      "predicate": "was_suspended_by",
+      "object_entity_id": "a6f5c1d9-9b0e-4aef-8f62-8f2d3f2c1a77",
+      "attributes": {
+        "context": "from offering investment advisory services"
+      },
+      "confidence": 0.97,
+      "evidence_claim_ids": [
+        "9f7f1b57-0a5a-4dcf-9bd7-1f1f4b9c6d1e"
+      ]
+    },
+    {
+      "subject_entity_id": "8b1f2c3d-4e5f-4a6b-8c7d-5e6f7a8b9c10",
+      "predicate": "collaborated_with",
+      "object_entity_id": "0d3e4f5a-6b7c-4d8e-9f01-7b8c9d0e1f12",
+      "attributes": {
+        "context": "named in SEC complaint with Timothy Overturf"
+      },
+      "confidence": 0.62,
+      "evidence_claim_ids": [
+        "1d7b1c9f-6f0d-4f6f-9e2d-1d3e1a4c2f01"
+      ]
+    },
+    {
+      "subject_entity_id": "f1a2b3c4-d5e6-4789-abcd-ef0123456789",
+      "predicate": "employs",
+      "object_entity_id": "a9b8c7d6-e5f4-4321-9abc-def012345678",
+      "attributes": {
+        "context": "venture associated with Sisu Capital"
+      },
+      "confidence": 0.62,
+      "evidence_claim_ids": [
+        "c1d2e3f4-5678-4abc-9def-0123456789ab"
+      ]
+    },
+    {
+      "subject_entity_id": "a9b8c7d6-e5f4-4321-9abc-def012345678",
+      "predicate": "works_with",
+      "object_entity_id": "b1c2d3e4-f5a6-4789-bcde-f0123456789a",
+      "attributes": {
+        "purpose": "increase the financial ..."
+      },
+      "confidence": 0.84,
+      "evidence_claim_ids": [
+        "d4e5f6a7-89ab-4cde-b012-3456789abcde"
+      ]
+    },
+    {
+      "subject_entity_id": "e1f2a3b4-c5d6-4e7f-8a9b-0c1d2e3f4a5b",
+      "predicate": "filed",
+      "object_entity_id": "f4a5b6c7-d8e9-4f01-8a2b-3c4d5e6f7a8b",
+      "attributes": {},
+      "confidence": 0.94,
+      "evidence_claim_ids": [
+        "d2b3e0f1-8a6c-4d53-9d8a-0b9d2b7f6b12"
+      ]
+    },
+    {
+      "subject_entity_id": "c7f1a2b3-4d5e-4f6a-8b7c-9d0e1f2a3b4c",
+      "predicate": "was_subject_of",
+      "object_entity_id": "f4a5b6c7-d8e9-4f01-8a2b-3c4d5e6f7a8b",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "d2b3e0f1-8a6c-4d53-9d8a-0b9d2b7f6b12"
+      ]
+    },
+    {
+      "subject_entity_id": "d2c9d4c1-7d1e-4d7b-9b8d-0d8b2d1f7e33",
+      "predicate": "founded_by",
+      "object_entity_id": "d2c9d4c1-7d1e-4d7b-9b8d-0d8b2d1f7e33",
+      "attributes": {},
+      "confidence": 0.0,
+      "evidence_claim_ids": [
+        "c8f3d0bb-0a6d-4a8f-8d2c-6c4c4d8c0a11"
+      ]
+    },
+    {
+      "subject_entity_id": "a1111111-2222-4333-8444-555555555555",
+      "predicate": "collaborated_with",
+      "object_entity_id": "b1111111-2222-4333-8444-555555555555",
+      "attributes": {
+        "context": "increase the financial well-being of their clients"
+      },
+      "confidence": 0.82,
+      "evidence_claim_ids": [
+        "7f5e2bb0-2b6d-4d5d-9f58-7c4fa6d6b5b1"
+      ]
+    },
+    {
+      "subject_entity_id": "b1c2d3e4-f5a6-47b8-9c0d-1e2f3a4b5c67",
+      "predicate": "was_led_by",
+      "object_entity_id": "00000000-0000-0000-0000-000000000000",
+      "attributes": {},
+      "confidence": 0.0,
+      "evidence_claim_ids": [
+        "7f1f3e6e-6b7d-4a4e-9f2c-2a4a2a4e7d11"
+      ]
+    },
+    {
+      "subject_entity_id": "9c8b7a6d-5e4f-4a3b-9c2d-1e0f2a3b4c5d",
+      "predicate": "has_ceo",
+      "object_entity_id": "9c8b7a6d-5e4f-4a3b-9c2d-1e0f2a3b4c5d",
+      "attributes": {},
+      "confidence": 0.0,
+      "evidence_claim_ids": []
+    },
+    {
+      "subject_entity_id": "7c3f8f6d-3c2c-4d3f-a1f4-4d3d9d2f0b21",
+      "predicate": "collaborated_with",
+      "object_entity_id": "2a9b5e4c-6a8a-4c9d-b8a8-5c7f7d2c1f33",
+      "attributes": {
+        "context": "purchase of Arcata Theatre Lounge in 2019"
+      },
+      "confidence": 0.88,
+      "evidence_claim_ids": [
+        "b7c2b2d8-7f7d-4d2b-8f3f-9e2d3f2d6a11"
+      ]
+    },
+    {
+      "subject_entity_id": "7b9c3d4e-6f8a-4b0c-9d1e-3f4a5b6c7d00",
+      "predicate": "is_related_to",
+      "object_entity_id": "6a8b2c3d-5e7f-4a9b-8c0d-2e3f4a5b6c99",
+      "attributes": {
+        "evidence": "previous role listed alongside Timothy Overturf"
+      },
+      "confidence": 0.45,
+      "evidence_claim_ids": [
+        "2b4d8c9e-1f3a-4a7b-8f6c-3c2f1d0e9a22"
+      ]
+    },
+    {
+      "subject_entity_id": "8c0d4e5f-7a9b-4c1d-0e2f-4a5b6c7d8e11",
+      "predicate": "is_related_to",
+      "object_entity_id": "6a8b2c3d-5e7f-4a9b-8c0d-2e3f4a5b6c99",
+      "attributes": {
+        "evidence": "previous role listed alongside Timothy Overturf"
+      },
+      "confidence": 0.45,
+      "evidence_claim_ids": [
+        "3c5e9a0b-2d4f-4b8a-9d7e-1a2b3c4d5e66"
+      ]
+    },
+    {
+      "subject_entity_id": "9d1e5f6a-8b0c-4d2e-1f3a-5b6c7d8e9f22",
+      "predicate": "is_related_to",
+      "object_entity_id": "6a8b2c3d-5e7f-4a9b-8c0d-2e3f4a5b6c99",
+      "attributes": {
+        "evidence": "previous role listed alongside Timothy Overturf"
+      },
+      "confidence": 0.45,
+      "evidence_claim_ids": [
+        "4e6f0a1b-3c5d-4e7f-8a9b-0c1d2e3f4a77"
+      ]
+    },
+    {
+      "subject_entity_id": "0e2f6a7b-9c1d-4e3f-2a4b-6c7d8e9f0a33",
+      "predicate": "is_related_to",
+      "object_entity_id": "6a8b2c3d-5e7f-4a9b-8c0d-2e3f4a5b6c99",
+      "attributes": {
+        "evidence": "previous role listed alongside Timothy Overturf"
+      },
+      "confidence": 0.45,
+      "evidence_claim_ids": [
+        "5f7a1b2c-4d6e-4f8a-9b0c-1d2e3f4a5b88"
+      ]
+    },
+    {
+      "subject_entity_id": "2cf7f4f4-bf1d-4f48-a92a-0f6d0a0d4b1e",
+      "predicate": "was_subject_of_regulatory_action_with",
+      "object_entity_id": "af6c66bf-1b39-4f9e-9f6d-2f7d8c7a0a1c",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.82,
+      "evidence_claim_ids": [
+        "3d7d2c0a-6c35-4e62-8c3f-7f8b8cbe7e9a"
+      ]
+    },
+    {
+      "subject_entity_id": "7e6f4c1a-8c9d-4b2f-9a8d-1c2b3d4e5f60",
+      "predicate": "filed",
+      "object_entity_id": "9a1c2b3d-4e5f-4a6b-8c7d-0e1f2a3b4c50",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "6bc8c2a4-9e0a-4d64-8f71-7c8c7b2e2f1a",
+        "f0fdad0f-3d4a-4d6f-a2c6-5f0e9d6a8d3c"
+      ]
+    },
+    {
+      "subject_entity_id": "9a1c2b3d-4e5f-4a6b-8c7d-0e1f2a3b4c50",
+      "predicate": "involves",
+      "object_entity_id": "2f7e7c2f-7d4b-4f4d-9d43-5f5a5f4e6d20",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence_claim_ids": [
+        "f0fdad0f-3d4a-4d6f-a2c6-5f0e9d6a8d3c"
+      ]
+    },
+    {
+      "subject_entity_id": "1a2b3c4d-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "predicate": "took_action_against",
+      "object_entity_id": "0f4d7a9e-8c1b-4d2f-9a3c-7e6b5d4c3f2a",
+      "attributes": {
+        "action": "charges"
+      },
+      "confidence": 0.86,
+      "evidence_claim_ids": [
+        "6a0d1f6e-4f12-4a8d-9c74-6b3f7c5f4c2a"
+      ]
+    },
+    {
+      "subject_entity_id": "2b3c4d5e-6f7a-4b8c-9d0e-1f2a3b4c5d6e",
+      "predicate": "investigates",
+      "object_entity_id": "0f4d7a9e-8c1b-4d2f-9a3c-7e6b5d4c3f2a",
+      "attributes": {},
+      "confidence": 0.84,
+      "evidence_claim_ids": [
+        "6a0d1f6e-4f12-4a8d-9c74-6b3f7c5f4c2a"
+      ]
+    },
+    {
+      "subject_entity_id": "2d4c8f52-7a7f-4c91-8e7f-9f1a0a8d3c22",
+      "predicate": "initiated_action_against",
+      "object_entity_id": "f6a1b5d0-3f1d-4b2a-bc7f-1f9e9c7e4f88",
+      "attributes": {
+        "context": "lawsuit"
+      },
+      "confidence": 0.95,
+      "evidence_claim_ids": [
+        "9b0d9d4d-5f38-4f9d-9d86-7c0b7d4d2f11",
+        "0b7f8a8b-2a4d-4f7e-9d0d-8e6a1f7a4d2c"
+      ]
+    },
+    {
+      "subject_entity_id": "e5f6a7b8-9c0d-4e1f-8a12-34567890bcde",
+      "predicate": "filed",
+      "object_entity_id": "f6a7b8c9-0d1e-4f2a-9b23-4567890cdef1",
+      "attributes": {},
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "a6f2bc7d-1e5d-4d12-9f42-8c0f8d8f4d22"
+      ]
+    },
+    {
+      "subject_entity_id": "f6a7b8c9-0d1e-4f2a-9b23-4567890cdef1",
+      "predicate": "concerns",
+      "object_entity_id": "d4e5f6a7-8b9c-4d0e-9f01-234567890abc",
+      "attributes": {},
+      "confidence": 0.94,
+      "evidence_claim_ids": [
+        "a6f2bc7d-1e5d-4d12-9f42-8c0f8d8f4d22",
+        "b9e1cc2a-6f3b-4f0b-9c4c-2c6e4c0d7e33"
+      ]
+    },
+    {
+      "subject_entity_id": "a7b8c9d0-1e2f-4a3b-9c34-567890cdef12",
+      "predicate": "is_father_of",
+      "object_entity_id": "f6a7b8c9-0d1e-4f2a-9b23-4567890cdef1",
+      "attributes": {
+        "via": "Timothy Overturf context"
+      },
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "c1d2e3f4-5678-4abc-9def-0123456789ab"
+      ]
+    },
+    {
+      "subject_entity_id": "f4b1a9d8-2c33-4d0c-9a7c-8c6e6c7f8a31",
+      "predicate": "is_related_to",
+      "object_entity_id": "f4b1a9d8-2c33-4d0c-9a7c-8c6e6c7f8a31",
+      "attributes": {
+        "note": "Mentioned in source text alongside Timothy Overturf"
+      },
+      "confidence": 0.2,
+      "evidence_claim_ids": []
+    },
+    {
+      "subject_entity_id": "b22c33d4-e55f-66a7-b8c9-d0e1f2334455",
+      "predicate": "took_action_against",
+      "object_entity_id": "a11b22c3-d44e-55f6-a7b8-c9d0e1f22334",
+      "attributes": {},
+      "confidence": 0.94,
+      "evidence_claim_ids": [
+        "7b0d4d6f-8b24-4b1a-9f63-3a7ef5c0a9a1",
+        "c8b7d4a1-9c1e-4f2a-bd77-2a8f6e3d5b44"
+      ]
+    },
+    {
+      "subject_entity_id": "9b0c1d2e-3f4a-5b6c-7d8e-9f0a1b2c3d44",
+      "predicate": "is_subject_of_lawsuit",
+      "object_entity_id": "1d2e3f4a-5b6c-7d8e-9f0a-1b2c3d4e5f77",
+      "attributes": {
+        "date": "2023-08-18"
+      },
+      "confidence": 0.93,
+      "evidence_claim_ids": [
+        "7f8e9d0c-1b2a-4c3d-8d5e-6f7a8b9c0d12"
+      ]
+    },
+    {
+      "subject_entity_id": "0c1d2e3f-4a5b-6c7d-8e9f-0a1b2c3d4e66",
+      "predicate": "filed",
+      "object_entity_id": "1d2e3f4a-5b6c-7d8e-9f0a-1b2c3d4e5f77",
+      "attributes": {
+        "venue": "federal court"
+      },
+      "confidence": 0.92,
+      "evidence_claim_ids": [
+        "5c6d7e8f-1a2b-4c3d-8e9f-0a1b2c3d4e55"
+      ]
+    },
+    {
+      "subject_entity_id": "9c8d5f6a-1e2b-4f5d-8c7a-3b4a5c6d7e8f",
+      "predicate": "is_subject_of_regulatory_action_with",
+      "object_entity_id": "4e5f6a7b-8c9d-4e0f-a1b2-c3d4e5f6a7b8",
+      "attributes": {},
+      "confidence": 0.83,
+      "evidence_claim_ids": [
+        "c3f1c6a2-7a0e-4d4b-9c6b-2a1d5b1d6f11"
+      ]
+    },
+    {
+      "subject_entity_id": "c6d9f3a1-2d4e-4c5b-8a7e-2f3d4c5e6a77",
+      "predicate": "related_to",
+      "object_entity_id": "7e0df3b4-1f2f-4a0e-9d7a-1e4b9f7d8b21",
+      "attributes": {
+        "context": "mentioned together in SEC complaint",
+        "role": "aiding_and_abetting_alleged_violations"
+      },
+      "confidence": 0.72,
+      "evidence_claim_ids": [
+        "1d8e3f5a-9d4d-4f1d-b7f8-4a2c8b0c1e33"
+      ]
+    },
+    {
+      "subject_entity_id": "0d9f8d5a-9e1b-4a8f-9f3c-2d6b7d9a1c33",
+      "predicate": "charged",
+      "object_entity_id": "f0b2e9f4-0e3c-4c11-8e3d-3f3f0e8c2b55",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.95,
+      "evidence_claim_ids": [
+        "7c2aaf0e-0cc4-4c4e-8d7e-0e5a5f0c2f11"
+      ]
+    },
+    {
+      "subject_entity_id": "9d2d4d0f-1d72-4f75-8d3a-4ce7b4d7a8e1",
+      "predicate": "is_subject_of",
+      "object_entity_id": "f0b2e9f4-0e3c-4c11-8e3d-3f3f0e8c2b55",
+      "attributes": {},
+      "confidence": 0.92,
+      "evidence_claim_ids": [
+        "7c2aaf0e-0cc4-4c4e-8d7e-0e5a5f0c2f11",
+        "f7e2a9f4-2fb7-4f29-a9c5-8e9c5c8f8f31"
+      ]
+    },
+    {
+      "subject_entity_id": "b1d4e6f8-2c7a-4a19-9c3e-5f7b1d2a8c66",
+      "predicate": "filed",
+      "object_entity_id": "d3e5f7a9-1b2c-4d6e-8f90-7a1b2c3d4e77",
+      "attributes": {
+        "forum": "federal court"
+      },
+      "confidence": 0.95,
+      "evidence_claim_ids": [
+        "c2e7b9e4-3e59-4f2f-9a6d-2f3cb2d1c4a7",
+        "4f7a1c8b-9d2e-4c6d-8f8d-6f1f3a7b0c22"
+      ]
+    },
+    {
+      "subject_entity_id": "a9c3d2b1-7f4e-4d88-a2f1-2b9a7e1c3d55",
+      "predicate": "is_subject_of_regulatory_action",
+      "object_entity_id": "d3e5f7a9-1b2c-4d6e-8f90-7a1b2c3d4e77",
+      "attributes": {},
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "c2e7b9e4-3e59-4f2f-9a6d-2f3cb2d1c4a7"
+      ]
+    },
+    {
+      "subject_entity_id": "d6db0d6f-5f5f-4c9f-9d2f-6d3f0d8a0d1a",
+      "predicate": "associated_with",
+      "object_entity_id": "f0d3a4b2-6c7d-4e8f-9a1b-2c3d4e5f6a7b",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "5c1d0d4e-0cbe-4bc4-9f08-0f4f4d1e7a7b"
+      ]
+    },
+    {
+      "subject_entity_id": "5f4f9f1c-8b6f-4f3d-9d1d-1d3a5f7b2c9a",
+      "predicate": "concerns",
+      "object_entity_id": "f5e7d1b8-0d2d-4a66-9e4a-2c7f1b8d8e11",
+      "attributes": {
+        "role": "alleged in complaint"
+      },
+      "confidence": 0.85,
+      "evidence_claim_ids": [
+        "d0f0d7a1-0e0f-4d2b-9d77-9a6d0d9b5c31"
+      ]
+    },
+    {
+      "subject_entity_id": "5f4f9f1c-8b6f-4f3d-9d1d-1d3a5f7b2c9a",
+      "predicate": "concerns",
+      "object_entity_id": "b9ccf6b2-5a17-4f26-8c4a-3a1f64e7e2f0",
+      "attributes": {
+        "role": "mentioned in complaint"
+      },
+      "confidence": 0.84,
+      "evidence_claim_ids": [
+        "4b8d6c6a-0f4d-4c5d-8f9d-0db0d2b4c1a2",
+        "b3b5b6f9-4d0f-4c1b-8b95-0af3d5b2ed28"
+      ]
+    },
+    {
+      "subject_entity_id": "d7a8f9c0-1b2c-4d3e-8f90-1a2b3c4d5e6f",
+      "predicate": "subject_of_action_by",
+      "object_entity_id": "a1b2c3d4-e5f6-47a8-90bc-1d2e3f4a5b6d",
+      "attributes": {},
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "3f0c8c5d-3d89-4c0a-8c8f-9e7d0f0f5b2a",
+        "f4d2a1c7-5f8b-4d5a-9d9e-2a8b5d0f1d3c"
+      ]
+    },
+    {
+      "subject_entity_id": "1a1a1a1a-1111-4111-8111-1a1a1a1a1a11",
+      "predicate": "holds_role",
+      "object_entity_id": "b7f7f0b0-8d86-4a6d-a66d-4f8d9a9e1a11",
+      "attributes": {
+        "role": "Chief Executive Officer"
+      },
+      "confidence": 0.98,
+      "evidence_claim_ids": [
+        "8f3b1f1e-1f3f-4d6a-a7e8-3c7b8b7d1a01"
+      ]
+    },
+    {
+      "subject_entity_id": "1a1a1a1a-1111-4111-8111-1a1a1a1a1a11",
+      "predicate": "collaborated_with",
+      "object_entity_id": "c8a8f1c1-9e97-4b7e-b77e-5a9e0b0f2b22",
+      "attributes": {
+        "context": "new Sisu venture"
+      },
+      "confidence": 0.83,
+      "evidence_claim_ids": [
+        "4e2f7a8b-3c3d-4e9f-a9a0-2b3c4d5e6f04"
+      ]
+    },
+    {
+      "subject_entity_id": "a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d",
+      "predicate": "employs",
+      "object_entity_id": "a0b1c2d3-e4f5-4a6b-8c9d-1e2f3a4b5c6d",
+      "attributes": {
+        "role": "Chief Executive Officer"
+      },
+      "confidence": 0.92,
+      "evidence_claim_ids": [
+        "b6f7f8a1-4f2f-4dd4-9a9e-1d4a0e4b4d2e"
+      ]
+    },
+    {
+      "subject_entity_id": "b4d0f6a9-4f0f-4c4d-8d2c-7b9f8a1a2d3e",
+      "predicate": "employs",
+      "object_entity_id": "c9b6a1d4-7e2f-4d2c-9f8a-1c2d3e4f5a6b",
+      "attributes": {
+        "context": "new Sisu venture works with community banks"
+      },
+      "confidence": 0.7,
+      "evidence_claim_ids": [
+        "5bc3f9e5-6c0a-4d26-97d8-8f2c7e5e5f11",
+        "a3f6d2d4-1c7c-4c9f-8e34-5f0d6b7c9c21"
+      ]
+    },
+    {
+      "subject_entity_id": "b6b9a4e5-1b2c-4d2c-9c1a-9f2d3d1b7f0a",
+      "predicate": "is_parent_of",
+      "object_entity_id": "c7c4f2c9-6e86-4f85-9f1d-2f9e9c4e9f2a",
+      "attributes": {
+        "context": "referred many of his own investment advisory clients to his son's new company"
+      },
+      "confidence": 0.72,
+      "evidence_claim_ids": [
+        "7a6a9cf6-7f3a-4d6a-9f90-4f2f8b9c5d41"
+      ]
+    },
+    {
+      "subject_entity_id": "8fd2df1a-7f58-4d0f-9b18-57d62a4a4d3f",
+      "predicate": "founded_by",
+      "object_entity_id": "8fd2df1a-7f58-4d0f-9b18-57d62a4a4d3f",
+      "attributes": {},
+      "confidence": 0.0,
+      "evidence_claim_ids": [
+        "2f4d4d4b-4d2a-4f77-a9f5-7f7ff5f8f7d1"
+      ]
+    },
+    {
+      "subject_entity_id": "2f4a6b9d-1b6b-4d4d-9c1d-0d7d0d9f7a11",
+      "predicate": "founded_by",
+      "object_entity_id": "7d1c2e3f-4a5b-4c6d-8e7f-9a0b1c2d3e4f",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "8c8f9f2d-6f0f-4f0f-a7e0-2a7c7d3e2f1d"
+      ]
+    },
+    {
+      "subject_entity_id": "f4d8f2a1-2d5a-4e1d-8f6f-7a1c2b3d4e55",
+      "predicate": "collaborated_with",
+      "object_entity_id": "c2b2b7b8-1f64-4e6c-8d1f-3b2d5f9f6a30",
+      "attributes": {
+        "context": "referred many of his own investment advisory clients to his son's new company"
+      },
+      "confidence": 0.74,
+      "evidence_claim_ids": [
+        "d1c3f7a0-6b5f-4d1e-9e4e-5c9b7f3d2a11"
+      ]
+    },
+    {
+      "subject_entity_id": "c1a9d2b3-4f5e-4a6b-8c7d-9e0f1a2b3c4d",
+      "predicate": "employs",
+      "object_entity_id": "c1a9d2b3-4f5e-4a6b-8c7d-9e0f1a2b3c4d",
+      "attributes": {
+        "note": "No separate person/entity extracted for target; relation omitted due to schema constraints."
+      },
+      "confidence": 0.0,
+      "evidence_claim_ids": [
+        "7b9f6d83-1d4c-4d9f-8f03-8d3dd9d7f8a1"
+      ]
+    },
+    {
+      "subject_entity_id": "f4b8c6d7-1a2e-4f3b-9c8d-0a1b2c3d4e5f",
+      "predicate": "is_part_of",
+      "object_entity_id": "e3a9d7c1-2b4f-4c6d-8e1f-9a0b1c2d3e4f",
+      "attributes": {
+        "context": "new Sisu venture"
+      },
+      "confidence": 0.42,
+      "evidence_claim_ids": [
+        "b1d8a0c4-6f6c-4b7b-9f6f-1d6d0b5f2a77",
+        "8e1b2d3c-4f5a-4b6c-9d7e-1f2a3b4c5d6e"
+      ]
+    },
+    {
+      "subject_entity_id": "9f7b0a7d-8f9d-4e7e-8c3c-2c3e4d5f6a7b",
+      "predicate": "is_related_to",
+      "object_entity_id": "1c2d3e4f-5a6b-4c7d-8e9f-0a1b2c3d4e5f",
+      "attributes": {
+        "context": "advisory services to Sisu clients"
+      },
+      "confidence": 0.72,
+      "evidence_claim_ids": [
+        "d3a5e6b7-2c1f-4a8d-9e0a-1f2b3c4d5e6f"
+      ]
+    },
+    {
+      "subject_entity_id": "0d9d5a9d-7f19-4ce5-95f5-7b8c7bb7f3c1",
+      "predicate": "associated_with",
+      "object_entity_id": "0d9d5a9d-7f19-4ce5-95f5-7b8c7bb7f3c1",
+      "attributes": {
+        "note": "Entity extracted from the profile text; no separate related entity identified."
+      },
+      "confidence": 0.0,
+      "evidence_claim_ids": []
+    },
+    {
+      "subject_entity_id": "2b3c4d5e-6f78-4a90-abcd-ef1234567890",
+      "predicate": "involves",
+      "object_entity_id": "1a2b3c4d-5e6f-4789-9abc-def012345678",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "d9f2f7f5-7c60-4e56-9d9d-1a2b2d5f1c01",
+        "7e1c9a3d-6f5b-4f27-9d7d-3c2a1b0e9f06"
+      ]
+    },
+    {
+      "subject_entity_id": "0d3f6f4a-7f6a-4d6f-8f1e-2c3b4a5d6e07",
+      "predicate": "is_related_to",
+      "object_entity_id": "1a2b3c4d-5e6f-4789-9abc-def012345678",
+      "attributes": {
+        "context": "investment advice to clients"
+      },
+      "confidence": 0.84,
+      "evidence_claim_ids": [
+        "b8c8c3a8-4e54-4dd1-9f3f-0f8cbe8d6f02"
+      ]
+    },
+    {
+      "subject_entity_id": "11111111-2222-3333-4444-555555555555",
+      "predicate": "employs",
+      "object_entity_id": "11111111-2222-3333-4444-555555555555",
+      "attributes": {},
+      "confidence": 0.0,
+      "evidence_claim_ids": [
+        "2d2d5c6f-0f1b-4f1b-9c1a-9f5bf6d7e1a1"
+      ]
+    },
+    {
+      "subject_entity_id": "b7f0cf5a-6d47-4d85-b85f-4e3e7e9c7b9a",
+      "predicate": "referred_clients_to",
+      "object_entity_id": "a1c5a2d3-1e68-4dd5-8c28-b52a9a8b0c1a",
+      "attributes": {
+        "context": "own investment advisory clients"
+      },
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "6c0a9db6-8c2f-4c1a-9a6c-2a5f5b44e8d7"
+      ]
+    },
+    {
+      "subject_entity_id": "5f0a3c8c-9f1e-4bf4-8f36-76d4d3a1ed0d",
+      "predicate": "is_not_related_to",
+      "object_entity_id": "3f8e7a1c-2b5d-4d6d-9f2c-1c0d8f7e4a11",
+      "attributes": {
+        "source_note": "The source states Sisu Capital, LLC has no relation to Sisu Extracts."
+      },
+      "confidence": 0.9,
+      "evidence_claim_ids": []
+    },
+    {
+      "subject_entity_id": "9d2f1d6a-4f6a-4c4a-8d1e-2f6a9f1b4a2c",
+      "predicate": "employs",
+      "object_entity_id": "2b8c7d6e-1a3f-4d5e-9b0a-7c6d5e4f3a2b",
+      "attributes": {},
+      "confidence": 0.55,
+      "evidence_claim_ids": [
+        "7f8b4c5a-0f4d-4ef2-9d91-0b7f0e3f2c1a",
+        "c2a9c8e7-9f2a-4f37-a4b1-4c2e1d8f6b3f"
+      ]
+    },
+    {
+      "subject_entity_id": "c1d2c3e4-f5a6-4789-8abc-1234567890ab",
+      "predicate": "associated_with",
+      "object_entity_id": "d2e3f4a5-b6c7-4890-9bcd-234567890abc",
+      "attributes": {
+        "source_context": "profile page"
+      },
+      "confidence": 0.74,
+      "evidence_claim_ids": [
+        "2d8f7d3c-7c3f-4e2a-9c89-11d5df7bb6e1",
+        "6b9d1d0a-4f2b-4b43-bd0d-2b3d1c7d9f2f"
+      ]
+    },
+    {
+      "subject_entity_id": "e7d6b2a1-1f4c-4a4f-8a8d-6a7e1f2c3b55",
+      "predicate": "business_partner_of",
+      "object_entity_id": "d4a4c1c7-7f5a-4d7a-9d20-5c5c2b8f1d11",
+      "attributes": {
+        "context": "purchased Arcata Theatre Lounge in 2019"
+      },
+      "confidence": 0.79,
+      "evidence_claim_ids": [
+        "9d3f4c2a-8d1e-4b6a-9f0c-2d1f7e5a3b44"
+      ]
+    },
+    {
+      "subject_entity_id": "f6a7b8c9-d0e1-4f2a-8b3c-4d5e6f7a8b9c",
+      "predicate": "collaborated_with",
+      "object_entity_id": "a1d2c3b4-5e6f-4a7b-8c9d-0e1f2a3b4c5d",
+      "attributes": {
+        "context": "new Sisu venture"
+      },
+      "confidence": 0.62,
+      "evidence_claim_ids": [
+        "e5f7a0c3-8d6f-4e9b-c8f4-1b2d3e4f5a66"
+      ]
+    },
+    {
+      "subject_entity_id": "9d4d8c29-2f1c-4d45-8c63-6d56a2f0c9a1",
+      "predicate": "founded_by",
+      "object_entity_id": "9d4d8c29-2f1c-4d45-8c63-6d56a2f0c9a1",
+      "attributes": {
+        "note": "Relation not emitted because target entity was not separately instantiated as a non-target entity."
+      },
+      "confidence": 0.0,
+      "evidence_claim_ids": [
+        "7a6d4a4b-5d88-4d0f-9e2c-6a5e9dc3c2db"
+      ]
+    },
+    {
+      "subject_entity_id": "c2a3d7f9-1e6c-4c5a-9b7d-2f5a7d7c9e11",
+      "predicate": "is_organization_of",
+      "object_entity_id": "a8f1b2c3-d4e5-4f67-8a90-1b2c3d4e5f67",
+      "attributes": {
+        "context": "mentioned as a prior role source for Timothy Overturf"
+      },
+      "confidence": 0.0,
+      "evidence_claim_ids": []
+    },
+    {
+      "subject_entity_id": "2e9a4f1b-6c7d-4a8e-9f1c-3d2e7b8c9a01",
+      "predicate": "involves",
+      "object_entity_id": "4c1d8f9e-3d1c-4e7b-9d1a-2f7b6c8d9e10",
+      "attributes": {},
+      "confidence": 0.77,
+      "evidence_claim_ids": [
+        "7db8cf66-0d12-4fdb-84d4-1f7a2c7dfb90"
+      ]
+    },
+    {
+      "subject_entity_id": "8a2f7f34-8f4e-4bc3-bf40-4d8f7d1c2a11",
+      "predicate": "hosts",
+      "object_entity_id": "2e9a4f1b-6c7d-4a8e-9f1c-3d2e7b8c9a01",
+      "attributes": {},
+      "confidence": 0.72,
+      "evidence_claim_ids": [
+        "7db8cf66-0d12-4fdb-84d4-1f7a2c7dfb90"
+      ]
+    },
+    {
+      "subject_entity_id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+      "predicate": "filed",
+      "object_entity_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "8f5b7d34-4c2f-4d85-9d4e-0d7a9d4e2c11"
+      ]
+    },
+    {
+      "subject_entity_id": "a1d2c3b4-5e6f-7890-abcd-ef1234567890",
+      "predicate": "is_subject_of_lawsuit",
+      "object_entity_id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.95,
+      "evidence_claim_ids": [
+        "8f5b7d34-4c2f-4d85-9d4e-0d7a9d4e2c11"
+      ]
+    },
+    {
+      "subject_entity_id": "3c2d4e5f-7a8b-4c9d-9e0f-2a3b4c5d6e77",
+      "predicate": "filed",
+      "object_entity_id": "4d3e5f6a-8b9c-4d0e-9f1a-3b4c5d6e7f88",
+      "attributes": {
+        "forum": "federal court"
+      },
+      "confidence": 0.91,
+      "evidence_claim_ids": [
+        "c0c7f8a1-1f57-4f2f-b8a8-7e9b4e3a2a22"
+      ]
+    },
+    {
+      "subject_entity_id": "2b1e3f4a-6c7d-4e8f-9a0b-1c2d3e4f5a66",
+      "predicate": "is_subject_of_lawsuit",
+      "object_entity_id": "4d3e5f6a-8b9c-4d0e-9f1a-3b4c5d6e7f88",
+      "attributes": {},
+      "confidence": 0.89,
+      "evidence_claim_ids": [
+        "f4b6f9a3-9f4c-4f1d-9b2b-0c9b7a1d3c33"
+      ]
+    },
+    {
+      "subject_entity_id": "c5d4e3f2-9b6a-4f4e-8d88-3c4d5e6f7082",
+      "predicate": "concerns",
+      "object_entity_id": "a3f2d2e1-7b4e-4d2f-9f66-1a2c3d4e5f60",
+      "attributes": {},
+      "confidence": 0.86,
+      "evidence_claim_ids": [
+        "7f2d5c8e-7a1a-4d7f-8b43-0eb0a4f1d9d1"
+      ]
+    },
+    {
+      "subject_entity_id": "b4c3d2e1-8a5f-4e3d-9c77-2b3c4d5e6f71",
+      "predicate": "is_family_member_of",
+      "object_entity_id": "7f2d5c8e-7a1a-4d7f-8b43-0eb0a4f1d9d1",
+      "attributes": {
+        "relation": "father"
+      },
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "7f2d5c8e-7a1a-4d7f-8b43-0eb0a4f1d9d1"
+      ]
+    },
+    {
+      "subject_entity_id": "6f3a5f9d-1f6a-4df2-8a2f-4d1f8c8f2a11",
+      "predicate": "is_subject_of",
+      "object_entity_id": "a7c1f0c4-1c6f-4b8f-9c1a-0fbb3d5b6c22",
+      "attributes": {},
+      "confidence": 0.97,
+      "evidence_claim_ids": [
+        "b0a8c3c8-b31b-4e4c-8b0f-1b56d5b6af20"
+      ]
+    },
+    {
+      "subject_entity_id": "d8b2f3a1-9c4e-4c7b-8d2a-1e0f2a3b4c33",
+      "predicate": "is_parent_of",
+      "object_entity_id": "a7c1f0c4-1c6f-4b8f-9c1a-0fbb3d5b6c22",
+      "attributes": {
+        "relation_to_target": "father of Timothy Overturf"
+      },
+      "confidence": 0.82,
+      "evidence_claim_ids": []
+    },
+    {
+      "subject_entity_id": "2d8b7e6f-1a2b-4c3d-8e9f-0a1b2c3d4e55",
+      "predicate": "was_charged_by",
+      "object_entity_id": "3e9c8d7f-2b1a-4d5e-9f0a-1b2c3d4e5f66",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "confidence": 0.98,
+      "evidence_claim_ids": [
+        "b1f8d2a7-3d4e-4c2f-9b9b-6a7f5c3d1a44"
+      ]
+    },
+    {
+      "subject_entity_id": "3f7f0a2e-5c2f-4d63-9f7e-9baf2d0e2b11",
+      "predicate": "is_subject_of_regulatory_action",
+      "object_entity_id": "f2d1c3b4-9e7a-4a6d-8b3a-5c1d2e3f4a55",
+      "attributes": {},
+      "confidence": 0.94,
+      "evidence_claim_ids": [
+        "c1b4a7f0-6c8d-4d8b-8f3b-3c8d0c7f9a21"
+      ]
+    },
+    {
+      "subject_entity_id": "a8e0b6f1-7d4b-4c0f-9d1b-0f4d7c3a8c22",
+      "predicate": "is_parent_of",
+      "object_entity_id": "f2d1c3b4-9e7a-4a6d-8b3a-5c1d2e3f4a55",
+      "attributes": {
+        "relation": "father"
+      },
+      "confidence": 0.88,
+      "evidence_claim_ids": [
+        "8d6e2f5a-2f4d-4b1a-8f0e-6f4d2c9a1d10"
+      ]
+    },
+    {
+      "subject_entity_id": "f5a2d3c4-5b6a-4c7d-8e9f-0a1b2c3d4e55",
+      "predicate": "employs",
+      "object_entity_id": "0f1e2d3c-4b5a-4c6d-8e9f-1a2b3c4d5e67",
+      "attributes": {
+        "role": "Chief Executive Officer"
+      },
+      "confidence": 0.86,
+      "evidence_claim_ids": [
+        "7a8c8a2b-6f1b-4e1f-9d8b-8b7a5c5c6f01"
+      ]
+    },
+    {
+      "subject_entity_id": "c8c1c7a4-3b8d-4a1b-9a55-6f4d4e9d2e10",
+      "predicate": "published",
+      "object_entity_id": "c8c1c7a4-3b8d-4a1b-9a55-6f4d4e9d2e10",
+      "attributes": {
+        "note": "Referenced as publisher of Proceedings magazine"
+      },
+      "confidence": 0.2,
+      "evidence_claim_ids": [
+        "7c3e8d8a-4a58-4b75-b5e2-4e8d7f1c9b21"
+      ]
+    },
+    {
+      "subject_entity_id": "1a4d7b2c-6c1f-4b6c-9d1a-0b7d4f2c8e11",
+      "predicate": "purchased_by",
+      "object_entity_id": "5c9e8a1f-2d3b-4c7a-9f0d-1b2c3d4e5f60",
+      "attributes": {
+        "year": "2019"
+      },
+      "confidence": 0.72,
+      "evidence_claim_ids": [
+        "8d2f7f4c-1b7e-4f87-9d79-3c0b2f7b6d2f"
+      ]
+    },
+    {
+      "subject_entity_id": "4d3f8d1d-3d1d-4b7b-9b9b-7d74b8e9a1aa",
+      "predicate": "filed",
+      "object_entity_id": "b7cf2b8a-6f0d-4b44-8c8d-1f8c9a5a7b77",
+      "attributes": {},
+      "confidence": 0.93,
+      "evidence_claim_ids": [
+        "0f4d6f2a-4f15-4f3a-b4b6-f0d5f0b9f0fd"
+      ]
+    },
+    {
+      "subject_entity_id": "2a0d5e15-4e33-4c76-a4db-4c56b6d9f3fb",
+      "predicate": "is_subject_of_regulatory_action",
+      "object_entity_id": "b7cf2b8a-6f0d-4b44-8c8d-1f8c9a5a7b77",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "0f4d6f2a-4f15-4f3a-b4b6-f0d5f0b9f0fd"
+      ]
+    },
+    {
+      "subject_entity_id": "c2d9bd8e-8b95-4d4f-8f3f-7b4f0d6f0a44",
+      "predicate": "filed",
+      "object_entity_id": "e4f0d3c2-6a7b-4f8d-9c1e-0a1b2c3d4e66",
+      "attributes": {},
+      "confidence": 0.96,
+      "evidence_claim_ids": [
+        "a8c8a6d3-3d2c-4c65-8d87-8d0f4b8c3e33"
+      ]
+    },
+    {
+      "subject_entity_id": "d1e7f7c4-2f3e-4c3e-9e7c-2d3b1f0a5b55",
+      "predicate": "is_subject_of_regulatory_action",
+      "object_entity_id": "e4f0d3c2-6a7b-4f8d-9c1e-0a1b2c3d4e66",
+      "attributes": {},
+      "confidence": 0.95,
+      "evidence_claim_ids": [
+        "a8c8a6d3-3d2c-4c65-8d87-8d0f4b8c3e33"
+      ]
+    },
+    {
+      "subject_entity_id": "f7e3b2b1-2a6c-4b2c-9d8a-2d9a4b3f1c22",
+      "predicate": "published",
+      "object_entity_id": "c1f6a8e9-5a2d-4f0c-8f12-3c4b7d8e9a33",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence_claim_ids": [
+        "b8e6dd3c-7f7d-4b1a-8d3f-9b3f3c2f8f11"
+      ]
+    },
+    {
+      "subject_entity_id": "d3e4f5a6-b7c8-4d9e-0f1a-2b3c4d5e6f7a",
+      "predicate": "involves",
+      "object_entity_id": "c2d3e4f5-a6b7-4c8d-9e0f-1a2b3c4d5e6f",
+      "attributes": {
+        "context": "works with"
+      },
+      "confidence": 0.88,
+      "evidence_claim_ids": [
+        "8e5c4d3b-6a2f-4d0c-9a7b-3c1d2e4f5a6b",
+        "9f6d5c4b-3a2e-4f1b-8c7d-2e1f3a4b5c6d"
+      ]
+    },
+    {
+      "subject_entity_id": "b1c2d3e4-f5a6-4b7c-8d9e-0f1a2b3c4d5e",
+      "predicate": "employs",
+      "object_entity_id": "d3e4f5a6-b7c8-4d9e-0f1a-2b3c4d5e6f7a",
+      "attributes": {
+        "context": "CEO role and venture"
+      },
+      "confidence": 0.72,
+      "evidence_claim_ids": [
+        "2c2b3d7a-2e8d-4c54-9b3a-6c2dbf7e7a9f",
+        "4c1e2d8b-7d2a-4f19-8d7b-1dbe1b4c3d2a"
+      ]
+    },
+    {
+      "subject_entity_id": "b4c5d6e7-f8a9-4b01-c234-5d6e7f8a9b01",
+      "predicate": "is_parent_of",
+      "object_entity_id": "a3d4f5c6-7e8f-4a90-b123-4c5d6e7f8a90",
+      "attributes": {
+        "context": "alongside his father"
+      },
+      "confidence": 0.82,
+      "evidence_claim_ids": [
+        "6c1e7d8f-7b7f-4f48-9bb7-8a7c9a6a7c8f"
+      ]
+    }
+  ]
+}
