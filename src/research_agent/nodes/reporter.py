@@ -94,13 +94,16 @@ def _generate_markdown(
     """Generate the report Markdown via LLM, with guardrail check and fallback."""
     prompt_template = Prompt(_PROMPTS_DIR / "reporter.md")
 
+    # Sort by confidence descending so the LLM sees strongest evidence first.
+    # Cap at 15 claims to stay within TPM limits on rate-limited orgs (~26K tokens).
+    top_claims = sorted(validated_claims, key=lambda c: c.confidence, reverse=True)[:15]
     prompt_text = prompt_template.render(
         target_name=target.name,
         target_profile=str(target.model_dump(mode="json")),
-        validated_claims=str([c.model_dump(mode="json") for c in validated_claims[:50]]),
+        validated_claims=str([c.model_dump(mode="json") for c in top_claims]),
         risk_flags=str([f.model_dump(mode="json") for f in sorted_flags]),
-        entities=str([e.model_dump(mode="json") for e in entities[:20]]),
-        relations=str([r.model_dump(mode="json") for r in relations[:15]]),
+        entities=str([e.model_dump(mode="json") for e in entities[:10]]),
+        relations=str([r.model_dump(mode="json") for r in relations[:8]]),
         budget_used=(
             f"tokens_in=~{budget.used_dollars * 1000:.0f}, "
             f"dollars={budget.used_dollars:.3f}, "

@@ -38,9 +38,12 @@ def risk_analyzer(state: ResearchState) -> dict:
 
     prompt_template = Prompt(_PROMPTS_DIR / "risk_analyzer.md")
 
-    claims_json = [c.model_dump(mode="json") for c in validated_claims[:50]]
-    entities_json = [e.model_dump(mode="json") for e in entities[:30]]
-    relations_json = [r.model_dump(mode="json") for r in relations[:20]]
+    # Sort by confidence descending so the LLM sees the strongest claims first.
+    # Cap at 15 claims to stay within TPM limits on rate-limited orgs (~26K tokens).
+    top_claims = sorted(validated_claims, key=lambda c: c.confidence, reverse=True)[:15]
+    claims_json = [c.model_dump(mode="json") for c in top_claims]
+    entities_json = [e.model_dump(mode="json") for e in entities[:10]]
+    relations_json = [r.model_dump(mode="json") for r in relations[:10]]
 
     prompt_text = prompt_template.render(
         validated_claims=str(claims_json),
