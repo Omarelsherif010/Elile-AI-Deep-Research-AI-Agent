@@ -8,8 +8,8 @@ from pydantic import BaseModel
 
 from research_agent.errors import ProviderUnavailable, SchemaValidationError
 from research_agent.tools.llm import (
-    CLAUDE_OPUS_4,
     GEMINI_FLASH,
+    GPT_41,
     GPT_54_MINI,
     ROLE_TO_MODEL,
     LLMRouter,
@@ -86,11 +86,11 @@ class TestPromptParseSections:
 
 
 class TestLLMRouterModelRouting:
-    def test_planner_uses_claude(self) -> None:
-        assert ROLE_TO_MODEL["planner"] == CLAUDE_OPUS_4
+    def test_planner_uses_gpt41(self) -> None:
+        assert ROLE_TO_MODEL["planner"] == GPT_41
 
-    def test_reflector_uses_claude(self) -> None:
-        assert ROLE_TO_MODEL["reflector"] == CLAUDE_OPUS_4
+    def test_reflector_uses_gpt41(self) -> None:
+        assert ROLE_TO_MODEL["reflector"] == GPT_41
 
     def test_extractor_uses_gpt(self) -> None:
         assert ROLE_TO_MODEL["extractor"] == GPT_54_MINI
@@ -111,9 +111,9 @@ class TestLLMRouterModelRouting:
             router.call("unknown_role", "prompt")
             mock_call.assert_called_once()
 
-    def test_planner_role_calls_anthropic(self) -> None:
+    def test_planner_role_calls_openai(self) -> None:
         router = LLMRouter()
-        with patch.object(router, "_call_anthropic", return_value=("text", 10, 5)) as mock_call:
+        with patch.object(router, "_call_openai", return_value=("text", 10, 5)) as mock_call:
             result = router.call("planner", "test prompt")
             mock_call.assert_called_once()
             assert result == ("text", 10, 5)
@@ -158,7 +158,7 @@ class TestProviderUnavailable:
 
 class TestProviderFallback:
     def test_claude_fallback_to_openai(self, monkeypatch: pytest.MonkeyPatch) -> None:
-        """When Anthropic is unavailable, planner role falls back to OpenAI."""
+        """When Anthropic is unavailable for a Claude-routed role, falls back to OpenAI."""
         monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
         monkeypatch.setenv("OPENAI_API_KEY", "fake-key")
         router = LLMRouter()
@@ -166,7 +166,8 @@ class TestProviderFallback:
         with patch.object(router, "_call_anthropic") as mock_claude, \
              patch.object(router, "_call_openai", return_value=("fallback", 10, 5)) as mock_openai:
             mock_claude.side_effect = ProviderUnavailable("anthropic", "no key")
-            result = router.call("planner", "test prompt")
+            # Use an unknown role that defaults to Claude Opus
+            result = router.call("unknown_claude_role", "test prompt")
 
         assert result == ("fallback", 10, 5)
         mock_openai.assert_called_once_with(GPT_54_MINI, "test prompt", None, 4096)

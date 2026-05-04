@@ -22,6 +22,13 @@ class TestLLMCallCost:
         cost = tracker.record_llm_call("claude-opus-4-7-20260416", 1_000, 500)
         assert abs(cost - 0.0175) < 1e-9
 
+    def test_gpt41_cost(self) -> None:
+        tracker = CostTracker()
+        # $2.0/1M in, $8.0/1M out
+        # 1 000 in + 1 000 out → 0.002 + 0.008 = 0.010
+        cost = tracker.record_llm_call("gpt-4.1", 1_000, 1_000)
+        assert abs(cost - 0.010) < 1e-9
+
     def test_gpt54_mini_cost(self) -> None:
         tracker = CostTracker()
         # $0.75/1M in, $4.50/1M out

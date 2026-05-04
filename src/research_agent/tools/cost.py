@@ -9,6 +9,7 @@ logger = structlog.get_logger()
 # Pricing per 1M tokens (input/output) as of May 2026
 PRICING: dict[str, dict[str, float]] = {
     "claude-opus-4-7-20260416": {"input": 5.0, "output": 25.0},
+    "gpt-4.1": {"input": 2.0, "output": 8.0},
     "gpt-5.4-mini": {"input": 0.75, "output": 4.50},
     "gemini-3-flash-preview": {"input": 0.50, "output": 3.0},
 }
