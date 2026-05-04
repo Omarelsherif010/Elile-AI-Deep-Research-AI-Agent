@@ -96,17 +96,17 @@ def _generate_markdown(
 
     # Sort by confidence descending so the LLM sees strongest evidence first.
     # Cap at 15 claims to stay within TPM limits on rate-limited orgs (~26K tokens).
+    # report.json retains the full claim inventory; the LLM synthesizes from the top slice.
     top_claims = sorted(validated_claims, key=lambda c: c.confidence, reverse=True)[:15]
     prompt_text = prompt_template.render(
         target_name=target.name,
         target_profile=str(target.model_dump(mode="json")),
         validated_claims=str([c.model_dump(mode="json") for c in top_claims]),
+        total_claims=len(validated_claims),
         risk_flags=str([f.model_dump(mode="json") for f in sorted_flags]),
         entities=str([e.model_dump(mode="json") for e in entities[:10]]),
         relations=str([r.model_dump(mode="json") for r in relations[:8]]),
         budget_used=(
-            f"tokens_in=~{budget.used_dollars * 1000:.0f}, "
-            f"dollars={budget.used_dollars:.3f}, "
             f"search_calls={budget.used_search_calls}, "
             f"iterations={budget.used_iterations}"
         ),
