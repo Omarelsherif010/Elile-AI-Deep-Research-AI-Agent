@@ -9,7 +9,6 @@ from typing import Any, Literal
 import structlog
 
 from research_agent.schemas import Budget
-
 from research_agent.state import ResearchState
 
 logger = structlog.get_logger()
@@ -114,7 +113,7 @@ def budget_guard(node_fn: Any) -> Any:
     if inspect.iscoroutinefunction(node_fn):
 
         @wraps(node_fn)
-        async def _async(state: Any) -> dict:
+        async def _async(state: Any, **_kwargs: Any) -> dict:
             budget: Budget = state.get("budget", Budget())
             term = _check(budget, node_fn.__name__)
             if term:
@@ -127,7 +126,7 @@ def budget_guard(node_fn: Any) -> Any:
         return _async
 
     @wraps(node_fn)
-    def _sync(state: Any) -> dict:
+    def _sync(state: Any, **_kwargs: Any) -> dict:
         budget: Budget = state.get("budget", Budget())
         term = _check(budget, node_fn.__name__)
         if term:
@@ -143,6 +142,14 @@ def budget_guard(node_fn: Any) -> Any:
 # ---------------------------------------------------------------------------
 # Routing
 # ---------------------------------------------------------------------------
+
+
+def _accept_kwargs(fn: Any) -> Any:
+    """Wrap a node function to absorb extra kwargs (e.g. LangGraph config)."""
+    @wraps(fn)
+    def _wrapper(state: Any, **_kwargs: Any) -> dict:
+        return fn(state)
+    return _wrapper
 
 
 def reflector_router(state: ResearchState) -> Literal["planner", "graph_builder"]:
@@ -189,9 +196,9 @@ def build_graph():  # type: ignore[return]
     builder.add_node("reflector", budget_guard(nodes["reflector"]))
 
     # --- Terminal nodes (always run once loop exits) ---
-    builder.add_node("graph_builder", nodes["graph_builder"])
-    builder.add_node("risk_analyzer", nodes["risk_analyzer"])
-    builder.add_node("reporter", nodes["reporter"])
+    builder.add_node("graph_builder", _accept_kwargs(nodes["graph_builder"]))
+    builder.add_node("risk_analyzer", _accept_kwargs(nodes["risk_analyzer"]))
+    builder.add_node("reporter", _accept_kwargs(nodes["reporter"]))
 
     # --- Edges ---
     builder.set_entry_point("planner")
@@ -236,9 +243,9 @@ def build_graph_with_checkpointer(db_path: Path):  # type: ignore[return]
     builder.add_node("extractor", budget_guard(nodes["extractor"]))
     builder.add_node("validator", budget_guard(nodes["validator"]))
     builder.add_node("reflector", budget_guard(nodes["reflector"]))
-    builder.add_node("graph_builder", nodes["graph_builder"])
-    builder.add_node("risk_analyzer", nodes["risk_analyzer"])
-    builder.add_node("reporter", nodes["reporter"])
+    builder.add_node("graph_builder", _accept_kwargs(nodes["graph_builder"]))
+    builder.add_node("risk_analyzer", _accept_kwargs(nodes["risk_analyzer"]))
+    builder.add_node("reporter", _accept_kwargs(nodes["reporter"]))
 
     builder.set_entry_point("planner")
     builder.add_edge("planner", "search_orchestrator")
