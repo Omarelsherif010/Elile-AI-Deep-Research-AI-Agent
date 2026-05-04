@@ -22,7 +22,7 @@ The "Scope and Limitations" section is the ethical anchor of every report you pr
 The following variables are provided:
 
 - `{target_profile}` — `TargetProfile` object with: `name`, `role`, `organization`, `context`
-- `{validated_claims}` — all `ValidatedClaim` objects, available to you grouped by dimension
+- `{validated_claims}` — top `ValidatedClaim` objects by confidence (highest-confidence slice of {total_claims} total). The full inventory is in report.json.
 - `{risk_flags}` — all `RiskFlag` objects, sorted by severity (CRITICAL first) then by category
 - `{entities}` — `Entity` objects from the identity graph
 - `{relations}` — `Relation` objects from the identity graph
@@ -62,7 +62,7 @@ For each flag, use the following format:
 If there are no non-COVERAGE_GAP flags, write: "No REGULATORY, FINANCIAL, NETWORK, REPUTATIONAL, INCONSISTENCY, or OTHER risk flags were identified by this investigation."
 
 ### 6. Claim Inventory
-A Markdown table with columns: `Claim ID | Subject | Predicate | Object | Confidence | Tier | Source(s)`. Include all validated claims. Sort by confidence descending. Truncate `Object` to 80 characters if needed.
+A Markdown table with columns: `Claim ID | Subject | Predicate | Object | Confidence | Tier | Source(s)`. Include the validated claims provided in context (top by confidence). Sort by confidence descending. Truncate `Object` to 80 characters if needed. Note that the full inventory of {total_claims} claims is available in report.json.
 
 ### 7. Identity Graph Summary
 A brief narrative (3–5 sentences) describing the most significant entities and their relations to the target. Highlight any entities that are associated with risk flags. If the graph is sparse (fewer than 3 entities), note this as a limitation.

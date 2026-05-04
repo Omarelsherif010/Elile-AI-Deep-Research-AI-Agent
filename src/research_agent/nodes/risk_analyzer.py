@@ -38,9 +38,14 @@ def risk_analyzer(state: ResearchState) -> dict:
 
     prompt_template = Prompt(_PROMPTS_DIR / "risk_analyzer.md")
 
-    claims_json = [c.model_dump(mode="json") for c in validated_claims[:50]]
-    entities_json = [e.model_dump(mode="json") for e in entities[:30]]
-    relations_json = [r.model_dump(mode="json") for r in relations[:20]]
+    # Sort by confidence descending so the LLM sees the strongest claims first.
+    # Cap at 15 claims to stay within TPM limits on rate-limited orgs (~26K tokens).
+    top_claims = sorted(validated_claims, key=lambda c: c.confidence, reverse=True)[:15]
+    claims_json = [c.model_dump(mode="json") for c in top_claims]
+    entities_json = [e.model_dump(mode="json") for e in entities[:10]]
+    relations_json = [r.model_dump(mode="json") for r in relations[:10]]
+
+    claim_stats = _build_claim_statistics(validated_claims)
 
     prompt_text = prompt_template.render(
         validated_claims=str(claims_json),
@@ -48,6 +53,7 @@ def risk_analyzer(state: ResearchState) -> dict:
         relations=str(relations_json),
         target_name=state["target"].name,
         risk_categories=_RISK_CATEGORIES_DESC,
+        claim_statistics=claim_stats,
     )
 
     risk_flags: list[RiskFlag] = _call_risk_analyzer_llm(prompt_text)
@@ -94,3 +100,36 @@ def _call_risk_analyzer_llm(prompt_text: str) -> list[RiskFlag]:
     except Exception as exc:
         logger.warning("risk_analyzer_failed", error=str(exc))
         return []
+
+
+def _build_claim_statistics(claims: list[ValidatedClaim]) -> str:
+    """Build a compact summary of all claims so the LLM can detect coverage gaps
+    and inconsistencies even when only a top-N slice is provided in the prompt."""
+    total = len(claims)
+    if total == 0:
+        return "No validated claims."
+
+    high = sum(1 for c in claims if c.confidence >= 0.7)
+    medium = sum(1 for c in claims if 0.4 <= c.confidence < 0.7)
+    low = sum(1 for c in claims if c.confidence < 0.4)
+    with_contradictions = sum(1 for c in claims if c.contradicts)
+
+    predicates: dict[str, int] = {}
+    for c in claims:
+        predicates[c.predicate] = predicates.get(c.predicate, 0) + 1
+    top_predicates = sorted(predicates.items(), key=lambda x: x[1], reverse=True)[:10]
+
+    domains: set[str] = set()
+    for c in claims:
+        for url in c.source_urls:
+            parts = url.split("/")
+            if len(parts) > 2:
+                domains.add(parts[2])
+
+    return (
+        f"Total claims: {total} (showing top 15 by confidence). "
+        f"Confidence distribution: {high} high (>=0.7), {medium} medium (0.4-0.7), {low} low (<0.4). "
+        f"Claims with contradictions: {with_contradictions}. "
+        f"Unique source domains: {len(domains)}. "
+        f"Top predicates: {', '.join(f'{p}({n})' for p, n in top_predicates)}."
+    )

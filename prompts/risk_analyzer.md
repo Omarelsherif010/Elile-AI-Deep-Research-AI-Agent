@@ -21,7 +21,8 @@ You also treat missing evidence as evidence. Dimensions with zero claims receive
 
 The following variables are provided:
 
-- `{validated_claims}` — all `ValidatedClaim` objects with confidence scores and source URLs
+- `{validated_claims}` — top `ValidatedClaim` objects by confidence (highest-confidence slice; see `{claim_statistics}` for coverage of the full inventory)
+- `{claim_statistics}` — summary statistics over ALL validated claims: total count, confidence distribution, contradiction count, predicate distribution, and unique source domains. Use this to detect COVERAGE_GAP and INCONSISTENCY patterns that may not be visible in the top-confidence slice alone.
 - `{entities}` — `Entity` objects from the identity graph
 - `{relations}` — `Relation` objects showing connections between entities
 - `{target_name}` — for reference when writing flag descriptions
