@@ -23,7 +23,7 @@ planted_facts:
     match_threshold: 100.0
     notes: Headline fact — appears in page title and opening paragraph.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/index.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/index.html
 
   - id: fact_a02
     statement: Aria Vellinor was born in Velmaris.
@@ -34,7 +34,7 @@ planted_facts:
     match_threshold: 80.0
     notes: Opening biography paragraph.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/index.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/index.html
 
   - id: fact_a03
     statement: Aria Vellinor holds a Master of Finance from the Velmaris Institute of Technology.
@@ -45,7 +45,7 @@ planted_facts:
     match_threshold: 80.0
     notes: Education section, clearly stated.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/index.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/index.html
 
   - id: fact_a04
     statement: Vellinor Capital was founded in 2019.
@@ -56,7 +56,7 @@ planted_facts:
     match_threshold: 100.0
     notes: Company founding date in opening paragraph.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/index.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/index.html
 
   # Medium tier — requires reading article body
   - id: fact_a05
@@ -68,7 +68,7 @@ planted_facts:
     match_threshold: 80.0
     notes: Board membership listed in career timeline; not in opening paragraph.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/career.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/career.html
 
   - id: fact_a06
     statement: Aria Vellinor was previously Chief Technology Officer at Meridian Fintech Solutions.
@@ -79,7 +79,7 @@ planted_facts:
     match_threshold: 80.0
     notes: Prior role in career timeline page.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/career.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/career.html
 
   - id: fact_a07
     statement: Vellinor Capital led a Series B investment of 45 million Velmaris crowns in Nexara Systems.
@@ -90,7 +90,7 @@ planted_facts:
     match_threshold: 75.0
     notes: Investment amount in ventures page; specific number requires reading.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/ventures.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/ventures.html
 
   - id: fact_a08
     statement: Aria Vellinor is an advisory board member at the Ethereal AI Governance Institute.
@@ -101,7 +101,7 @@ planted_facts:
     match_threshold: 80.0
     notes: Advisory role mentioned in ventures page.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/ventures.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/ventures.html
 
   # Hard tier — requires cross-referencing multiple pages
   - id: fact_a09
@@ -113,7 +113,7 @@ planted_facts:
     match_threshold: 0.75
     notes: Conference quote in speaking page; may be paraphrased by agent.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/speaking.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/speaking.html
 
   - id: fact_a10
     statement: The Velmaris Financial Oversight Authority opened a preliminary inquiry into Vellinor Capital in March 2022.
@@ -124,7 +124,7 @@ planted_facts:
     match_threshold: 75.0
     notes: Regulatory inquiry details in press page; requires cross-referencing with career page for timeline.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/press.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/press.html
 
   - id: fact_a11
     statement: Aria Vellinor declined to comment on the Velmaris Financial Oversight Authority inquiry when asked by the Velmaris Business Tribune.
@@ -135,7 +135,7 @@ planted_facts:
     match_threshold: 0.75
     notes: No-comment statement in press page; likely paraphrased.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/press.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/press.html
 
   - id: fact_a12
     statement: Aria Vellinor invested personally in the seed round of Lumina Robotics prior to Vellinor Capital's Series A lead.
@@ -146,8 +146,8 @@ planted_facts:
     match_threshold: 70.0
     notes: Personal investment detail requires connecting seed-round mention in ventures page with press coverage.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/ventures.html
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/press.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/ventures.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/press.html
 
 planted_risks:
   - id: risk_a01
@@ -157,4 +157,4 @@ planted_risks:
       The Velmaris Financial Oversight Authority opened a preliminary inquiry
       into Vellinor Capital in March 2022 regarding cross-border investment disclosures.
     evidence_source_urls:
-      - https://example.github.io/research-agent-plant-site/aria-vellinor/press.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/aria-vellinor/press.html

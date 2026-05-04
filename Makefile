@@ -29,7 +29,8 @@ validate-personas:
 	uv run python -m eval validate-persona --all
 
 deploy-plant-site:
-	git subtree push --prefix eval/plant_site origin gh-pages
+	@echo "Plant site auto-deploys via GitHub Actions on push to main."
+	@echo "To force a manual deploy, run: gh workflow run deploy-plant-site.yml"
 
 demo:
 	uv run streamlit run streamlit_app.py

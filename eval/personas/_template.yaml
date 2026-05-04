@@ -46,7 +46,7 @@ planted_facts:
     match_threshold: 80.0
     notes: This is an easy fact visible in a headline or opening paragraph.
     source_urls:
-      - https://example.github.io/research-agent-plant-site/example-person/index.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/example-person/index.html
 
 # Optional. List of expected risk flags.
 planted_risks:
@@ -60,4 +60,4 @@ planted_risks:
     expected_severity: MEDIUM
     description: Example regulatory risk
     evidence_source_urls:
-      - https://example.github.io/research-agent-plant-site/example-person/index.html
+      - https://omarelsherif010.github.io/Elile-AI-Deep-Research-AI-Agent/example-person/index.html
