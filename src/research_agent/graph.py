@@ -67,18 +67,21 @@ def budget_guard(node_fn: Any) -> Any:
             ),
             ("dollars", budget.used_dollars, budget.max_dollars, "Dollar budget exhausted"),
             (
-                "search_calls",
-                budget.used_search_calls,
-                budget.max_search_calls,
-                "Search call budget exhausted",
-            ),
-            (
                 "seconds",
                 budget.used_seconds_current_iteration,
                 float(budget.max_seconds_per_iteration),
                 "Time budget exhausted",
             ),
         ]
+        # search_calls cap only blocks the search node; other nodes must still
+        # process whatever data was collected during this iteration.
+        if name == "search_orchestrator":
+            caps.append((
+                "search_calls",
+                budget.used_search_calls,
+                budget.max_search_calls,
+                "Search call budget exhausted",
+            ))
         for resource, used, cap, reason in caps:
             if used >= cap:
                 logger.warning(
