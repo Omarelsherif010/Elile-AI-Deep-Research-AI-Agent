@@ -22,14 +22,15 @@ T = TypeVar("T", bound=BaseModel)
 
 # Model IDs
 CLAUDE_OPUS_4 = "claude-opus-4-7-20260416"
+GPT_41 = "gpt-4.1"
 GPT_54_MINI = "gpt-5.4-mini"
 GEMINI_FLASH = "gemini-3-flash-preview"
 
 ROLE_TO_MODEL: dict[str, str] = {
-    "planner": CLAUDE_OPUS_4,
-    "reflector": CLAUDE_OPUS_4,
-    "risk_analyzer": CLAUDE_OPUS_4,
-    "reporter": CLAUDE_OPUS_4,
+    "planner": GPT_41,
+    "reflector": GPT_41,
+    "risk_analyzer": GPT_41,
+    "reporter": GPT_41,
     "extractor": GPT_54_MINI,
     "validator": GPT_54_MINI,
     "query_expander": GEMINI_FLASH,
