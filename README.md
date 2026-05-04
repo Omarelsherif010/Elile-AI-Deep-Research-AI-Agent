@@ -189,8 +189,9 @@ streamlit_app.py        # Interactive demo UI
 |-------------|--------|----------|
 | **Complete codebase + documentation** | **Done** | 8 nodes, 5 tools, 8 prompts, schemas, tests, README, CLAUDE.md, .env.example |
 | **Three test personas with expected findings** | **Done** | `eval/personas/`: Aria Vellinor (synthetic), Dorian Ashcroft (synthetic), Satya Nadella (real public). Plant site at `eval/plant_site/` |
-| **Execution logs** | **Done** | `runs/timothy_overturf/audit.json` — 1.7MB per-node audit trail with input state, prompts, responses, latency, tokens |
-| **Risk assessment reports** | **Done** | `runs/timothy_overturf/report.json` — 320 claims, 6 risk flags (CRITICAL SEC action, HIGH network risk, MEDIUM reputational) |
+| **Execution logs** | **Done** | `runs/timothy_overturf/audit.json` — per-node audit trail with input state, prompts, responses, latency, tokens |
+| **Risk assessment reports** | **Done** | `runs/timothy_overturf/report.json` — 670 claims, 6 risk flags (2 CRITICAL SEC enforcement, 4 COVERAGE_GAP). Trimmed summary in `demo_results/` |
+| **Eval suite results** | **Done** | `demo_results/eval/` — live run metrics, fixture replay, eval methodology documentation |
 
 ### Evaluation Criteria
 
@@ -200,9 +201,9 @@ streamlit_app.py        # Interactive demo UI
 | **Effective multi-model orchestration** | 3 models by role with automatic fallback, centralized routing in `tools/llm.py`, cost tracking per provider |
 | **Intelligent search progression** | Reflector evaluates coverage after each iteration, identifies gaps, planner generates targeted queries. Budget-aware termination |
 | **Error handling and edge cases** | Budget guard on every node, graceful termination (no exceptions), empty LLM output handling, rate limit fallback, provider unavailable fallback |
-| **Depth and accuracy** | 320 claims from 33 search calls for Timothy Overturf, found real SEC enforcement action (CRITICAL), connected parties with suspensions (HIGH) |
+| **Depth and accuracy** | 670 claims from 60 search calls for Timothy Overturf, found real SEC enforcement action (2x CRITICAL), 4 coverage gaps honestly disclosed |
 | **Risk assessment quality** | 7-category taxonomy with 4 severity levels, evidence-backed flags with claim IDs, coverage gaps explicitly reported |
-| **Non-obvious connections** | Network analysis found Hansueli/Hans Overturf connection with suspension — not immediately obvious from basic search |
+| **Non-obvious connections** | Identity graph maps 69 entities and 258 relationships, including familial connections (Hansueli/Hans Overturf) not immediately obvious from basic search |
 | **Source verification** | 4-factor confidence formula, tier-based source classification (gov/court → news → professional → blog), hard cap on single-source claims |
 | **Creative approaches** | Synthetic eval personas with planted facts on GitHub Pages, deterministic confidence formula (not LLM-based), XML content wrapping for prompt injection defense |
 | **Search optimization** | Query expansion via cheap model (Gemini/GPT-5.4 Mini), multi-provider routing by intent, deduplication via SearchCache |
@@ -216,12 +217,11 @@ The assessment target was successfully investigated. Key findings:
 
 | Severity | Category | Finding |
 |----------|----------|---------|
-| **CRITICAL** | REGULATORY | SEC filed federal-court enforcement action against Timothy Overturf and Sisu Capital — allegations of fiduciary duty breaches, unauthorized trades, unsuitable trades in client accounts |
-| **HIGH** | NETWORK | Connected to Hansueli/Hans Overturf with documented suspension |
-| **MEDIUM** | REPUTATIONAL | Regional/industry coverage repeats SEC allegations against Overturf and Sisu Capital |
-| LOW | COVERAGE_GAP | Financial connections beyond SEC pattern, broader reputation, inconsistency detection |
+| **CRITICAL** | REGULATORY | Official SEC enforcement action against Timothy Overturf and Sisu Capital, LLC — allegations of fiduciary duty breaches via unauthorized and unsuitable trades in client accounts (confidence 0.95) |
+| **CRITICAL** | REGULATORY | SEC released official allegations that Timothy Overturf breached fiduciary duties to clients — confirmed by Tier 1 regulatory releases (confidence 0.95) |
+| LOW | COVERAGE_GAP | Financial connections, negative press, inconsistency, and network risk dimensions have zero validated claims — gaps disclosed in report |
 
-**Metrics**: 320 validated claims, 43 entities, 121 relationships, 33 search calls, ~18 minutes runtime.
+**Metrics**: 670 validated claims, 69 entities, 258 relationships, 60 search calls. Full report and artifacts in `runs/timothy_overturf/` and `demo_results/timothy_overturf/`.
 
 ---
 

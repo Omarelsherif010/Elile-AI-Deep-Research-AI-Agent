@@ -1,0 +1,60 @@
+{
+  "persona_synthetic_a": [
+    {
+      "claim_id": "claim_002",
+      "claim_text": "Aria Vellinor was born in Velmaris",
+      "confidence": 0.88,
+      "is_correct": true,
+      "best_fuzzy_score": 64.70588235294117
+    },
+    {
+      "claim_id": "claim_001",
+      "claim_text": " Aria Vellinor is the founder and Managing Partner of Vellinor Capital ",
+      "confidence": 0.92,
+      "is_correct": true,
+      "best_fuzzy_score": 100.0
+    },
+    {
+      "claim_id": "claim_006",
+      "claim_text": "Aria Vellinor was previously Chief Technology Officer at Meridian Fintech Solutions ",
+      "confidence": 0.83,
+      "is_correct": true,
+      "best_fuzzy_score": 73.6842105263158
+    },
+    {
+      "claim_id": "claim_003",
+      "claim_text": "Aria Vellinor holds a Master of Finance from the Velmaris Institute of Technology ",
+      "confidence": 0.82,
+      "is_correct": true,
+      "best_fuzzy_score": 60.952380952380956
+    },
+    {
+      "claim_id": "claim_009",
+      "claim_text": "The Velmaris Financial Oversight Authority opened a preliminary inquiry into Vellinor Capital in March 2022 ",
+      "confidence": 0.72,
+      "is_correct": true,
+      "best_fuzzy_score": 66.66666666666667
+    },
+    {
+      "claim_id": "claim_007",
+      "claim_text": "Vellinor Capital led a Series B investment of 45 million Velmaris crowns in Nexara Systems ",
+      "confidence": 0.8,
+      "is_correct": true,
+      "best_fuzzy_score": 71.1864406779661
+    },
+    {
+      "claim_id": "claim_005",
+      "claim_text": "Aria Vellinor serves on the board of the Velmaris Digital Commerce Association ",
+      "confidence": 0.78,
+      "is_correct": true,
+      "best_fuzzy_score": 70.37037037037037
+    },
+    {
+      "claim_id": "claim_004",
+      "claim_text": " Vellinor Capital was founded in 2019 ",
+      "confidence": 0.89,
+      "is_correct": true,
+      "best_fuzzy_score": 61.53846153846154
+    }
+  ]
+}

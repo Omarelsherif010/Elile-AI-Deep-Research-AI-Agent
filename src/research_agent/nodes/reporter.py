@@ -118,7 +118,14 @@ def _generate_markdown(
         result_raw, tokens_in, tokens_out = _router.call("reporter", prompt_text, max_tokens=8192)
 
         if isinstance(result_raw, str):
-            report_markdown = result_raw
+            try:
+                parsed = json.loads(result_raw)
+                if isinstance(parsed, dict) and "markdown" in parsed:
+                    report_markdown = parsed["markdown"]
+                else:
+                    report_markdown = result_raw
+            except (json.JSONDecodeError, KeyError):
+                report_markdown = result_raw
         elif hasattr(result_raw, "markdown"):
             report_markdown = str(result_raw.markdown)
         else:

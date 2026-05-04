@@ -1,7 +1,10 @@
 """Streamlit demo: visualize a research agent report.json."""
+
 from __future__ import annotations
+
 import json
 from pathlib import Path
+
 import streamlit as st
 
 st.set_page_config(
@@ -143,9 +146,7 @@ def render_graph(report: dict) -> None:
             G.add_node(e["id"], label=e.get("canonical_name", ""), type=e.get("type", ""))
 
         for r in relations:
-            G.add_edge(
-                r["subject_entity_id"], r["object_entity_id"], label=r.get("predicate", "")
-            )
+            G.add_edge(r["subject_entity_id"], r["object_entity_id"], label=r.get("predicate", ""))
 
         pos = nx.spring_layout(G, seed=42)
 
@@ -204,15 +205,37 @@ def render_graph(report: dict) -> None:
             )
 
 
+def _discover_runs() -> list[str]:
+    """Find existing run directories that contain a report.json."""
+    runs_dir = Path("runs")
+    if not runs_dir.is_dir():
+        return []
+    return sorted(
+        [d.name for d in runs_dir.iterdir() if d.is_dir() and (d / "report.json").exists()],
+        reverse=True,
+    )
+
+
 def main() -> None:
     st.sidebar.title("Deep Research Agent")
-    st.sidebar.markdown("Upload a `report.json` to visualize results.")
 
-    # Load options
-    input_method = st.sidebar.radio("Load report from:", ["File upload", "Run directory path"])
+    existing_runs = _discover_runs()
+
+    input_method = st.sidebar.radio(
+        "Load report from:",
+        ["Existing run", "File upload", "Run directory path"],
+        index=0 if existing_runs else 1,
+    )
 
     report = None
-    if input_method == "File upload":
+    if input_method == "Existing run":
+        if existing_runs:
+            selected = st.sidebar.selectbox("Select run:", existing_runs)
+            if selected:
+                report = load_report(Path("runs") / selected / "report.json")
+        else:
+            st.sidebar.info("No completed runs found in `runs/`.")
+    elif input_method == "File upload":
         uploaded = st.sidebar.file_uploader("report.json", type="json")
         if uploaded:
             report = load_report(uploaded)
