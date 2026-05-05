@@ -1,0 +1,3295 @@
+{
+  "run_id": "timothy_overturf",
+  "target": {
+    "name": "Timothy Overturf",
+    "aliases": [],
+    "role": "CEO",
+    "organization": "Sisu Capital",
+    "context": null,
+    "geographic_hint": null
+  },
+  "claim_count": 670,
+  "risk_flag_count": 6,
+  "risk_flags": [
+    {
+      "type": "REGULATORY",
+      "severity": "CRITICAL",
+      "description": "Official SEC enforcement action was initiated against Timothy Overturf and Sisu Capital, LLC on August 1, 2023, alleging breaches of fiduciary duty via unauthorized and unsuitable trades in client accounts. This is confirmed by Tier 1 SEC regulatory notices.",
+      "evidence_claim_ids": [
+        "7f3d2b8d-7d0a-4b1c-a6b8-8f0b3c9e2c11",
+        "b4f2fd2c-6a8e-4f5b-b2fb-7d2f0a1f9b31",
+        "3f9e2e9e-1c77-44d3-a1e9-2f1f4b2c4d11",
+        "c6d7e8f9-0a1b-4c2d-8e3f-9a0b1c2d3e4f"
+      ],
+      "confidence": 0.95,
+      "justification": ""
+    },
+    {
+      "type": "REGULATORY",
+      "severity": "CRITICAL",
+      "description": "SEC released official allegations that Timothy Overturf breached fiduciary duties to clients by making unauthorized and unsuitable trades in client accounts. This is evidenced by Tier 1 SEC regulatory releases.",
+      "evidence_claim_ids": [
+        "a6c1d2e3-f4b5-4c6d-8e7f-9012a3b4c5d6",
+        "c7d8e9f0-1234-4567-89ab-cdef01234567",
+        "d8e9f0a1-2345-5678-9abc-def012345678"
+      ],
+      "confidence": 0.95,
+      "justification": ""
+    },
+    {
+      "type": "COVERAGE_GAP",
+      "severity": "LOW",
+      "description": "No validated claims were found regarding Timothy Overturf's personal finances, bankruptcy, debt defaults, or unusual financial activity. Public sources do not document financial distress or solvency status. This gap should be disclosed in the report.",
+      "evidence_claim_ids": [],
+      "confidence": 1.0,
+      "justification": ""
+    },
+    {
+      "type": "COVERAGE_GAP",
+      "severity": "LOW",
+      "description": "There are no validated claims concerning negative press coverage, public disputes, or reputational controversies about Timothy Overturf. This represents a gap in available public information.",
+      "evidence_claim_ids": [],
+      "confidence": 1.0,
+      "justification": ""
+    },
+    {
+      "type": "COVERAGE_GAP",
+      "severity": "LOW",
+      "description": "No validated claims establish any contradictory statements or inconsistencies regarding key facts about Timothy Overturf. The inconsistency dimension is a coverage gap for this subject.",
+      "evidence_claim_ids": [],
+      "confidence": 1.0,
+      "justification": ""
+    },
+    {
+      "type": "COVERAGE_GAP",
+      "severity": "LOW",
+      "description": "There are no validated claims documenting significant network risk (e.g., associations with flagged individuals or entities subject to regulatory action) relating to Timothy Overturf. This gap should be disclosed in the report.",
+      "evidence_claim_ids": [],
+      "confidence": 1.0,
+      "justification": ""
+    }
+  ],
+  "budget_used": {
+    "max_iterations": 4,
+    "used_iterations": 0,
+    "max_search_calls": 60,
+    "used_search_calls": 60,
+    "max_dollars": 3.0,
+    "used_dollars": 0.0,
+    "max_seconds_per_iteration": 180,
+    "used_seconds_current_iteration": 0.0,
+    "last_iteration_cost": 0.0
+  },
+  "entity_count": 69,
+  "relation_count": 258,
+  "top_claims": [
+    {
+      "id": "7f3d2b8d-7d0a-4b1c-a6b8-8f0b3c9e2c11",
+      "subject": "Timothy Overturf",
+      "predicate": "is_subject_of_regulatory_action",
+      "object": "SEC enforcement action",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.99,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.7625,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC enforcement release; official regulatory publication with clear provenance. Strong support, though the claim remains time-sensitive."
+    },
+    {
+      "id": "0e0a7d7e-5a8a-4de1-8f27-64f7d2d7c8c9",
+      "subject": "Timothy Overturf",
+      "predicate": "located_in",
+      "object": "Arcata, California",
+      "attributes": {
+        "as_of": "2023-08-01"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.97,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.7625,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC release; official regulatory source. Time-sensitive location claim as of 2023-08-01 with one independent domain."
+    },
+    {
+      "id": "b9d8a1f4-2f56-4b2e-9c0d-1a9b8c7d6e5f",
+      "subject": "Timothy Overturf",
+      "predicate": "owned_or_works_at",
+      "object": "Sisu Capital, LLC",
+      "attributes": {
+        "context": "investment advisory firm",
+        "as_of": "2023-08-01"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.93,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.7625,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC release; official regulatory source. The ownership/work-at wording reflects an allegation context and is time-sensitive."
+    },
+    {
+      "id": "a6c1d2e3-f4b5-4c6d-8e7f-9012a3b4c5d6",
+      "subject": "Timothy Overturf",
+      "predicate": "breached_fiduciary_duties_to",
+      "object": "clients",
+      "attributes": {
+        "context": "SEC allegation"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.95,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.7625,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC enforcement release. Allegation-based predicate with clear official provenance; no prior contradictions."
+    },
+    {
+      "id": "c7d8e9f0-1234-4567-89ab-cdef01234567",
+      "subject": "Timothy Overturf",
+      "predicate": "made_unauthorized_trades_in",
+      "object": "client accounts",
+      "attributes": {
+        "context": "SEC allegation"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.96,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.7625,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC enforcement release. Allegation-based predicate with clear official provenance; no prior contradictions."
+    },
+    {
+      "id": "d8e9f0a1-2345-5678-9abc-def012345678",
+      "subject": "Timothy Overturf",
+      "predicate": "made_unsuitable_trades_in",
+      "object": "client accounts",
+      "attributes": {
+        "context": "SEC allegation"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.96,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.7625,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC enforcement release. Allegation-based predicate with clear official provenance; no prior contradictions."
+    },
+    {
+      "id": "1a7a2d4f-8d6f-4c8b-9d0d-5d8e5e9b2f6c",
+      "subject": "Timothy Overturf",
+      "predicate": "is_based_in",
+      "object": "Arcata, California",
+      "attributes": {
+        "as_of": "2023-08-01"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.96,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.73,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:34.507346Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:35.881424Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:45.629981Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:46.718579Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:48.679433Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:52.848384Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:55.011606Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:57.159553Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:02.692135Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:05.197538Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:13.273456Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:14.405784Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:15.542244Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:18.535499Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:19.662683Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:20.795536Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:23.768148Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC release for a current-at-the-time location/basis claim. Dated 2023 and time-sensitive, but no contradiction signal in the validated set."
+    },
+    {
+      "id": "3f9e2e9e-1c77-44d3-a1e9-2f1f4b2c4d11",
+      "subject": "Timothy Overturf",
+      "predicate": "breached_fiduciary_duties_to_clients",
+      "object": "clients",
+      "attributes": {
+        "context": "making unauthorized and unsuitable trades in client accounts",
+        "date": "2023-08-01"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.98,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.73,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:34.507346Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:35.881424Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:45.629981Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:46.718579Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:48.679433Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:52.848384Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:55.011606Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:57.159553Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:02.692135Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:05.197538Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:13.273456Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:14.405784Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:15.542244Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:18.535499Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:19.662683Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:20.795536Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:23.768148Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC enforcement release alleging unauthorized and unsuitable trades. Strong regulatory provenance; no contradiction signal in the validated set."
+    },
+    {
+      "id": "c6d7e8f9-0a1b-4c2d-8e3f-9a0b1c2d3e4f",
+      "subject": "Timothy Overturf",
+      "predicate": "made",
+      "object": "unauthorized and unsuitable trades in client accounts",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.97,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.73,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:34.507346Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:35.881424Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:45.629981Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:46.718579Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:48.679433Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:52.848384Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:55.011606Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:57.159553Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:02.692135Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:05.197538Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:13.273456Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:14.405784Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:15.542244Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:18.535499Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:19.662683Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:20.795536Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:23.768148Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC enforcement release supporting the trading allegation. Time-sensitive 2023 regulatory claim with no contradiction signal here."
+    },
+    {
+      "id": "b4f2fd2c-6a8e-4f5b-b2fb-7d2f0a1f9b31",
+      "subject": "Timothy Overturf",
+      "predicate": "is_subject_of_regulatory_action",
+      "object": "Securities and Exchange Commission enforcement action",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.99,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.63,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:34.507346Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:35.881424Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:45.629981Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:46.718579Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:48.679433Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:52.848384Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:55.011606Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:57.159553Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:02.692135Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:05.197538Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:13.273456Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:14.405784Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:15.542244Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:18.535499Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:19.662683Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:20.795536Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:23.768148Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC enforcement release; strongest provenance in this set. Risk-surface regulatory-action claim is dated 2023 and directly conflicts with prior lower-tier paraphrases of the same event."
+    },
+    {
+      "id": "d0af3f7b-7cf1-4c1d-8f8f-2e2c7f3d9d77",
+      "subject": "Timothy Overturf",
+      "predicate": "founded",
+      "object": "Sisu Capital, LLC",
+      "attributes": {
+        "as_of": "2023-08-01"
+      },
+      "source_urls": [
+        "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807"
+      ],
+      "extraction_confidence": 0.9,
+      "asserted_at": "2023-08-01T00:00:00",
+      "confidence": 0.63,
+      "supporting_sources": [
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745202Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002611Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420662Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507236Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745230Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.810997Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104640Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787599Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919836Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038290Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:34.507346Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:35.881424Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:45.629981Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:46.718579Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:48.679433Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:52.848384Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:55.011606Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:26:57.159553Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:02.692135Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:05.197538Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:13.273456Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:14.405784Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:15.542244Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:18.535499Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:19.662683Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:20.795536Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.sec.gov/enforcement-litigation/litigation-releases/lr-25807",
+          "domain": "www.sec.gov",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:27:23.768148Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 1 SEC enforcement release; foundational source for Sisu Capital formation. Dated and time-sensitive, but authoritative within this set."
+    },
+    {
+      "id": "4c1efc1e-6b2a-4a1c-9d3a-5d3d6c0d2d63",
+      "subject": "Timothy Overturf",
+      "predicate": "holds_role",
+      "object": "Chief Executive Officer at Sisu Capital",
+      "attributes": {
+        "as_of": "unknown",
+        "location": "unknown"
+      },
+      "source_urls": [
+        "https://www.linkedin.com/in/timothy-overturf-9aa63378/"
+      ],
+      "extraction_confidence": 0.98,
+      "asserted_at": null,
+      "confidence": 0.49,
+      "supporting_sources": [
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745157Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:19.850676Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002543Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271860Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420651Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507208Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745221Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:31.881499Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:33.003572Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:43.035878Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:44.175798Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:48.411343Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:49.563156Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:50.706357Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:54.437542Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:55.564926Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787606Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919839Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038309Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:04.763874Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:05.902936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:07.046886Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Single Tier 3 LinkedIn self-attestation; current role claim is time-sensitive and not independently corroborated here. No prior contradictions in the validated set. [capped: insufficient corroboration for >0.5] [inferred, unverified: insufficient evidence]"
+    },
+    {
+      "id": "c9d9d3d5-2b34-4c34-b1c6-2d3e6f5d4a7a",
+      "subject": "Timothy Overturf",
+      "predicate": "has_responsibility_for",
+      "object": "day to day administrative and trading operations",
+      "attributes": {
+        "context": "Chief Executive Officer at Sisu Capital"
+      },
+      "source_urls": [
+        "https://www.linkedin.com/in/timothy-overturf-9aa63378/"
+      ],
+      "extraction_confidence": 0.97,
+      "asserted_at": null,
+      "confidence": 0.49,
+      "supporting_sources": [
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745157Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:19.850676Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002543Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271860Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420651Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507208Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745221Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:31.881499Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:33.003572Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:43.035878Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:44.175798Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:48.411343Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:49.563156Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:50.706357Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:54.437542Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:55.564926Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787606Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919839Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038309Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:04.763874Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:05.902936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:07.046886Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 3 self-attested LinkedIn bio material describing current responsibilities. No independent corroboration and no prior contradictions. [capped: insufficient corroboration for >0.5] [inferred, unverified: insufficient evidence]"
+    },
+    {
+      "id": "0f0a1c7b-8b7d-4d66-8d41-4e5b2c7c5d33",
+      "subject": "Timothy Overturf",
+      "predicate": "has_responsibility_for",
+      "object": "client interaction",
+      "attributes": {
+        "context": "Chief Executive Officer at Sisu Capital"
+      },
+      "source_urls": [
+        "https://www.linkedin.com/in/timothy-overturf-9aa63378/"
+      ],
+      "extraction_confidence": 0.96,
+      "asserted_at": null,
+      "confidence": 0.49,
+      "supporting_sources": [
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745157Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:19.850676Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002543Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271860Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420651Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507208Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745221Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:31.881499Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:33.003572Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:43.035878Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:44.175798Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:48.411343Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:49.563156Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:50.706357Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:54.437542Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:55.564926Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787606Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919839Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038309Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:04.763874Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:05.902936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:07.046886Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 3 self-attested LinkedIn bio material describing current responsibilities. No independent corroboration and no prior contradictions. [capped: insufficient corroboration for >0.5] [inferred, unverified: insufficient evidence]"
+    },
+    {
+      "id": "8f1d2f3e-9a4b-4c5d-8e6f-1a2b3c4d5e6f",
+      "subject": "Timothy Overturf",
+      "predicate": "is_spearheading",
+      "object": "a new Sisu venture that works with community banks",
+      "attributes": {
+        "context": "Sisu Capital"
+      },
+      "source_urls": [
+        "https://www.linkedin.com/in/timothy-overturf-9aa63378/"
+      ],
+      "extraction_confidence": 0.9,
+      "asserted_at": null,
+      "confidence": 0.49,
+      "supporting_sources": [
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745157Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:19.850676Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002543Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271860Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420651Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507208Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745221Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:31.881499Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:33.003572Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:43.035878Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:44.175798Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:48.411343Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:49.563156Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:50.706357Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:54.437542Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:55.564926Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787606Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919839Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038309Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:04.763874Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:05.902936Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://www.linkedin.com/in/timothy-overturf-9aa63378/",
+          "domain": "www.linkedin.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:07.046886Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 3 self-attestation from LinkedIn about a current venture. Single-domain provenance only; no contradiction signal. [capped: insufficient corroboration for >0.5] [inferred, unverified: insufficient evidence]"
+    },
+    {
+      "id": "f1c3f6b8-5d6a-4f2a-8f5f-6cf2e0f3f0ab",
+      "subject": "Timothy Overturf",
+      "predicate": "holds_role",
+      "object": "owner/CEO of Sisu Capital, LLC",
+      "attributes": {
+        "location": "Arcata"
+      },
+      "source_urls": [
+        "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/"
+      ],
+      "extraction_confidence": 0.98,
+      "asserted_at": "2023-08-18T00:00:00",
+      "confidence": 0.49,
+      "supporting_sources": [
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745195Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:19.850732Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002604Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271912Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420655Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507234Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745224Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:31.881515Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:33.003568Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.811048Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:37.922900Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104692Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:45.330559Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:48.411283Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:49.563078Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:50.706312Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:54.437538Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:55.564946Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787536Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919813Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038239Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:05.902920Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 3 regional news source; historical role claim anchored to 2023 reporting. No prior contradictions detected. [capped: insufficient corroboration for >0.5] [inferred, unverified: insufficient evidence]"
+    },
+    {
+      "id": "4b2a2f4f-0a1a-4c8f-9f2c-6b2d0f4c1d9e",
+      "subject": "Timothy Overturf",
+      "predicate": "is_subject_of_regulatory_action",
+      "object": "SEC complaint filed in federal court",
+      "attributes": {
+        "date": "2023-08-01",
+        "agency": "Securities and Exchange Commission"
+      },
+      "source_urls": [
+        "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/"
+      ],
+      "extraction_confidence": 0.95,
+      "asserted_at": "2023-08-18T00:00:00",
+      "confidence": 0.49,
+      "supporting_sources": [
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745195Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:19.850732Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002604Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271912Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420655Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507234Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745224Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:31.881515Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:33.003568Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.811048Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:37.922900Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104692Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:45.330559Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:48.411283Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:49.563078Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:50.706312Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:54.437538Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:55.564946Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787536Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919813Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038239Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:05.902920Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 3 regional news reporting a 2023 SEC complaint; risk-surface claim with only one domain in this set. No contradictions in prior validated claims. [capped: insufficient corroboration for >0.5] [inferred, unverified: insufficient evidence]"
+    },
+    {
+      "id": "a6a4f3df-4c73-4d3c-8c88-3b2d7d9d1c44",
+      "subject": "Sisu Capital, LLC",
+      "predicate": "was_defunct",
+      "object": "now-defunct",
+      "attributes": {},
+      "source_urls": [
+        "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/"
+      ],
+      "extraction_confidence": 0.9,
+      "asserted_at": "2023-08-18T00:00:00",
+      "confidence": 0.49,
+      "supporting_sources": [
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745195Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:19.850732Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002604Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271912Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420655Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507234Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745224Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:31.881515Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:33.003568Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.811048Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:37.922900Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104692Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:45.330559Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:48.411283Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:49.563078Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:50.706312Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:54.437538Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:55.564946Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787536Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919813Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038239Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:05.902920Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 3 regional news source. Defunct-status wording is dated to 2023 reporting and should be treated as time-sensitive; no contradictions noted. [capped: insufficient corroboration for >0.5] [inferred, unverified: insufficient evidence]"
+    },
+    {
+      "id": "c3b9fd9c-6a1e-4dbe-8db6-1b3b6e7a5f12",
+      "subject": "Sisu Capital, LLC",
+      "predicate": "is_subject_of_regulatory_action",
+      "object": "SEC complaint alleging serious financial crimes",
+      "attributes": {
+        "date": "2023-08-01"
+      },
+      "source_urls": [
+        "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/"
+      ],
+      "extraction_confidence": 0.93,
+      "asserted_at": "2023-08-18T00:00:00",
+      "confidence": 0.49,
+      "supporting_sources": [
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745195Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:19.850732Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002604Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271912Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420655Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507234Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745224Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:31.881515Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:33.003568Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.811048Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:37.922900Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104692Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:45.330559Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:48.411283Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:49.563078Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:50.706312Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:54.437538Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:55.564946Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787536Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919813Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038239Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:05.902920Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 3 regional news source covering an SEC complaint allegation. Single-domain support only; no contradiction signal. [capped: insufficient corroboration for >0.5] [inferred, unverified: insufficient evidence]"
+    },
+    {
+      "id": "d8e7f2c1-9e5a-4c12-8e1d-2b7f7d5a1c88",
+      "subject": "Timothy Overturf",
+      "predicate": "is_child_of",
+      "object": "Hansueli 'Hans' Overturf",
+      "attributes": {},
+      "source_urls": [
+        "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/"
+      ],
+      "extraction_confidence": 0.93,
+      "asserted_at": "2023-08-18T00:00:00",
+      "confidence": 0.49,
+      "supporting_sources": [
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:18.745195Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:19.850732Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:21.002604Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:26.271912Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:27.420655Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:28.507234Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:30.745224Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:31.881515Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:33.003568Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:36.811048Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:37.922900Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:39.104692Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:45.330559Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:48.411283Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:49.563078Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:50.706312Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:54.437538Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:55.564946Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:09:59.787536Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:00.919813Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:02.038239Z",
+          "robots_allowed": true
+        },
+        {
+          "url": "https://lostcoastoutpost.com/2023/aug/18/sec-accuses-timothy-overturf-owner-and-ceo-local-i/",
+          "domain": "lostcoastoutpost.com",
+          "tier": 3,
+          "retrieved_at": "2026-05-04T13:10:05.902920Z",
+          "robots_allowed": true
+        }
+      ],
+      "contradicts": [],
+      "validation_notes": "Tier 3 regional news source for a family relationship claim. No independent corroboration in the current source set and no contradiction evidence. [capped: insufficient corroboration for >0.5] [inferred, unverified: insufficient evidence]"
+    }
+  ]
+}

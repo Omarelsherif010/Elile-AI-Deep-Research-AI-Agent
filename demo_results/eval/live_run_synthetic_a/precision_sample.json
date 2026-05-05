@@ -1,0 +1,382 @@
+{
+  "persona_synthetic_a": [
+    {
+      "claim_id": "8d7f8a2c-3fbb-4f0a-9f2a-4b1a5c4c6d11",
+      "claim_text": "Aria Vellinor held_role Managing Principal, Square Mile Capital Management LLC",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 65.45454545454545
+    },
+    {
+      "claim_id": "a1d2c3e4-f5a6-47b8-9c0d-1e2f3a4b5c6d",
+      "claim_text": "Aria Vellinor learned_with Manocherian Brothers",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 60.75949367088608
+    },
+    {
+      "claim_id": "b2c3d4e5-f6a7-48b9-8c0d-2e3f4a5b6c7d",
+      "claim_text": "Aria Vellinor was_co_chair_of HBS Real Estate Alumni Association",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 70.17543859649122
+    },
+    {
+      "claim_id": "c3d4e5f6-a7b8-49c0-9d0e-3f4a5b6c7d8e",
+      "claim_text": "Aria Vellinor advised Professor Arthur Segel",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 63.01369863013699
+    },
+    {
+      "claim_id": "5f4a1d6a-9d7c-4f1d-8a55-0e8d7d6b5d11",
+      "claim_text": "Annabelle first_joined Warner Music",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 50.0
+    },
+    {
+      "claim_id": "f2a8d1c3-7b6e-4a52-9a49-3f6ed2c5e7a4",
+      "claim_text": "Annabelle held_role Business Affairs Director, Festival Mushroom Music",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 44.24778761061947
+    },
+    {
+      "claim_id": "0b6e6d1f-2f47-4f9e-a2e0-6d9bb7c5b2c8",
+      "claim_text": "Annabelle joins ARIA",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 52.63157894736843
+    },
+    {
+      "claim_id": "a7d4c8e1-1c8c-4a6f-8b72-3c0f7d8c9e21",
+      "claim_text": "Annabelle joins PPCA",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 52.63157894736843
+    },
+    {
+      "claim_id": "c1f9b2a4-8b6d-4e2f-9f1a-2d7b4c3e5a90",
+      "claim_text": "Annabelle had_career_at Network 10",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 50.0
+    },
+    {
+      "claim_id": "d3e7a5b1-4f2d-4c6a-9d8e-1a2b3c4d5e6f",
+      "claim_text": "Annabelle held_role Chief ...",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 50.0
+    },
+    {
+      "claim_id": "0f0ad7e6-6b6e-4d1d-9c9d-2a8fd2f7c4c1",
+      "claim_text": "Aria Vellinor held_role seasonal worker, Party City",
+      "confidence": 0.455,
+      "is_correct": true,
+      "best_fuzzy_score": 64.15094339622642
+    },
+    {
+      "claim_id": "3e4c2f2d-4e5d-4f8f-8b8f-6b7a7c2f9a11",
+      "claim_text": "Aria Vellinor held_role teaching assistant, Kampus Kids",
+      "confidence": 0.455,
+      "is_correct": true,
+      "best_fuzzy_score": 64.15094339622642
+    },
+    {
+      "claim_id": "5b2a1d8f-7f3f-4f0f-9c44-2f3b9d0a5e2c",
+      "claim_text": "Aria Vellinor held_role teaching assistant, Sugar n' Spice",
+      "confidence": 0.455,
+      "is_correct": true,
+      "best_fuzzy_score": 64.15094339622642
+    },
+    {
+      "claim_id": "7c1b8a9d-0c4f-4f3d-b2a1-9e6f1d3c8a77",
+      "claim_text": "Aria Vellinor performed_duties cared for children",
+      "confidence": 0.455,
+      "is_correct": true,
+      "best_fuzzy_score": 61.33333333333333
+    },
+    {
+      "claim_id": "9d2f3a1b-8c4e-4f2d-a1b9-3e7c2d4f5a66",
+      "claim_text": "Aria Vellinor performed_duties cleaned",
+      "confidence": 0.455,
+      "is_correct": true,
+      "best_fuzzy_score": 66.66666666666667
+    },
+    {
+      "claim_id": "b6f2c1d3-5a7e-4c8f-9a2b-1d3e4f5a6b77",
+      "claim_text": "Aria Vellinor performed_duties communicated with parents",
+      "confidence": 0.455,
+      "is_correct": true,
+      "best_fuzzy_score": 62.745098039215684
+    },
+    {
+      "claim_id": "2d7d8b9a-8c4f-4a2d-9bfe-2b4d0a6e6a11",
+      "claim_text": "Gary began_career_as officer in the US Navy",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 51.21951219512195
+    },
+    {
+      "claim_id": "9d6a5a5f-1e64-4d8c-a0ad-8b4d5d7b2d22",
+      "claim_text": "Gary has_held_role operations leadership roles in the medical device industry",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 49.27536231884058
+    },
+    {
+      "claim_id": "4d2c0f41-9c6f-4ef2-9a0a-0b6c0a9e3a33",
+      "claim_text": "Gary has_experience_with multiple start-up and large medical device companies",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 44.285714285714285
+    },
+    {
+      "claim_id": "e9d1f7e3-6b25-4df5-9f44-4d8b4d7c4a44",
+      "claim_text": "Gary joined Aria CV",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 57.89473684210527
+    },
+    {
+      "claim_id": "0d6f9a2b-4c57-4f2d-9e7d-3d4a1e7b9f10",
+      "claim_text": "Aria Vellinor is_subject_of_lawsuit Consumer Financial Protection Bureau v. Aria",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 64.0
+    },
+    {
+      "claim_id": "a1f2d3c4-b5e6-47f8-9a0b-1c2d3e4f5a67",
+      "claim_text": "Aria Vellinor was_ordered_to_pay restoration of $4.7 million in collected fees",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 75.0
+    },
+    {
+      "claim_id": "b2e3f4a5-c6d7-48e9-8fab-2c3d4e5f6a78",
+      "claim_text": "Aria Vellinor was_ordered_to_pay civil penalty of $10 million",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 75.0
+    },
+    {
+      "claim_id": "5d2ef0f6-5c7d-4f0b-a4d7-1d7b4cf7b2c1",
+      "claim_text": "Andrew Radin held_role ex-Co-Founder, Aria Pharmaceuticals",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 48.35164835164834
+    },
+    {
+      "claim_id": "2d7a8a41-3fa0-4a5f-9b8d-4f0dc6f0d2c1",
+      "claim_text": "Joshua Benaim holds_role Founder and CEO, Aria New York City office",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 51.66666666666666
+    },
+    {
+      "claim_id": "9fb7c4b2-1bb9-4f55-9a66-6b6e2f3d6d2f",
+      "claim_text": "Madeleine Stevens supports Joshua Benaim",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 50.70422535211267
+    },
+    {
+      "claim_id": "7f3f0b9c-2c58-4f2b-9f74-ff7cbe5b7d7a",
+      "claim_text": "Aria Vellinor is_investor_in real estate equity and real estate related debt",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 72.72727272727273
+    },
+    {
+      "claim_id": "b2d7f3e1-1b3d-4f2f-9f4f-6cf4c7f2a1a1",
+      "claim_text": "Aria Vellinor specializes_in complex situations",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 64.40677966101696
+    },
+    {
+      "claim_id": "0f7d9c25-8a2e-4d92-8d7b-3f4a0d3c1e11",
+      "claim_text": "Aria Vellinor is_investor_in institutional grade multifamily assets across the United States",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 72.72727272727273
+    },
+    {
+      "claim_id": "2c6a5d8b-6c1a-4b2a-9d6e-8d3f2f4e9a22",
+      "claim_text": "Aria Vellinor uses_methodology data-driven and customer-centric methodology",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 65.38461538461539
+    },
+    {
+      "claim_id": "6d2f8a9e-1b3c-4f72-9b0a-1f7c5e8a3b33",
+      "claim_text": "Aria Vellinor partners_with emerging developers",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 71.42857142857143
+    },
+    {
+      "claim_id": "7d5f1d9b-1c5d-4fb6-8de2-2f6c0a6e3f31",
+      "claim_text": "Ilan Gur holds_role founding CEO, Advanced Research and Invention Agency (ARIA)",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 47.61904761904761
+    },
+    {
+      "claim_id": "5f2a5a9d-5d4d-4f83-9e0e-b0b9d8a1c8a1",
+      "claim_text": "Aria Vellinor held_role Former bioethicist at Google (via Advanced Clinical)",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 64.15094339622642
+    },
+    {
+      "claim_id": "8d0df2b4-9c1f-4f7e-9a9f-5e1d8d3d7e2a",
+      "claim_text": "Aria Vellinor held_role Former researcher in NYU\u2019s digital governance initiative",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 64.15094339622642
+    },
+    {
+      "claim_id": "c0f7e2b8-2f4d-4e8a-8b7c-6f2f2f1a4d0c",
+      "claim_text": "Aria Vellinor held_role Former Senior Advisor at the Bureau of Industry and Security",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 64.15094339622642
+    },
+    {
+      "claim_id": "f4a2b2d9-7a4b-4d6d-8c61-6e6c7b4c9a11",
+      "claim_text": "Aria Vellinor held_role Former Engineering Manager and Head of Data Science in the biotech",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 64.15094339622642
+    },
+    {
+      "claim_id": "7d6c5b4a-9f1e-4d2b-8a3c-1e0f2a3b4c5d",
+      "claim_text": "Joshua Benaim holds_role Founder and CEO of Aria",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 54.761904761904766
+    },
+    {
+      "claim_id": "8e7f6a5b-0c1d-4e3f-9a2b-3c4d5e6f7a8b",
+      "claim_text": "Aria specializes_in next generation multifamily, value investment and special situations investing, and creative real estate development",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 48.484848484848484
+    },
+    {
+      "claim_id": "9f8e7d6c-5b4a-4c3d-8e1f-2a3b4c5d6e7f",
+      "claim_text": "Joshua Benaim founded Aria",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 57.692307692307686
+    },
+    {
+      "claim_id": "0a1b2c3d-4e5f-4a6b-8c7d-9e0f1a2b3c4d",
+      "claim_text": "Joshua Benaim co_founded Aria",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 53.57142857142857
+    },
+    {
+      "claim_id": "2f4c7b56-9c8f-4d5f-8d1f-0e9a3d4a1b11",
+      "claim_text": "ARIA is_partner_of 5050",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 61.904761904761905
+    },
+    {
+      "claim_id": "7a1d6c2e-3a5b-4f27-9b4f-5c7f3e9f2b22",
+      "claim_text": "ARIA made_possible launch about five years earlier",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 50.0
+    },
+    {
+      "claim_id": "9c2b8e1f-1d6a-4d8d-8d0c-6f7a2b3c4d33",
+      "claim_text": "ARIA shares_values_with 5050",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 46.808510638297875
+    },
+    {
+      "claim_id": "a4d1f6b7-2c3e-4f8a-9b0d-1e2f3a4b5c44",
+      "claim_text": "5050 recruits prospective founders with unique technical insights",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 45.28301886792453
+    },
+    {
+      "claim_id": "b5e2f7c8-3d4f-4a9b-8c1d-2f3a4b5c6d55",
+      "claim_text": "5050 enables intra-cohort collaborations",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 51.72413793103448
+    },
+    {
+      "claim_id": "b7f2f3d4-6a42-4d8a-9f1e-5ef8f9e6b8c1",
+      "claim_text": "Joshua Benaim held_role Managing Principal at Square Mile Capital Management LLC",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 52.63157894736843
+    },
+    {
+      "claim_id": "2d4fbf9c-2e5f-4c8a-8d1a-0d0f5c6f8c2a",
+      "claim_text": "Joshua Benaim learned_from Manocherian Brothers",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 47.82608695652174
+    },
+    {
+      "claim_id": "f4d0d8f5-1e83-4c45-ae7d-1f4a9f7a0b32",
+      "claim_text": "Joshua Benaim held_role Co-Chair of the HBS Real Estate Alumni Association",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 56.48854961832062
+    },
+    {
+      "claim_id": "6a9c2f3d-1b7e-4d0f-9b6a-7e4b2f8d9c10",
+      "claim_text": "Joshua Benaim advised Professor Arthur Segel",
+      "confidence": 0.49,
+      "is_correct": false,
+      "best_fuzzy_score": 47.72727272727273
+    },
+    {
+      "claim_id": "3d6f6d3d-9f7c-4a1a-8d4c-3d6f2f8b3c11",
+      "claim_text": "Aria Vellinor holds_role Board member, ARIA Board",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 60.97560975609756
+    },
+    {
+      "claim_id": "7c2a6c0f-2f7f-4b0d-9a2b-1d4e9e2f4a22",
+      "claim_text": "Aria Vellinor holds_role Chairman of the board, AIR (Australian Independent Record Labels Association)",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 64.15094339622642
+    },
+    {
+      "claim_id": "b0d7f2f1-8c1c-4b0a-9f0b-3c6d2d5d0a33",
+      "claim_text": "Aria Vellinor was_board_member_of MIFF (Melbourne International Film Festival)",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 76.36363636363637
+    },
+    {
+      "claim_id": "1f3c9d8a-4b5e-4c1d-9a0e-5e6f7a8b9c44",
+      "claim_text": "Aria Vellinor was_board_member_of PPCA (Phonographic Performance Company of Australia)",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 76.36363636363637
+    },
+    {
+      "claim_id": "9a8b7c6d-5e4f-4a3b-9c2d-1e0f2a3b4c55",
+      "claim_text": "Aria Vellinor holds_role Current board member, RISING",
+      "confidence": 0.49,
+      "is_correct": true,
+      "best_fuzzy_score": 64.15094339622642
+    }
+  ]
+}

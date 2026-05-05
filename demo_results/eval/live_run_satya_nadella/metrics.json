@@ -1,0 +1,166 @@
+{
+  "run_id": "20260504_152223",
+  "persona_id": "persona_real_public",
+  "target_name": "Satya Nadella",
+  "timestamp": "2026-05-04T16:21:15.530079+00:00",
+  "agent_stats": {
+    "total_claims": 985,
+    "total_risk_flags": 4,
+    "total_entities": 225,
+    "total_relations": 409,
+    "duration_seconds": 2603.7,
+    "search_calls": 60,
+    "iterations": 0
+  },
+  "recall_by_tier": {
+    "easy": 0.5,
+    "medium": 1.0,
+    "hard": 1.0
+  },
+  "risk_recall": null,
+  "precision_rate": null,
+  "precision_sample_size": 30,
+  "ece": 0.4860406091370558,
+  "calibration_buckets": [
+    {
+      "range_low": 0.0,
+      "range_high": 0.2,
+      "claim_count": 0,
+      "matched_count": 0,
+      "observed_precision": null
+    },
+    {
+      "range_low": 0.2,
+      "range_high": 0.4,
+      "claim_count": 2,
+      "matched_count": 0,
+      "observed_precision": 0.0
+    },
+    {
+      "range_low": 0.4,
+      "range_high": 0.6,
+      "claim_count": 983,
+      "matched_count": 3,
+      "observed_precision": 0.003051881993896236
+    },
+    {
+      "range_low": 0.6,
+      "range_high": 0.8,
+      "claim_count": 0,
+      "matched_count": 0,
+      "observed_precision": null
+    },
+    {
+      "range_low": 0.8,
+      "range_high": 1.0,
+      "claim_count": 0,
+      "matched_count": 0,
+      "observed_precision": null
+    }
+  ],
+  "fact_matches": [
+    {
+      "fact_id": "fact_r01",
+      "strategy": "exact",
+      "score": 0.0,
+      "matched": false,
+      "matched_claim_text": "",
+      "matched_confidence": null
+    },
+    {
+      "fact_id": "fact_r02",
+      "strategy": "exact",
+      "score": 0.0,
+      "matched": false,
+      "matched_claim_text": "",
+      "matched_confidence": null
+    },
+    {
+      "fact_id": "fact_r03",
+      "strategy": "fuzzy",
+      "score": 82.35294117647058,
+      "matched": true,
+      "matched_claim_text": "Satya Nadella age 46",
+      "matched_confidence": 0.49
+    },
+    {
+      "fact_id": "fact_r04",
+      "strategy": "fuzzy",
+      "score": 83.33333333333334,
+      "matched": true,
+      "matched_claim_text": "Satya Nadella age 46",
+      "matched_confidence": 0.49
+    },
+    {
+      "fact_id": "fact_r05",
+      "strategy": "fuzzy",
+      "score": 83.33333333333334,
+      "matched": true,
+      "matched_claim_text": "Satya Nadella age 46",
+      "matched_confidence": 0.49
+    },
+    {
+      "fact_id": "fact_r06",
+      "strategy": "fuzzy",
+      "score": 83.33333333333334,
+      "matched": true,
+      "matched_claim_text": "Satya Nadella age 46",
+      "matched_confidence": 0.49
+    },
+    {
+      "fact_id": "fact_r07",
+      "strategy": "fuzzy",
+      "score": 97.43589743589743,
+      "matched": true,
+      "matched_claim_text": "Satya Nadella worked_at Sun Microsystems",
+      "matched_confidence": 0.49
+    },
+    {
+      "fact_id": "fact_r08",
+      "strategy": "fuzzy",
+      "score": 80.0,
+      "matched": true,
+      "matched_claim_text": "Satya Nadella age 46",
+      "matched_confidence": 0.49
+    },
+    {
+      "fact_id": "fact_r09",
+      "strategy": "fuzzy",
+      "score": 84.21052631578947,
+      "matched": true,
+      "matched_claim_text": "Satya Nadella age 46",
+      "matched_confidence": 0.49
+    },
+    {
+      "fact_id": "fact_r10",
+      "strategy": "fuzzy",
+      "score": 94.87179487179486,
+      "matched": true,
+      "matched_claim_text": "Satya Nadella was_born_in Hyderabad, India",
+      "matched_confidence": 0.49
+    }
+  ],
+  "risk_flags_summary": [
+    {
+      "type": "COVERAGE_GAP",
+      "severity": "LOW",
+      "description": "No validated claims were found concerning regulatory issues (e.g., sanctions, lawsuits, enforcement actions) involving S"
+    },
+    {
+      "type": "COVERAGE_GAP",
+      "severity": "LOW",
+      "description": "No validated claims from Tier-2 or higher sources document negative press, public controversies, or reputation-damaging "
+    },
+    {
+      "type": "COVERAGE_GAP",
+      "severity": "LOW",
+      "description": "No validated claims document significant risk among Satya Nadella\u2019s network\u2014no connected people or organizations are evi"
+    },
+    {
+      "type": "COVERAGE_GAP",
+      "severity": "LOW",
+      "description": "The financial dimension shows a coverage gap: No validated claims were found regarding Satya Nadella\u2019s bankruptcy, debt "
+    }
+  ],
+  "notes": "Semantic matching fell back to fuzzy (OpenAI embedding quota exceeded). Some fuzzy matches may be spurious. Easy exact matches missed because agent claim text differs from planted fact verbatim text."
+}

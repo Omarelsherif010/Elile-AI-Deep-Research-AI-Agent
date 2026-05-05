@@ -1,0 +1,187 @@
+{
+  "run_id": "e2e_demo_004-replay-20260503_181235",
+  "timestamp": "2026-05-03T18:12:40.152401Z",
+  "per_persona": [
+    {
+      "persona_id": "persona_synthetic_a",
+      "recall_by_tier": {
+        "easy": 1.0,
+        "medium": 0.75,
+        "hard": 0.5
+      },
+      "precision": 1.0,
+      "precision_sample_size": 8,
+      "precision_is_automated": true,
+      "risk_recall": 1.0,
+      "fact_matches": [
+        {
+          "planted_fact_id": "fact_a01",
+          "matched_claim_id": "claim_001",
+          "match_strategy_used": "exact",
+          "match_score": 1.0,
+          "matched_claim_confidence": 0.92,
+          "matched_claim_text": "Aria Vellinor is the founder and Managing Partner of Vellinor Capital",
+          "notes": null
+        },
+        {
+          "planted_fact_id": "fact_a02",
+          "matched_claim_id": "claim_002",
+          "match_strategy_used": "fuzzy",
+          "match_score": 100.0,
+          "matched_claim_confidence": 0.88,
+          "matched_claim_text": "Aria Vellinor was born in Velmaris",
+          "notes": null
+        },
+        {
+          "planted_fact_id": "fact_a03",
+          "matched_claim_id": "claim_003",
+          "match_strategy_used": "fuzzy",
+          "match_score": 100.0,
+          "matched_claim_confidence": 0.82,
+          "matched_claim_text": "Aria Vellinor holds a Master of Finance from the Velmaris Institute of Technology",
+          "notes": null
+        },
+        {
+          "planted_fact_id": "fact_a04",
+          "matched_claim_id": "claim_004",
+          "match_strategy_used": "exact",
+          "match_score": 1.0,
+          "matched_claim_confidence": 0.89,
+          "matched_claim_text": "Vellinor Capital was founded in 2019",
+          "notes": null
+        },
+        {
+          "planted_fact_id": "fact_a05",
+          "matched_claim_id": "claim_005",
+          "match_strategy_used": "fuzzy",
+          "match_score": 100.0,
+          "matched_claim_confidence": 0.78,
+          "matched_claim_text": "Aria Vellinor serves on the board of the Velmaris Digital Commerce Association",
+          "notes": null
+        },
+        {
+          "planted_fact_id": "fact_a06",
+          "matched_claim_id": "claim_006",
+          "match_strategy_used": "fuzzy",
+          "match_score": 100.0,
+          "matched_claim_confidence": 0.83,
+          "matched_claim_text": "Aria Vellinor was previously Chief Technology Officer at Meridian Fintech Solutions",
+          "notes": null
+        },
+        {
+          "planted_fact_id": "fact_a07",
+          "matched_claim_id": "claim_007",
+          "match_strategy_used": "fuzzy",
+          "match_score": 100.0,
+          "matched_claim_confidence": 0.8,
+          "matched_claim_text": "Vellinor Capital led a Series B investment of 45 million Velmaris crowns in Nexara Systems",
+          "notes": null
+        },
+        {
+          "planted_fact_id": "fact_a08",
+          "matched_claim_id": null,
+          "match_strategy_used": "fuzzy",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a09",
+          "matched_claim_id": null,
+          "match_strategy_used": "semantic",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a10",
+          "matched_claim_id": "claim_009",
+          "match_strategy_used": "fuzzy",
+          "match_score": 100.0,
+          "matched_claim_confidence": 0.72,
+          "matched_claim_text": "The Velmaris Financial Oversight Authority opened a preliminary inquiry into Vellinor Capital in March 2022",
+          "notes": null
+        },
+        {
+          "planted_fact_id": "fact_a11",
+          "matched_claim_id": null,
+          "match_strategy_used": "semantic",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a12",
+          "matched_claim_id": "claim_002",
+          "match_strategy_used": "fuzzy",
+          "match_score": 71.69811320754718,
+          "matched_claim_confidence": 0.88,
+          "matched_claim_text": "Aria Vellinor was born in Velmaris",
+          "notes": null
+        }
+      ],
+      "risk_matches": [
+        {
+          "planted_risk_id": "risk_a01",
+          "matched_flag_index": 0,
+          "matched_category": "REGULATORY",
+          "severity_match": true,
+          "notes": "Fuzzy score 100.0"
+        }
+      ],
+      "calibration_buckets": [
+        {
+          "range_low": 0.0,
+          "range_high": 0.2,
+          "claim_count": 0,
+          "matched_count": 0,
+          "observed_precision": null
+        },
+        {
+          "range_low": 0.2,
+          "range_high": 0.4,
+          "claim_count": 0,
+          "matched_count": 0,
+          "observed_precision": null
+        },
+        {
+          "range_low": 0.4,
+          "range_high": 0.6,
+          "claim_count": 0,
+          "matched_count": 0,
+          "observed_precision": null
+        },
+        {
+          "range_low": 0.6,
+          "range_high": 0.8,
+          "claim_count": 3,
+          "matched_count": 3,
+          "observed_precision": 1.0
+        },
+        {
+          "range_low": 0.8,
+          "range_high": 1.0,
+          "claim_count": 5,
+          "matched_count": 5,
+          "observed_precision": 1.0
+        }
+      ],
+      "expected_calibration_error": 0.175,
+      "cost_dollars": 0.85,
+      "duration_seconds": 0.0,
+      "iterations_used": 1,
+      "search_calls_used": 6,
+      "success_criteria": {
+        "high_confidence_precision": true,
+        "easy_recall": true,
+        "risk_recall": true
+      }
+    }
+  ],
+  "overall_pass": true,
+  "total_cost_dollars": 0.85,
+  "total_duration_seconds": 0.0
+}

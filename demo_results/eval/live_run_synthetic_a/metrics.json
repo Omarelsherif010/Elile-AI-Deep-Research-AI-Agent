@@ -1,0 +1,197 @@
+{
+  "run_id": "20260504_102832",
+  "timestamp": "2026-05-04T10:44:37.903900Z",
+  "per_persona": [
+    {
+      "persona_id": "persona_synthetic_a",
+      "recall_by_tier": {
+        "easy": 0.0,
+        "medium": 0.0,
+        "hard": 0.0
+      },
+      "found_by_tier": {
+        "easy": 0,
+        "medium": 0,
+        "hard": 0
+      },
+      "total_by_tier": {
+        "easy": 4,
+        "medium": 4,
+        "hard": 4
+      },
+      "precision": 0.5185185185185185,
+      "precision_sample_size": 54,
+      "precision_is_automated": true,
+      "risk_recall": 0.0,
+      "fact_matches": [
+        {
+          "planted_fact_id": "fact_a01",
+          "matched_claim_id": null,
+          "match_strategy_used": "exact",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a02",
+          "matched_claim_id": null,
+          "match_strategy_used": "fuzzy",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a03",
+          "matched_claim_id": null,
+          "match_strategy_used": "fuzzy",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a04",
+          "matched_claim_id": null,
+          "match_strategy_used": "exact",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a05",
+          "matched_claim_id": null,
+          "match_strategy_used": "fuzzy",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a06",
+          "matched_claim_id": null,
+          "match_strategy_used": "fuzzy",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a07",
+          "matched_claim_id": null,
+          "match_strategy_used": "fuzzy",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a08",
+          "matched_claim_id": null,
+          "match_strategy_used": "fuzzy",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a09",
+          "matched_claim_id": null,
+          "match_strategy_used": "semantic",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a10",
+          "matched_claim_id": null,
+          "match_strategy_used": "fuzzy",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a11",
+          "matched_claim_id": null,
+          "match_strategy_used": "semantic",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        },
+        {
+          "planted_fact_id": "fact_a12",
+          "matched_claim_id": null,
+          "match_strategy_used": "fuzzy",
+          "match_score": 0.0,
+          "matched_claim_confidence": null,
+          "matched_claim_text": null,
+          "notes": "No matching claim found"
+        }
+      ],
+      "risk_matches": [
+        {
+          "planted_risk_id": "risk_a01",
+          "matched_flag_index": null,
+          "matched_category": null,
+          "severity_match": false,
+          "notes": "No matching risk flag found"
+        }
+      ],
+      "calibration_buckets": [
+        {
+          "range_low": 0.0,
+          "range_high": 0.2,
+          "claim_count": 0,
+          "matched_count": 0,
+          "observed_precision": null
+        },
+        {
+          "range_low": 0.2,
+          "range_high": 0.4,
+          "claim_count": 0,
+          "matched_count": 0,
+          "observed_precision": null
+        },
+        {
+          "range_low": 0.4,
+          "range_high": 0.6,
+          "claim_count": 54,
+          "matched_count": 0,
+          "observed_precision": 0.0
+        },
+        {
+          "range_low": 0.6,
+          "range_high": 0.8,
+          "claim_count": 0,
+          "matched_count": 0,
+          "observed_precision": null
+        },
+        {
+          "range_low": 0.8,
+          "range_high": 1.0,
+          "claim_count": 0,
+          "matched_count": 0,
+          "observed_precision": null
+        }
+      ],
+      "expected_calibration_error": 0.4861111111111111,
+      "cost_dollars": 0.0,
+      "duration_seconds": 950.2110331058502,
+      "iterations_used": 0,
+      "search_calls_used": 42,
+      "success_criteria": {
+        "high_confidence_precision": true,
+        "easy_recall": false,
+        "risk_recall": false
+      }
+    }
+  ],
+  "overall_pass": false,
+  "total_cost_dollars": 0.0,
+  "total_duration_seconds": 950.2110331058502
+}
