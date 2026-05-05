@@ -235,7 +235,7 @@ The assessment target was successfully investigated. Key findings:
 ### Setup
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/Omarelsherif010/Elile-AI-Deep-Research-AI-Agent.git
 cd Elile-AI-Deep-Research-AI-Agent
 make install
 cp .env.example .env
@@ -266,16 +266,22 @@ make run TARGET="Elon Musk"
 ### Eval Suite
 
 ```bash
-make eval                # Run all 3 personas
-python -m research_agent eval --persona persona_synthetic_a
+make eval                              # Run all 3 personas
+python -m eval run --persona persona_synthetic_a  # Single persona
+python -m eval replay --run-id <id>    # Replay from cached artifacts (no API calls)
+python -m eval validate-persona --all  # Validate persona YAML
 ```
+
+See `demo_results/eval/README.md` for methodology, results, and known limitations.
 
 ### Demo UI
 
 ```bash
-streamlit run streamlit_app.py
-# Load runs/timothy_overturf/report.json in the UI
+make demo
+# or: streamlit run streamlit_app.py
 ```
+
+The Streamlit app auto-discovers existing runs in `runs/` — select from the sidebar dropdown or upload a `report.json` file.
 
 ## Observability
 
@@ -292,3 +298,17 @@ streamlit run streamlit_app.py
 - XML content wrapping defends against prompt injection
 - Mandatory "Scope and Limitations" section in every report
 - Thin coverage reported as a finding ("coverage gap"), not fabricated
+
+---
+
+## For Reviewers
+
+If you're evaluating this project, here's a suggested reading order:
+
+1. **This README** — architecture, design decisions, requirement fulfillment
+2. **`DEMO_GUIDE.md`** — structured 5-act walkthrough of the system
+3. **`demo_results/timothy_overturf/report.md`** — sample investigation report (clean markdown)
+4. **`demo_results/eval/README.md`** — eval methodology, results, and known limitations
+5. **`prompts/`** — all 8 LLM prompts (version-controlled, structured Markdown)
+6. **`src/research_agent/graph.py`** — the LangGraph pipeline wiring
+7. **`src/research_agent/confidence.py`** — deterministic confidence scoring formula
