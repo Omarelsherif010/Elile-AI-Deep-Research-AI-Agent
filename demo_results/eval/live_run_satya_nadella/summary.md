@@ -22,7 +22,8 @@
 | Easy Recall | 0.50 | 2/4 easy facts found |
 | Medium Recall | 1.00 | 3/3 medium facts found |
 | Hard Recall | 1.00 | 3/3 hard facts found (fuzzy fallback for semantic) |
-| Risk Recall | 1.00 | No planted risks — agent correctly did not fabricate any |
+| Risk Recall | N/A | No planted risks in this persona |
+| Fabricated Risks | 0 | Agent correctly produced no fabricated risk flags |
 | ECE | 0.486 | Calibration error — acceptable for a first run |
 
 ## Fact Match Details

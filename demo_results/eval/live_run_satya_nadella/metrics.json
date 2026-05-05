@@ -17,7 +17,7 @@
     "medium": 1.0,
     "hard": 1.0
   },
-  "risk_recall": 1.0,
+  "risk_recall": null,
   "precision_rate": null,
   "precision_sample_size": 30,
   "ece": 0.4860406091370558,
