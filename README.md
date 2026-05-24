@@ -2,17 +2,16 @@
 
 A LangGraph-orchestrated multi-agent system for autonomous OSINT-style investigation of public figures. Built for the **Elile AI** technical assessment — investigating **Timothy Overturf, CEO of Sisu Capital**.
 
-## How the System Works
+## How the System Worksرلارى
 
 The agent conducts a structured investigation through an iterative research loop. Each cycle deepens coverage across six dimensions: biographical details, professional history, financial connections, network relationships, public statements, and risk surface.
 
 ### End-to-End Flow
 
-```
+```لاى
 User provides target name + context
         │
-        ▼
-┌─────────────────────────────────────────────────────────┐
+ر┌─────────────────────────────────────────────────────────┐
 │                    RESEARCH LOOP                         │
 │                                                         │
 │  ┌──────────┐    ┌───────────────────┐    ┌───────────┐ │
